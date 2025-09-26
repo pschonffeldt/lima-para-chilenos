@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SidebarComponent from "./components/sidebar-component";
+import ContainerComponent from "./components/container-component";
 
 export const metadata: Metadata = {
   title: "Lima para Chilenos",
@@ -13,8 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="min-h-screen bg-background text-foreground antialiased">
-        {children}
+      <body className="min-h-screen bg-background text-foreground antialiased flex flex-row">
+        <SidebarComponent />
+        <ContainerComponent>{children}</ContainerComponent>
       </body>
     </html>
   );
