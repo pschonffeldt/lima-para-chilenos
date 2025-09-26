@@ -13,16 +13,58 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pokémon Explorer – Discover, Learn & Explore",
+  title: "Santiago a Lima — Guía para descubrir la capital peruana",
   description:
-    "Discover, learn, and explore the world of Pokémon in one simple web app. Browse Pokémon details, abilities, types, and more – perfect for fans and new trainers alike.",
+    "Consejos prácticos para viajar de Santiago a Lima: barrios (Miraflores, Barranco, Centro), seguridad, transporte, costos, cambio de moneda, SIM, y gastronomía (¡ceviche!).",
+  keywords: [
+    "Santiago a Lima",
+    "Lima para chilenos",
+    "guía de viaje Lima",
+    "qué hacer en Lima",
+    "Miraflores",
+    "Barranco",
+    "Costa Verde",
+    "gastronomía peruana",
+    "seguridad en Lima",
+    "transporte en Lima",
+    "cambio de moneda",
+    "chip SIM Perú",
+  ],
+  alternates: {
+    canonical: "/santiago-a-lima",
+  },
   openGraph: {
-    title: "Pokémon Explorer – Discover, Learn & Explore",
+    title: "Santiago a Lima — Guía para descubrir la capital peruana",
     description:
-      "Dive into Pokémon data, stats, abilities, and regions. All in one beautiful web app.",
-    siteName: "Pokémon Explorer",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
-    type: "website",
+      "Todo lo esencial para tu viaje: barrios, transporte, seguridad, costos y comida imperdible.",
+    url: "/santiago-a-lima",
+    siteName: "Lima para chilenos",
+    images: [
+      {
+        url: "/og-santiago-lima.png",
+        width: 1200,
+        height: 630,
+        alt: "Guía Santiago a Lima: vista de Miraflores y el Pacífico",
+      },
+    ],
+    locale: "es_PE",
+    alternateLocale: ["es_CL"],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Santiago a Lima — Guía para descubrir la capital peruana",
+    description:
+      "Tips rápidos y honestos para chilenos: barrios, transporte, seguridad, costos y comida.",
+    images: ["/og-santiago-lima.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  category: "viajes",
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
