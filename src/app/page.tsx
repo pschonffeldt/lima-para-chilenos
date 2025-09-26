@@ -28,7 +28,7 @@ export default function Home() {
       </aside>
 
       {/* Right section */}
-      <section className="mx-auto w-[80%] min-w-0 py-20">
+      <section className="mx-auto w-[80%] min-w-0 py-20 space-y-10">
         {/* HERO */}
         <header className="space-y-5">
           <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
@@ -42,7 +42,7 @@ export default function Home() {
 
           <div className="flex flex-wrap gap-3 pt-1">
             <Link
-              href="/introduccion"
+              href="/intro"
               className="rounded-lg border bg-white/60 px-4 py-2 text-sm font-medium shadow-sm hover:bg-white"
             >
               Empezar por la Introducción
@@ -203,7 +203,7 @@ export default function Home() {
           <h2 className="text-lg font-semibold">Explora la guía</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
             <Link
-              href="/introduccion"
+              href="/intro"
               className="group rounded-xl border p-5 shadow-sm transition-colors hover:bg-muted/40"
             >
               <div className="mb-2 flex items-center gap-3">
