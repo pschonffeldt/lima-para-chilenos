@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
+/* Light tokens */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Tell the browser to use light UI (scrollbars, form controls) */
+  color-scheme: light;
 }
 
-@theme inline {
+/* Tailwind v4 tokens so utilities like bg-card / bg-muted work */
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #000000;
-  }
+  --color-card: #ffffff;
+  --color-muted: hsl(220 14% 96%);
+  --color-muted-foreground: hsl(220 9% 46%);
+  --color-primary: hsl(221 83% 53%);
+  --color-primary-foreground: #ffffff;
 }
 
 body {
