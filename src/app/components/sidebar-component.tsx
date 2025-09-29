@@ -1,8 +1,9 @@
+// src/app/components/sidebar-component.tsx
 import React from "react";
 
 export default function SidebarComponent() {
   return (
-    <aside className="w-[200px] shrink-0 bg-gray-100">
+    <aside className="w-[200px] shrink-0 h-full border-r bg-gray-100">
       <div className="flex h-full flex-col p-6">
         <h3 className="text-xl font-semibold text-gray-900">Pokédex</h3>
         <p className="mt-2 text-sm text-gray-600">
@@ -21,7 +22,7 @@ export default function SidebarComponent() {
             Roll a random Pokémon (discover something new fast)
           </li>
         </ul>
-        <div className="mt-auto pt-5"></div>
+        <div className="mt-auto pt-5" />
       </div>
     </aside>
   );

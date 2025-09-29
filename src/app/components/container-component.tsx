@@ -1,11 +1,15 @@
+// src/app/components/container-component.tsx
 import type { ReactNode } from "react";
 
-type Props = { children: ReactNode };
-
-export default function ContainerComponent({ children }: Props) {
+export default function ContainerComponent({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
-    <main className="flex min-h-screen flex-1">
-      {/* centered content area at 80% of the right pane */}
+    // takes remaining width, scrolls vertically
+    <main className="flex-1 h-[100svh] min-w-0 overflow-y-auto">
+      {/* centered, 80% width content */}
       <div className="mx-auto w-[80%] min-w-0 p-4 md:p-8">{children}</div>
     </main>
   );

@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="min-h-screen bg-background text-foreground antialiased flex flex-row">
+      <body className="h-[100svh] overflow-hidden bg-background text-foreground antialiased flex">
         <SidebarComponent />
         <ContainerComponent>{children}</ContainerComponent>
       </body>
