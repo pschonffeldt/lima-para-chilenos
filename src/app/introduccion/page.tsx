@@ -14,8 +14,10 @@ export default function IntroPage() {
         <h1 className="text-3xl font-bold tracking-tight">Introducción</h1>
         <p className="max-w-[70ch] text-muted-foreground">
           Qué esperar al llegar, cómo orientarte y los atajos para adaptarte en
-          horas (no días). Si vienes de 🇨🇱, esta es la guía rápida para partir
-          bien.
+          horas (no días).
+        </p>
+        <p className="max-w-[70ch] text-muted-foreground">
+          Si vienes de 🇨🇱, esta es la guía rápida para partir bien.
         </p>
       </header>
 
@@ -28,7 +30,7 @@ export default function IntroPage() {
           <ul className="space-y-1 text-sm">
             <li>Miraflores — cómoda, caminable, malecón.</li>
             <li>Barranco — arte y bares, bohemio.</li>
-            <li>San Isidro — seguro, restaurantes top.</li>
+            <li>San Isidro — seguro, oficinas y restaurantes top.</li>
           </ul>
         </div>
         <div className="rounded-lg border p-4">
@@ -36,19 +38,19 @@ export default function IntroPage() {
             Transporte rápido
           </p>
           <ul className="space-y-1 text-sm">
-            <li>Taxi por app (Uber/Cabify/InDrive).</li>
-            <li>Metropolitano para tramos fijos.</li>
-            <li>Evita taxi de calle.</li>
+            <li>Taxi por app (El más seguro es Cabify).</li>
+            <li>Metropolitano (micro) para tramos fijos.</li>
+            <li>Evita taxi de calle y la combis.</li>
           </ul>
         </div>
         <div className="rounded-lg border p-4">
           <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Plata & conectividad
+            Pagos & conectividad
           </p>
           <ul className="space-y-1 text-sm">
-            <li>Cambia en casas formales; evita calle.</li>
-            <li>Tarjeta ok + algo de soles (S/.).</li>
-            <li>SIM/eSIM: Claro, Entel o Movistar.</li>
+            <li>Cambia en la calle.</li>
+            <li>Trae USD y habilita tu tarjeta bancaria Chilena.</li>
+            <li>eSIM o roaming, no compres una SIM fisica en Lima</li>
           </ul>
         </div>
       </div>
@@ -57,13 +59,13 @@ export default function IntroPage() {
       <div className="rounded-xl border p-5">
         <h2 className="text-lg font-semibold">Checklist al aterrizar</h2>
         <ol className="mt-3 list-decimal space-y-2 pl-6 text-sm">
-          <li>Conéctate: compra SIM/eSIM o activa plan internacional.</li>
+          <li>Conéctate: compra eSIM o activa plan internacional.</li>
           <li>Plata: cambia un poco a soles o usa cajero de banco grande.</li>
           <li>
             Traslado: pide taxi por app; destino Miraflores/Barranco/San Isidro.
           </li>
           <li>Ubícate: malecón = norte-sur; vía expresa = eje central.</li>
-          <li>Guarda el celu a la vista en esquinas muy concurridas.</li>
+          <li>Cuídate: Guarda el teléfono en esquinas muy concurridas.</li>
         </ol>
       </div>
 
@@ -83,12 +85,36 @@ export default function IntroPage() {
           </div>
           <div className="rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Dónde comprar
+              Dónde comprar eSIM
             </p>
             <ul className="space-y-1 text-sm">
-              <li>Centros comerciales y tiendas oficiales.</li>
-              <li>Quioscos autorizados en avenidas principales.</li>
-              <li>eSIM online en sitios oficiales (lleva pasaporte).</li>
+              <li>
+                <a
+                  href="https://mobimatter.com/"
+                  className="hover:underline text-primary"
+                >
+                  Mobimatter
+                </a>
+                , marketplace de eSIM.
+              </li>
+              <li>
+                <a
+                  href="https://esim.holafly.com//"
+                  className="hover:underline text-primary"
+                >
+                  Holafly
+                </a>
+                , segúramente has visto sus comerciales.
+              </li>
+              <li>
+                <a
+                  href="https://maya.net//"
+                  className="hover:underline text-primary"
+                >
+                  Maya
+                </a>
+                , no es tan famoso, pero igual es bueno.
+              </li>
             </ul>
           </div>
           <div className="rounded-lg border p-4">
@@ -98,7 +124,10 @@ export default function IntroPage() {
             <ul className="space-y-1 text-sm">
               <li>Activa datos/roaming solo si tu plan lo permite.</li>
               <li>Guarda el QR de eSIM y anota tu número local.</li>
-              <li>Wi-Fi decente en cafés y malls; pide la clave.</li>
+              <li>
+                Wi-Fi en cafés y malls, usa siempre un{" "}
+                <span className="font-semibold">VPN</span>.
+              </li>
             </ul>
           </div>
         </div>
@@ -115,7 +144,7 @@ export default function IntroPage() {
               Cambio seguro
             </p>
             <ul className="space-y-1 text-sm">
-              <li>Casas de cambio formales (no calle).</li>
+              <li>Casas de cambio informales (en calle).</li>
               <li>Consulta tipo de cambio antes de ir.</li>
               <li>Evita cambiar montos grandes en público.</li>
             </ul>
@@ -127,19 +156,17 @@ export default function IntroPage() {
             <ul className="space-y-1 text-sm">
               <li>Tarjeta aceptada en la mayoría de locales.</li>
               <li>Cajeros de bancos grandes para retirar soles.</li>
-              <li>Pregunta por comisión y cupos.</li>
+              <li>Bajas comisiones para tarjetas Chilenas.</li>
             </ul>
           </div>
           <div className="rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Yape/Plin (apps locales)
+              Yape/Plin (billeteras digitales)
             </p>
             <ul className="space-y-1 text-sm">
-              <li>Útiles en tiendas pequeñas y delivery.</li>
-              <li>No todos los turistas pueden activarlas; lleva efectivo.</li>
-              <li>
-                Si un chileno local te acompaña, puede pagar y tú reembolsas.
-              </li>
+              <li>NO pierdas tiempo, no podrás usar estas Apps.</li>
+              <li>Tienes que ser Peruano o tener residencia.</li>
+              <li>En Perú, todos pueden Yapear, literal.</li>
             </ul>
           </div>
         </div>
@@ -154,7 +181,7 @@ export default function IntroPage() {
           {[
             {
               name: "Miraflores",
-              note: "Base cómoda para primera visita: malecón, parques, cafés.",
+              note: "Un buen lugar para quedarte en tu primera visita: el malecón, con parques y cafés cerca.",
               href: "/barrios/miraflores",
             },
             {
@@ -196,17 +223,17 @@ export default function IntroPage() {
           <div className="rounded-lg border p-4">
             <ul className="space-y-1 text-sm">
               <li>Almuerzo 1–3 pm; cena 8–10 pm.</li>
-              <li>Restos top piden reserva (fines de semana).</li>
+              <li>Restaurantes top piden reserva.</li>
               <li>Propina no obligatoria; 10% es bien recibida.</li>
-              <li>En direcciones usan referencias (esquina, cuadra, cruce).</li>
+              <li>A las rotondas les dicen óvalos</li>
             </ul>
           </div>
           <div className="rounded-lg border p-4">
             <ul className="space-y-1 text-sm">
-              <li>Clima templado con garúa en invierno.</li>
+              <li>Clima templado con cielos nublados en invierno.</li>
               <li>Sol fuerte en verano; bloqueador siempre.</li>
               <li>Evita exhibir el celular en esquinas muy concurridas.</li>
-              <li>Para correr/caminar: malecón de día es top.</li>
+              <li>Para correr/caminar: malecón de día es tu mejor opción.</li>
             </ul>
           </div>
         </div>
@@ -219,9 +246,9 @@ export default function IntroPage() {
           <div className="rounded-lg border p-4">
             <p className="mb-1 text-sm font-medium">Haz</p>
             <ul className="space-y-1 text-sm">
-              <li>Pide taxi por app y verifica patente/conductor.</li>
+              <li>Pide taxi por Cabify y verifica patente/conductor.</li>
               <li>Lleva algo de efectivo (S/.) para emergencias.</li>
-              <li>Cambia en casa formal y guarda boleta.</li>
+              <li>No comas ceviche todos los días, te vas a enfermar.</li>
               <li>Usa malecón y parques de día para pasear o trabajar.</li>
             </ul>
           </div>
@@ -230,7 +257,7 @@ export default function IntroPage() {
             <ul className="space-y-1 text-sm">
               <li>Tomar taxi de calle o subir sin precio claro.</li>
               <li>Mostrar el celu en esquinas/semáforos concurridos.</li>
-              <li>Cambiar plata con cambistas informales.</li>
+              <li>Comprar droga en la calle, esa es la mala.</li>
               <li>Caminar por zonas poco iluminadas de noche.</li>
             </ul>
           </div>
