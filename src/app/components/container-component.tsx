@@ -8,9 +8,9 @@ export default function ContainerComponent({
 }) {
   return (
     // takes remaining width, scrolls vertically
-    <main className="flex-1 h-[100svh] min-w-0 overflow-y-auto">
+    <main className="flex-1 h-[100svh] overflow-y-auto">
       {/* centered, 80% width content */}
-      <div className="mx-auto w-[80%] max-w-6xl min-w-0 p-4 md:p-8">
+      <div className="mx-auto p-4 sm:w-[90%] md:w-[90%] lg:w-[90%] xl:w-[80%]">
         {children}
       </div>
     </main>
