@@ -1,4 +1,18 @@
 import Link from "next/link";
+import { ActividadSlug } from "../lib/actividades-content";
+
+const to = (slug: ActividadSlug) => `/actividades/${slug}`;
+const SLUG = {
+  paseoMalecon: "paseo-malecon" as ActividadSlug,
+  correrBici: "correr-bici-malecon" as ActividadSlug,
+  surf: "surf-principiantes" as ActividadSlug,
+  centro: "centro-historico-dia" as ActividadSlug,
+  museos: "museos-sitios" as ActividadSlug,
+  barrancoCreativo: "barranco-creativo" as ActividadSlug,
+  parques: "parques-areas-verdes" as ActividadSlug,
+  aves: "aves-humedales" as ActividadSlug,
+  mediaJornada: "media-jornada-barranco" as ActividadSlug,
+} as const;
 
 export const metadata = {
   title: "Actividades — Lima para Chilenos",
@@ -48,7 +62,7 @@ export default function ActividadesPage() {
           <ul className="space-y-1 text-sm">
             <li>Apps (Cabify/Uber) para moverte fácil.</li>
             <li>Metropolitano sirve si tu ruta coincide.</li>
-            <li>Evita taxi de calle. Nos es seguro</li>
+            <li>Evita taxi de calle. No es seguro.</li>
           </ul>
         </div>
       </div>
@@ -67,11 +81,15 @@ export default function ActividadesPage() {
               <li>Atardeceres frente al mar, panorama seguro.</li>
             </ul>
             <div className="mt-auto pt-5">
-              <span className="inline-block text-sm text-primary underline-offset-4 group-hover:underline">
+              <Link
+                href={to(SLUG.paseoMalecon)}
+                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
+              >
                 Abrir sección →
-              </span>
+              </Link>
             </div>
           </div>
+
           <div className="flex flex-col rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Correr & bicicleta
@@ -82,11 +100,15 @@ export default function ActividadesPage() {
               <li>Hidratación y bloqueador siempre.</li>
             </ul>
             <div className="mt-auto pt-5">
-              <span className="inline-block text-sm text-primary underline-offset-4 group-hover:underline">
+              <Link
+                href={to(SLUG.correrBici)}
+                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
+              >
                 Abrir sección →
-              </span>
+              </Link>
             </div>
           </div>
+
           <div className="flex flex-col rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Playa & surf
@@ -97,9 +119,12 @@ export default function ActividadesPage() {
               <li>Deja objetos de valor en el alojamiento.</li>
             </ul>
             <div className="mt-auto pt-5">
-              <span className="inline-block text-sm text-primary underline-offset-4 group-hover:underline">
+              <Link
+                href={to(SLUG.surf)}
+                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
+              >
                 Abrir sección →
-              </span>
+              </Link>
             </div>
           </div>
         </div>
@@ -111,7 +136,7 @@ export default function ActividadesPage() {
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="flex flex-col rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Centro Histórico
+              Centro histórico
             </p>
             <ul className="space-y-1 text-sm">
               <li>Plaza Mayor, balcones y arquitectura clásica.</li>
@@ -119,11 +144,15 @@ export default function ActividadesPage() {
               <li>Combínalo con un museo y algo para comer.</li>
             </ul>
             <div className="mt-auto pt-5">
-              <span className="inline-block text-sm text-primary underline-offset-4 group-hover:underline">
+              <Link
+                href={to(SLUG.centro)}
+                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
+              >
                 Abrir sección →
-              </span>
+              </Link>
             </div>
           </div>
+
           <div className="flex flex-col rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Museos & sitios
@@ -134,11 +163,15 @@ export default function ActividadesPage() {
               <li>Compra entrada online si existe esa opción.</li>
             </ul>
             <div className="mt-auto pt-5">
-              <span className="inline-block text-sm text-primary underline-offset-4 group-hover:underline">
+              <Link
+                href={to(SLUG.museos)}
+                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
+              >
                 Abrir sección →
-              </span>
+              </Link>
             </div>
           </div>
+
           <div className="flex flex-col rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Barranco creativo
@@ -149,9 +182,12 @@ export default function ActividadesPage() {
               <li>Cafecitos y bares para cerrar el paseo.</li>
             </ul>
             <div className="mt-auto pt-5">
-              <span className="inline-block text-sm text-primary underline-offset-4 group-hover:underline">
+              <Link
+                href={to(SLUG.barrancoCreativo)}
+                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
+              >
                 Abrir sección →
-              </span>
+              </Link>
             </div>
           </div>
         </div>
@@ -161,7 +197,7 @@ export default function ActividadesPage() {
       <div id="deporte-naturaleza" className="space-y-3">
         <h2 className="text-lg font-semibold">Deporte y naturaleza</h2>
         <div className="grid gap-3 sm:grid-cols-3">
-          <div className="rounded-lg border p-4">
+          <div className="flex flex-col rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Parques & áreas verdes
             </p>
@@ -170,8 +206,17 @@ export default function ActividadesPage() {
               <li>Rutas planas y seguras de día.</li>
               <li>Siempre guarda tus cosas a la vista.</li>
             </ul>
+            <div className="mt-auto pt-5">
+              <Link
+                href={to(SLUG.parques)}
+                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
+              >
+                Abrir sección →
+              </Link>
+            </div>
           </div>
-          <div className="rounded-lg border p-4">
+
+          <div className="flex flex-col rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Observación de aves / humedales
             </p>
@@ -180,8 +225,17 @@ export default function ActividadesPage() {
               <li>Ideal en la mañana con guía o grupo.</li>
               <li>Lleva gorro, agua y protección solar.</li>
             </ul>
+            <div className="mt-auto pt-5">
+              <Link
+                href={to(SLUG.aves)}
+                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
+              >
+                Abrir sección →
+              </Link>
+            </div>
           </div>
-          <div className="rounded-lg border p-4">
+
+          <div className="flex flex-col rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Salidas de media jornada
             </p>
@@ -200,6 +254,14 @@ export default function ActividadesPage() {
                 .
               </li>
             </ul>
+            <div className="mt-auto pt-5">
+              <Link
+                href={to(SLUG.mediaJornada)}
+                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
+              >
+                Abrir sección →
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -226,7 +288,7 @@ export default function ActividadesPage() {
           </div>
         </div>
         <p className="text-sm text-muted-foreground">
-          Tip: define el punto de encuentro para la app transporte antes de
+          Tip: define el punto de encuentro para la app de transporte antes de
           terminar cada actividad.
         </p>
       </div>
