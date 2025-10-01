@@ -14,6 +14,7 @@ const NAV = [
   { href: "/transporte", label: "Transporte", icon: "🛵" },
   { href: "/comida", label: "Comida", icon: "🍽️" },
   { href: "/copete", label: "Copete", icon: "🍸" },
+  { href: "/cafe", label: "Café", icon: "☕️" },
   { href: "/actividades", label: "Actividades", icon: "🗺️" },
   { href: "/advertencias", label: "Advertencias", icon: "⚠️" },
   { href: "/barrios", label: "Barrios", icon: "🏙️" },
