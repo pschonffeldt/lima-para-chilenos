@@ -18,6 +18,7 @@ const NAV = [
   { href: "/actividades", label: "Actividades", icon: "🗺️" },
   { href: "/advertencias", label: "Advertencias", icon: "⚠️" },
   { href: "/barrios", label: "Barrios", icon: "🏙️" },
+  { href: "/itinerarios", label: "Itinerarios", icon: "📘" },
   { href: "/mapa", label: "Mapa", icon: "🧭" },
   { href: "/contacto", label: "Contacto", icon: "📞" },
 ];
