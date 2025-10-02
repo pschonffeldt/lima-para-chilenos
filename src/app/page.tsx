@@ -1,4 +1,6 @@
 import Link from "next/link";
+import HeroSection from "./components/hero-component";
+import Button from "./components/button-component";
 
 // Top essentials
 const ESSENTIALS = [
@@ -92,7 +94,7 @@ export default function Home() {
     // Rely on ContainerComponent for width; just spacing here
     <section className="space-y-10 py-10">
       {/* HERO */}
-      <header className="space-y-5">
+      {/* <header className="space-y-5">
         <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground">
           🇨🇱→🇵🇪 <span>Lima para Chilenos</span>
         </span>
@@ -114,13 +116,197 @@ export default function Home() {
             Empezar por la Introducción
           </Link>
           <a
-            href="#mapa"
+            href="/mapa"
             className="rounded-lg border px-4 py-2 text-sm text-muted-foreground hover:bg-muted/60"
           >
             Ver mapa con destinos
           </a>
         </div>
-      </header>
+      </header> */}
+      <HeroSection
+        title="🇨🇱→🇵🇪 Lima para chilenos, crudo y sin censura."
+        description={
+          <>
+            Consejos de un chileno que vive en Lima, con mapas y listas para que
+            te adaptes en horas — no en días. Menos bla bla y más datos útiles.
+          </>
+        }
+        actions={[
+          {
+            href: "/introduccion",
+            label: "Empezar por la Introducción",
+            variant: "primary",
+          },
+          { href: "/mapa", label: "Ver mapa con destinos", variant: "dark" },
+        ]}
+      />
+
+      <article className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+        <div className="flex h-full flex-col p-6">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-semibold text-gray-900">Regions</h3>
+            <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+              World Guide
+            </span>
+          </div>
+          <p className="mt-2 text-sm text-gray-600">
+            Explore geography, cities, gyms, starters, and legendaries from
+            Kanto to Paldea.
+          </p>
+          <ul className="mt-4 grid grid-cols-2 gap-2 text-sm text-gray-700">
+            {DISTRICTS.map((district) => (
+              <li key={district.name}>
+                <Link
+                  href={district.name}
+                  className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50"
+                >
+                  {district.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-auto pt-5 flex flex-wrap gap-2">
+            <Button href="/learn/pokemon-regions">See all regions</Button>
+          </div>
+        </div>
+      </article>
+
+      {/* Types */}
+      <article className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+        <div className="flex h-full flex-col p-6">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-semibold text-gray-900">Types</h3>
+            <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+              Battle Basics
+            </span>
+          </div>
+
+          <p className="mt-2 text-sm text-gray-600">
+            Type matchups are the backbone of every battle. With 18 types,
+            strengths, resistances, and immunities create the flow of offense
+            and defense.
+          </p>
+          <p className="mt-2 text-sm text-gray-600">
+            Same-Type Attack Bonus (STAB) boosts moves that match your Pokémon’s
+            type, while dual-typing can flip a matchup from risky to safe in one
+            turn.
+          </p>
+          {/* Emoji grid */}
+          <ul className="mt-4 grid grid-cols-6 gap-2 sm:grid-cols-9">
+            {[
+              { key: "normal", label: "Normal", emoji: "⚪️" },
+              { key: "fire", label: "Fire", emoji: "🔥" },
+              { key: "water", label: "Water", emoji: "💧" },
+              { key: "grass", label: "Grass", emoji: "🌿" },
+              { key: "electric", label: "Electric", emoji: "⚡️" },
+              { key: "ice", label: "Ice", emoji: "❄️" },
+              { key: "fighting", label: "Fighting", emoji: "🥊" },
+              { key: "poison", label: "Poison", emoji: "🧪" },
+              { key: "ground", label: "Ground", emoji: "🏜️" },
+              { key: "flying", label: "Flying", emoji: "🕊️" },
+              { key: "psychic", label: "Psychic", emoji: "🔮" },
+              { key: "bug", label: "Bug", emoji: "🐛" },
+              { key: "rock", label: "Rock", emoji: "🪨" },
+              { key: "ghost", label: "Ghost", emoji: "👻" },
+              { key: "dragon", label: "Dragon", emoji: "🐉" },
+              { key: "dark", label: "Dark", emoji: "🌑" },
+              { key: "steel", label: "Steel", emoji: "⚙️" },
+              { key: "fairy", label: "Fairy", emoji: "✨" },
+            ].map(({ key, label, emoji }) => (
+              <li key={key} className="flex items-center justify-center">
+                <Link
+                  href={`learn/pokemon-types/${key}`}
+                  title={label}
+                  aria-label={`Type: ${label}`}
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 bg-white text-2xl leading-none hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  <span aria-hidden="true">{emoji}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-auto pt-5 flex flex-wrap gap-2">
+            <Button href="learn/pokemon-types">Discover Pokémon Types</Button>
+          </div>
+        </div>
+      </article>
+
+      {/* Generations */}
+      <article className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+        <div className="flex h-full flex-col p-6">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-semibold text-gray-900">Generations</h3>
+            <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+              Timeline
+            </span>
+          </div>
+
+          <p className="mt-2 text-sm text-gray-600">
+            Each era changed how Pokémon is played—from breeding and Abilities
+            to the Physical/Special split, Megas, Z-Moves, Dynamax, and
+            Terastallization. Tap a generation to see what it added, best games
+            to start with, and meta shifts.
+          </p>
+
+          {/* Mini timeline (click to anchors on /generations) */}
+          <ul className="mt-4 grid grid-cols-3 gap-2 text-sm text-gray-700">
+            {[
+              {
+                id: "gen-i",
+                label: "Gen I",
+              },
+              {
+                id: "gen-ii",
+                label: "Gen II",
+              },
+              {
+                id: "gen-iii",
+                label: "Gen III",
+              },
+              {
+                id: "gen-iv",
+                label: "Gen IV",
+              },
+              { id: "gen-v", label: "Gen V" },
+              {
+                id: "gen-vi",
+                label: "Gen VI",
+              },
+              {
+                id: "gen-vii",
+                label: "Gen VII",
+              },
+              {
+                id: "gen-viii",
+                label: "Gen VIII",
+              },
+              {
+                id: "gen-ix",
+                label: "Gen IX",
+              },
+            ].map(({ id, label }) => (
+              <li key={id}>
+                <Link
+                  href={`/learn/pokemon-generations/${id}`}
+                  className="block rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50"
+                >
+                  <div className="flex items-center justify-between">
+                    <span>{label}</span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA */}
+          <div className="mt-auto pt-5 flex flex-wrap gap-2">
+            <Button href="/learn/pokemon-generations">
+              Explore generations
+            </Button>
+          </div>
+        </div>
+      </article>
 
       {/* ESSENTIALS */}
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
