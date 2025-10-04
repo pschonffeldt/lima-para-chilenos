@@ -94,35 +94,7 @@ export default function Home() {
     // Rely on ContainerComponent for width; just spacing here
     <section className="space-y-10 py-10">
       {/* HERO */}
-      {/* <header className="space-y-5">
-        <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground">
-          🇨🇱→🇵🇪 <span>Lima para Chilenos</span>
-        </span>
 
-        <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
-          Lima para chilenos, crudo y sin censura.
-        </h1>
-
-        <p className="max-w-[70ch] text-muted-foreground">
-          Consejos de un chileno que vive en Lima, con mapas y listas para que
-          te adaptes en horas — no en días. Menos bla bla y más datos útiles.
-        </p>
-
-        <div className="flex flex-wrap gap-3 pt-1">
-          <Link
-            href="/introduccion"
-            className="rounded-lg border bg-white/60 px-4 py-2 text-sm font-medium shadow-sm hover:bg-white"
-          >
-            Empezar por la Introducción
-          </Link>
-          <a
-            href="/mapa"
-            className="rounded-lg border px-4 py-2 text-sm text-muted-foreground hover:bg-muted/60"
-          >
-            Ver mapa con destinos
-          </a>
-        </div>
-      </header> */}
       <HeroSection
         title="🇨🇱→🇵🇪 Lima para chilenos, crudo y sin censura."
         description={
@@ -331,12 +303,12 @@ export default function Home() {
       </div>
 
       {/* DISTRICTS */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
+      <div className="p-10 group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+        <div className="p-5 group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md flex items-center justify-between ">
           <h2 className="text-lg font-semibold">Distritos recomendados</h2>
           <Link
             href="/barrios"
-            className="text-sm text-muted-foreground underline-offset-4 hover:underline"
+            className="group rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md underline-offset-4 hover:underline"
           >
             Ver todos los distritos →
           </Link>
