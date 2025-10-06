@@ -148,8 +148,8 @@ const ITINERARIOS: Itinerary[] = [
 type GameTag = "main" | "third" | "remake" | "open-world" | "dlc" | "legends";
 type Platform = "GB" | "GBC" | "GBA" | "DS" | "3DS" | "Switch";
 type Generation =
-  | "Gen I"
-  | "Gen II"
+  | "1-2h"
+  | "2-4h"
   | "Gen III"
   | "Gen IV"
   | "Gen V"
@@ -174,12 +174,12 @@ type Game = {
 };
 
 const GAMES: Game[] = [
-  /* Gen I */
+  /* 2-4h */
   {
     id: "rb",
-    title: "Red & Blue",
+    title: "1/2 día costero (Miraflores → Barranco)",
     year: 1998,
-    gen: "Gen I",
+    gen: "2-4h",
     region: "Kanto",
     platform: "GB",
     tags: ["main"],
@@ -196,7 +196,7 @@ const GAMES: Game[] = [
     id: "yellow",
     title: "Yellow",
     year: 1999,
-    gen: "Gen I",
+    gen: "2-4h",
     region: "Kanto",
     platform: "GB",
     tags: ["third"],
@@ -214,7 +214,7 @@ const GAMES: Game[] = [
     id: "gs",
     title: "Gold & Silver",
     year: "1999–2000",
-    gen: "Gen II",
+    gen: "1-2h",
     region: "Johto",
     platform: "GBC",
     tags: ["main"],
@@ -230,7 +230,7 @@ const GAMES: Game[] = [
     id: "crystal",
     title: "Crystal",
     year: 2001,
-    gen: "Gen II",
+    gen: "1-2h",
     region: "Johto",
     platform: "GBC",
     tags: ["third"],
@@ -527,8 +527,8 @@ const GEN_CHIPS: Array<{
   value: "All" | Generation;
 }> = [
   { label: "All", value: "All" },
-  { label: "Gen I", value: "Gen I" },
-  { label: "Gen II", value: "Gen II" },
+  { label: "2-4h", value: "2-4h" },
+  { label: "1-2h", value: "1-2h" },
   { label: "Gen III", value: "Gen III" },
   { label: "Gen IV", value: "Gen IV" },
   { label: "Gen V", value: "Gen V" },
@@ -706,7 +706,7 @@ export default function ItinerariosPage() {
         </Link>
       </div>
 
-      <div className="mx-auto max-w-7xl pt-12 px-6 sm:px-8 lg:px-12">
+      <div className="">
         <div className="mb-6 grid gap-3 md:grid-cols-2">
           <div className="rounded-xl border border-gray-200 bg-white p-4">
             <div className="mb-2 text-sm font-semibold text-gray-900">
@@ -763,7 +763,7 @@ export default function ItinerariosPage() {
       </div>
 
       {/* Game list */}
-      <div className="mx-auto max-w-7xl px-6 pb-12 sm:px-8 lg:px-12">
+      <div className="">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((g) => (
             <article
