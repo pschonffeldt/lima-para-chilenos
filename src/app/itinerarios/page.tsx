@@ -145,27 +145,18 @@ const ITINERARIOS: Itinerary[] = [
 
 // The special stuff
 
-type GameTag = "main" | "third" | "remake" | "open-world" | "dlc" | "legends";
+type Etiqueta = "main" | "third" | "remake" | "open-world" | "dlc" | "legends";
 type Platform = "GB" | "GBC" | "GBA" | "DS" | "3DS" | "Switch";
-type Generation =
-  | "1-2h"
-  | "2-4h"
-  | "Gen III"
-  | "Gen IV"
-  | "Gen V"
-  | "Gen VI"
-  | "Gen VII"
-  | "Gen VIII"
-  | "Gen IX";
+type Duración = "1-2h" | "2-4h" | "Medio día" | "Día compreto";
 
 type Game = {
   id: string;
   title: string;
   year: number | string;
-  gen: Generation;
+  gen: Duración;
   region: string;
   platform: Platform;
-  tags: GameTag[];
+  tags: Etiqueta[];
   highlights: string[];
   guideHref?: string; // to an eventual game/guide page
   generationHref: string; // /learn/pokemon-generations#gen-x
@@ -248,7 +239,7 @@ const GAMES: Game[] = [
     id: "rs",
     title: "Ruby & Sapphire",
     year: 2003,
-    gen: "Gen III",
+    gen: "Medio día",
     region: "Hoenn",
     platform: "GBA",
     tags: ["main"],
@@ -264,7 +255,7 @@ const GAMES: Game[] = [
     id: "emerald",
     title: "Emerald",
     year: 2005,
-    gen: "Gen III",
+    gen: "Medio día",
     region: "Hoenn",
     platform: "GBA",
     tags: ["third"],
@@ -280,7 +271,7 @@ const GAMES: Game[] = [
     id: "frlg",
     title: "FireRed & LeafGreen (Kanto Remakes)",
     year: 2004,
-    gen: "Gen III",
+    gen: "Medio día",
     region: "Kanto",
     platform: "GBA",
     tags: ["remake"],
@@ -298,7 +289,7 @@ const GAMES: Game[] = [
     id: "dp",
     title: "Diamond & Pearl",
     year: 2006,
-    gen: "Gen IV",
+    gen: "Día compreto",
     region: "Sinnoh",
     platform: "DS",
     tags: ["main"],
@@ -314,7 +305,7 @@ const GAMES: Game[] = [
     id: "plat",
     title: "Platinum",
     year: 2008,
-    gen: "Gen IV",
+    gen: "Día compreto",
     region: "Sinnoh",
     platform: "DS",
     tags: ["third"],
@@ -330,7 +321,7 @@ const GAMES: Game[] = [
     id: "hgss",
     title: "HeartGold & SoulSilver",
     year: 2009,
-    gen: "Gen IV",
+    gen: "Día compreto",
     region: "Johto",
     platform: "DS",
     tags: ["remake"],
@@ -523,23 +514,18 @@ const GAMES: Game[] = [
 ];
 
 const GEN_CHIPS: Array<{
-  label: "All" | Generation;
-  value: "All" | Generation;
+  label: "All" | Duración;
+  value: "All" | Duración;
 }> = [
-  { label: "All", value: "All" },
-  { label: "2-4h", value: "2-4h" },
+  { label: "Todos", value: "Todos" },
   { label: "1-2h", value: "1-2h" },
-  { label: "Gen III", value: "Gen III" },
-  { label: "Gen IV", value: "Gen IV" },
-  { label: "Gen V", value: "Gen V" },
-  { label: "Gen VI", value: "Gen VI" },
-  { label: "Gen VII", value: "Gen VII" },
-  { label: "Gen VIII", value: "Gen VIII" },
-  { label: "Gen IX", value: "Gen IX" },
+  { label: "2-4h", value: "2-4h" },
+  { label: "Medio día", value: "Medio día" },
+  { label: "Día completo", value: "Día completo" },
 ];
 
-const TAG_CHIPS: Array<{ label: string; value: GameTag | "any" }> = [
-  { label: "Any", value: "any" },
+const TAG_CHIPS: Array<{ label: string; value: Etiqueta | "Cualquiera" }> = [
+  { label: "Cualquiera", value: "Cualquiera" },
   { label: "Main series", value: "main" },
   { label: "Third version", value: "third" },
   { label: "Remakes", value: "remake" },
@@ -551,12 +537,12 @@ const TAG_CHIPS: Array<{ label: string; value: GameTag | "any" }> = [
 // End of special stuff
 
 export default function ItinerariosPage() {
-  const [gen, setGen] = React.useState<"All" | Generation>("All");
-  const [tag, setTag] = React.useState<GameTag | "any">("any");
+  const [gen, setGen] = React.useState<"Todos" | Duración>("Todos");
+  const [tag, setTag] = React.useState<Etiqueta | "Cualquiera">("Cualquiera");
 
   const filtered = React.useMemo(() => {
-    return GAMES.filter((g) => (gen === "All" ? true : g.gen === gen)).filter(
-      (g) => (tag === "any" ? true : g.tags.includes(tag))
+    return GAMES.filter((g) => (gen === "Todos" ? true : g.gen === gen)).filter(
+      (g) => (tag === "Cualquiera" ? true : g.tags.includes(tag))
     );
   }, [gen, tag]);
 
@@ -706,12 +692,14 @@ export default function ItinerariosPage() {
         </Link>
       </div>
 
+      {/* Filter section and logic */}
       <div className="">
         <div className="mb-6 grid gap-3 md:grid-cols-2">
           <div className="rounded-xl border border-gray-200 bg-white p-4">
             <div className="mb-2 text-sm font-semibold text-gray-900">
-              Generation
+              Duración
             </div>
+            {/* Filter by generation */}
             <div className="flex flex-wrap gap-2">
               {GEN_CHIPS.map((c) => {
                 const active = c.value === gen;
@@ -735,8 +723,11 @@ export default function ItinerariosPage() {
             </div>
           </div>
 
+          {/* Filter by tag */}
           <div className="rounded-xl border border-gray-200 bg-white p-4">
-            <div className="mb-2 text-sm font-semibold text-gray-900">Tag</div>
+            <div className="mb-2 text-sm font-semibold text-gray-900">
+              Etiqueta
+            </div>
             <div className="flex flex-wrap gap-2">
               {TAG_CHIPS.map((c) => {
                 const active = c.value === tag;
