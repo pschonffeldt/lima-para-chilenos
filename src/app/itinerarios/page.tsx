@@ -9,6 +9,23 @@ import React from "react";
 //     "Rutas simples de 1/2 día y día completo: malecón, Barranco creativo, centro histórico, surf y mañanas activas. Con enlaces a actividades clave y barrios.",
 // };
 
+type Etiqueta = "comida" | "cafe" | "running" | "surf" | "fiesta" | "otros";
+type Duración = "1-2h" | "2-4h" | "Medio día" | "Día completo";
+
+type Itinerary = {
+  id: string;
+  title: string;
+  duration: Duración;
+  region: string;
+  tags: Etiqueta[];
+  best: string;
+  areas: string[];
+  steps: string[];
+  notes?: string[];
+  price?: string;
+  links?: { href: string; label: string }[];
+};
+
 const ITINERARIOS: Itinerary[] = [
   {
     id: "medio-dia-costero-miraflores-barranco",
@@ -28,11 +45,9 @@ const ITINERARIOS: Itinerary[] = [
       "Traslados en app si se hace tarde.",
       "Bloqueador + cortaviento según clima.",
     ],
-    price: "Aprox 400 soles",
+    price: "400 soles",
     links: [
-      { href: "/actividades/paseo-malecon", label: "Paseo por el malecón" },
-      { href: "/actividades/barranco-creativo", label: "Barranco creativo" },
-      { href: "/cafe", label: "Café" },
+      { href: "/actividades/paseo-malecon", label: "Ver itinerario completo" },
     ],
   },
   {
@@ -148,24 +163,111 @@ const ITINERARIOS: Itinerary[] = [
       { href: "/barrios/barranco", label: "Barrio: Barranco" },
     ],
   },
+  {
+    id: "ruta-museos-pueblo-libre",
+    title: "Ruta de museos en Pueblo Libre (Larco + MNAAHP)",
+    duration: "Medio día",
+    region: "Lima Metropolitana",
+    tags: ["museos", "caminar"],
+    best: "mañana o tarde",
+    areas: ["Pueblo Libre"],
+    steps: [
+      "Visita al Museo Larco.",
+      "Café/descanso en el patio del museo.",
+      "Caminata hacia el MNAAHP y recorrido principal.",
+      "Paseo corto por el Parque Bolívar y retorno.",
+    ],
+    notes: ["Checa horarios; algunos museos cierran lunes."],
+    links: [
+      { href: "/actividades/museos-sitios", label: "Museos & sitios" },
+      { href: "/cafe", label: "Café" },
+      { href: "/barrios/pueblo-libre", label: "Barrio: Pueblo Libre" },
+    ],
+  },
+  {
+    id: "museos-barranco-mate-mac",
+    title: "Barranco de museos (MATE + MAC) + paseo",
+    duration: "2-4h",
+    region: "Lima Metropolitana",
+    tags: ["museos", "caminar"],
+    best: "tarde",
+    areas: ["Barranco"],
+    steps: [
+      "Ingreso al MATE (Mario Testino).",
+      "Cruce al MAC y recorrido breve.",
+      "Caminata por calles con murales.",
+      "Café final cerca del Puente de los Suspiros.",
+    ],
+    notes: ["Compra entradas online si es posible; evita horas de mayor sol."],
+    links: [
+      { href: "/actividades/museos-sitios", label: "Museos & sitios" },
+      { href: "/barrios/barranco", label: "Barrio: Barranco" },
+      { href: "/cafe", label: "Café" },
+    ],
+  },
+  {
+    id: "coffee-crawl-miraflores",
+    title: "Coffee crawl Miraflores (3 paradas)",
+    duration: "2-4h",
+    region: "Lima Metropolitana",
+    tags: ["cafe", "caminar"],
+    best: "mañana",
+    areas: ["Miraflores"],
+    steps: [
+      "Primera parada: espresso/cortado.",
+      "Caminata por el malecón (miradores).",
+      "Segunda parada: filtrado (V60/aeropress).",
+      "Tercera parada: algo dulce + cappuccino.",
+    ],
+    notes: ["Hidrátate; el sol pega incluso con brisa marina."],
+    links: [
+      { href: "/cafe", label: "Guía de café" },
+      { href: "/actividades/paseo-malecon", label: "Paseo por el malecón" },
+    ],
+  },
+  {
+    id: "coffee-crawl-barranco",
+    title: "Coffee crawl Barranco bohemio",
+    duration: "2-4h",
+    region: "Lima Metropolitana",
+    tags: ["cafe", "caminar"],
+    best: "tarde",
+    areas: ["Barranco"],
+    steps: [
+      "Primera cafetería cerca de la Bajada de Baños.",
+      "Murales y fotos por las callecitas.",
+      "Segunda cafetería de especialidad (metodologías).",
+      "Puente de los Suspiros + helado para cerrar.",
+    ],
+    notes: [
+      "Si oscurece, vuelve en app; evita caminar largas cuadras de noche.",
+    ],
+    links: [
+      { href: "/cafe", label: "Guía de café" },
+      { href: "/actividades/barranco-creativo", label: "Barranco creativo" },
+    ],
+  },
+  {
+    id: "malecon-a-pie-completo",
+    title: "Malecón a pie (San Isidro → Barranco)",
+    duration: "Medio día",
+    region: "Lima Metropolitana",
+    tags: ["caminar", "malecon"],
+    best: "tarde / atardecer",
+    areas: ["San Isidro", "Miraflores", "Barranco"],
+    steps: [
+      "Inicio en el Faro de la Marina.",
+      "Parques y miradores (Mariscal Castilla, Amor, Raimondi).",
+      "Bajada opcional a la playa (Bajada Balta o Armendáriz).",
+      "Llegada a Barranco para sunset y descanso.",
+    ],
+    notes: ["Gorro, bloqueador y corta viento; brisa fría al atardecer."],
+    links: [
+      { href: "/actividades/paseo-malecon", label: "Paseo por el malecón" },
+      { href: "/barrios/barranco", label: "Barrio: Barranco" },
+    ],
+  },
 ];
-
-type Etiqueta = "comida" | "cafe" | "running" | "surf" | "fiesta" | "otros";
-type Duración = "1-2h" | "2-4h" | "Medio día" | "Día completo";
-
-type Itinerary = {
-  id: string;
-  title: string;
-  duration: Duración;
-  region: string;
-  tags: Etiqueta[];
-  best: string;
-  areas: string[];
-  steps: string[];
-  notes?: string[];
-  price?: string;
-  links?: { href: string; label: string }[];
-};
 
 const DURATION_CHIPS: Array<{
   label: "Todos" | Duración;
@@ -324,7 +426,7 @@ export default function ItinerariosPage() {
           {filtered.map((g) => (
             <article
               key={g.id}
-              className="group relative flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md"
+              className="group relative flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-md transition"
             >
               {/* Title */}
               <div className="flex items-center justify-between gap-3">
@@ -332,25 +434,54 @@ export default function ItinerariosPage() {
                   {g.title}
                 </h3>
               </div>
-              {/* NAME THIS!!!!! */}
-              <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
-                  {g.duration}
-                </span>
-                <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
-                  {g.best}
-                </span>
-              </div>
-              {/* District */}
-              <div className="mt-1 text-xs text-gray-600">
-                <p className="text-sm text-muted-foreground">
-                  Zonas: {g.areas.join(" • ")}
-                </p>
-                {g.price && (
-                  <p className="text-sm text-muted-foreground">
-                    Costo: {g.price}
-                  </p>
-                )}
+              {/* Top tags */}
+              <div>
+                <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <h3 className="text-sm text-gray-700">Duración y horario:</h3>
+                  <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
+                    {g.duration}
+                  </span>
+                  <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
+                    {g.best}
+                  </span>
+                </div>
+                <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <h3 className="text-sm text-gray-700">Etiquetas:</h3>
+                  {g.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground"
+                    >
+                      {tag.replace("-", " ")}
+                    </span>
+                  ))}
+                </div>
+                <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <h3 className="text-sm text-gray-700">Zonas:</h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {g.areas?.length ? (
+                      g.areas.map((a) => (
+                        <span
+                          key={a}
+                          className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground"
+                        >
+                          {a}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="text-xs text-muted-foreground">—</span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <h3 className="text-sm text-gray-700">Costo aproximado:</h3>
+                  {g.price && (
+                    <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
+                      {g.price}
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Instructions */}
@@ -360,27 +491,21 @@ export default function ItinerariosPage() {
                 ))}
               </ul>
 
-              {/* Tips */}
-              {g.notes && (
-                <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-                  {g.notes.map((n, i) => (
-                    <li key={i}>• {n}</li>
-                  ))}
-                </ul>
-              )}
-
-              {/* Tags */}
-              <div className="mt-3 flex flex-wrap gap-2">
-                {g.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[11px] font-medium text-gray-700"
-                  >
-                    {tag.replace("-", " ")}
-                  </span>
-                ))}
+              {/* Notes */}
+              <div className="w-full rounded-2xl border border-gray-200 p-6 bg-indigo-50/50 mt-5">
+                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                  Tips{" "}
+                </h3>
+                {g.notes && (
+                  <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                    {g.notes.map((n, i) => (
+                      <li key={i}>• {n}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
-              {/* Kinks */}
+
+              {/* Links */}
               <div className="mt-3 flex flex-wrap gap-2">
                 {g.links && g.links.length > 0 && (
                   <div className="mt-auto pt-5 flex flex-wrap gap-2">
