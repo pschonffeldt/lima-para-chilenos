@@ -1,15 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import * as React from "react";
+import {
+  FilterConfig,
+  ChipFilterBoard,
+} from "../components/filter-board-component";
 
-// export const metadata = {
-//   title: "Itinerarios — Lima para Chilenos",
-//   description:
-//     "Rutas simples de 1/2 día y día completo: malecón, Barranco creativo, centro histórico, surf y mañanas activas. Con enlaces a actividades clave y barrios.",
-// };
+// --- Types ---
+type Etiqueta =
+  | "comida"
+  | "cafe"
+  | "running"
+  | "surf"
+  | "fiesta"
+  | "otros"
+  | "museos"
+  | "caminar"
+  | "malecon";
 
-type Etiqueta = "comida" | "cafe" | "running" | "surf" | "fiesta" | "otros";
 type Duración = "1-2h" | "2-4h" | "Medio día" | "Día completo";
 
 type Itinerary = {
@@ -26,6 +35,7 @@ type Itinerary = {
   links?: { href: string; label: string }[];
 };
 
+// --- Data (unchanged content, trimmed for brevity) ---
 const ITINERARIOS: Itinerary[] = [
   {
     id: "medio-dia-costero-miraflores-barranco",
@@ -269,6 +279,7 @@ const ITINERARIOS: Itinerary[] = [
   },
 ];
 
+// --- Chips (options) ---
 const DURATION_CHIPS: Array<{
   label: "Todos" | Duración;
   value: "Todos" | Duración;
@@ -288,21 +299,31 @@ const TAG_CHIPS: Array<{ label: string; value: Etiqueta | "Todos" }> = [
   { label: "Surf", value: "surf" },
   { label: "Fiesta", value: "fiesta" },
   { label: "Otros", value: "otros" },
+  { label: "Museos", value: "museos" },
+  { label: "Caminar", value: "caminar" },
+  { label: "Malecón", value: "malecon" },
 ];
 
+// --- Filter configs for ChipFilterBoard (string-only) ---
+const DURATION_FILTER: FilterConfig<Itinerary> = {
+  id: "duration",
+  label: "Duración",
+  options: DURATION_CHIPS,
+  defaultValue: "Todos",
+  isMatch: (g, v) => v === "Todos" || g.duration === v,
+};
+
+const TAG_FILTER: FilterConfig<Itinerary> = {
+  id: "tag",
+  label: "Etiqueta",
+  options: TAG_CHIPS,
+  defaultValue: "Todos",
+  isMatch: (g, v) => v === "Todos" || g.tags.includes(v as Etiqueta),
+};
+
 export default function ItinerariosPage() {
-  const [duration, setDuration] = React.useState<"Todos" | Duración>("Todos");
-  const [type, setType] = React.useState<Etiqueta | "Todos">("Todos");
-
-  const filtered = React.useMemo(() => {
-    return ITINERARIOS.filter((g) =>
-      duration === "Todos" ? true : g.duration === duration
-    ).filter((g) => (type === "Todos" ? true : g.tags.includes(type)));
-  }, [duration, type]);
-
   return (
     <section className="space-y-10 py-10">
-      {/* Agregar aca el codigo que deje en la otra pestanna */}
       {/* Title */}
       <header className="space-y-3">
         <h1 className="text-3xl font-bold tracking-tight">Itinerarios</h1>
@@ -321,7 +342,7 @@ export default function ItinerariosPage() {
         </p>
       </header>
 
-      {/* Quick advice */}
+      {/* Quick advice (unchanged) */}
       <div className="grid gap-3 sm:grid-cols-3">
         <div className="rounded-lg border p-4">
           <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -361,170 +382,133 @@ export default function ItinerariosPage() {
         </div>
       </div>
 
-      {/* Filter section and logic */}
-      <div className="mb-6 grid gap-3 md:grid-cols-2">
-        <div className="rounded-xl border border-gray-200 bg-white p-4">
-          <div className="mb-2 text-sm font-semibold text-gray-900">
-            Duración
-          </div>
-          {/* Filter by generation */}
-          <div className="flex flex-wrap gap-2">
-            {DURATION_CHIPS.map((chips) => {
-              const active = chips.value === duration;
-              return (
-                <button
-                  key={chips.value}
-                  type="button"
-                  onClick={() => setDuration(chips.value)}
-                  className={[
-                    "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
-                    active
-                      ? "border-indigo-200 bg-indigo-50 text-indigo-700"
-                      : "border-gray-200 bg-white text-gray-700 hover:bg-gray-50",
-                  ].join(" ")}
-                  aria-pressed={active}
+      {/* Filters + list via ChipFilterBoard */}
+      <ChipFilterBoard
+        items={ITINERARIOS}
+        filters={[DURATION_FILTER, TAG_FILTER]}
+      >
+        {(filtered) => (
+          <div className="mb-6 grid gap-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+              {filtered.map((g) => (
+                <article
+                  key={g.id}
+                  className="group relative flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-md transition"
                 >
-                  {chips.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Filter by tag */}
-        <div className="rounded-xl border border-gray-200 bg-white p-4">
-          <div className="mb-2 text-sm font-semibold text-gray-900">
-            Etiqueta
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {TAG_CHIPS.map((chips) => {
-              const active = chips.value === type;
-              return (
-                <button
-                  key={chips.value}
-                  type="button"
-                  onClick={() => setType(chips.value)}
-                  className={[
-                    "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
-                    active
-                      ? "border-indigo-200 bg-indigo-50 text-indigo-700"
-                      : "border-gray-200 bg-white text-gray-700 hover:bg-gray-50",
-                  ].join(" ")}
-                  aria-pressed={active}
-                >
-                  {chips.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* Itinerary list */}
-      <div className="mb-6 grid gap-3">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-          {filtered.map((g) => (
-            <article
-              key={g.id}
-              className="group relative flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-md transition"
-            >
-              {/* Title */}
-              <div className="flex items-center justify-between gap-3">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {g.title}
-                </h3>
-              </div>
-              {/* Top tags */}
-              <div>
-                <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-                  <h3 className="text-sm text-gray-700">Duración y horario:</h3>
-                  <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
-                    {g.duration}
-                  </span>
-                  <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
-                    {g.best}
-                  </span>
-                </div>
-                <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-                  <h3 className="text-sm text-gray-700">Etiquetas:</h3>
-                  {g.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground"
-                    >
-                      {tag.replace("-", " ")}
-                    </span>
-                  ))}
-                </div>
-                <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-                  <h3 className="text-sm text-gray-700">Zonas:</h3>
-                  <div className="flex flex-wrap gap-1.5">
-                    {g.areas?.length ? (
-                      g.areas.map((a) => (
-                        <span
-                          key={a}
-                          className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground"
-                        >
-                          {a}
-                        </span>
-                      ))
-                    ) : (
-                      <span className="text-xs text-muted-foreground">—</span>
-                    )}
+                  {/* Title */}
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {g.title}
+                    </h3>
                   </div>
-                </div>
 
-                <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-                  <h3 className="text-sm text-gray-700">Costo aproximado:</h3>
-                  {g.price && (
-                    <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
-                      {g.price}
-                    </span>
-                  )}
-                </div>
-              </div>
+                  {/* Top tags */}
+                  <div>
+                    <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <h3 className="text-sm text-gray-700">
+                        Duración y horario:
+                      </h3>
+                      <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
+                        {g.duration}
+                      </span>
+                      <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
+                        {g.best}
+                      </span>
+                    </div>
 
-              {/* Instructions */}
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-700">
-                {g.steps.map((h) => (
-                  <li key={h}>{h}</li>
-                ))}
-              </ul>
+                    <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <h3 className="text-sm text-gray-700">Etiquetas:</h3>
+                      {g.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground lowercase first-letter:uppercase"
+                        >
+                          {tag.replaceAll("-", " ")}
+                        </span>
+                      ))}
+                    </div>
 
-              {/* Notes */}
-              <div className="w-full rounded-2xl border border-gray-200 p-6 bg-indigo-50/50 mt-5">
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                  Tips{" "}
-                </h3>
-                {g.notes && (
-                  <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-                    {g.notes.map((n, i) => (
-                      <li key={i}>• {n}</li>
+                    <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <h3 className="text-sm text-gray-700">Zonas:</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        {g.areas?.length ? (
+                          g.areas.map((a) => (
+                            <span
+                              key={a}
+                              className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground"
+                            >
+                              {a}
+                            </span>
+                          ))
+                        ) : (
+                          <span className="text-xs text-muted-foreground">
+                            —
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <h3 className="text-sm text-gray-700">
+                        Costo aproximado:
+                      </h3>
+                      {g.price && (
+                        <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
+                          {g.price}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Instructions */}
+                  <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-700">
+                    {g.steps.map((h) => (
+                      <li key={h}>{h}</li>
                     ))}
                   </ul>
-                )}
-              </div>
 
-              {/* Links */}
-              <div className="mt-3 flex flex-wrap gap-2">
-                {g.links && g.links.length > 0 && (
-                  <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                    {g.links.map((l) => (
-                      <Link
-                        key={l.href + l.label}
-                        href={l.href}
-                        className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
-                      >
-                        {l.label}
-                      </Link>
-                    ))}
+                  {/* Notes */}
+                  <div className="mt-5 w-full rounded-2xl border border-gray-200 bg-indigo-50/50 p-6">
+                    <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                      Tips
+                    </h3>
+                    {g.notes && (
+                      <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                        {g.notes.map((n, i) => (
+                          <li key={i}>• {n}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
+
+                  {/* Links */}
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {g.links && g.links.length > 0 && (
+                      <div className="mt-auto flex flex-wrap gap-2 pt-5">
+                        {g.links.map((l) => (
+                          <Link
+                            key={l.href + l.label}
+                            href={l.href}
+                            className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
+                          >
+                            {l.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              ))}
+
+              {filtered.length === 0 && (
+                <div className="col-span-full rounded-lg border border-dashed p-6 text-sm text-muted-foreground">
+                  No hay resultados con los filtros actuales.
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </ChipFilterBoard>
     </section>
   );
 }
