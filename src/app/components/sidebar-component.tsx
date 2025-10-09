@@ -16,6 +16,7 @@ const NAV = [
   { href: "/copete", label: "Copete", icon: "🍸" },
   { href: "/cafe", label: "Café", icon: "☕️" },
   { href: "/actividades", label: "Actividades", icon: "🗺️" },
+  { href: "/carretes", label: "Carretes", icon: "🕺🏼" },
   { href: "/advertencias", label: "Advertencias", icon: "⚠️" },
   { href: "/barrios", label: "Barrios", icon: "🏙️" },
   { href: "/itinerarios", label: "Itinerarios", icon: "📘" },
