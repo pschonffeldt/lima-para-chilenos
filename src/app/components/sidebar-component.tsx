@@ -24,6 +24,32 @@ const NAV = [
   { href: "/contacto", label: "Contacto", icon: "📞" },
 ];
 
+const NAV_A = [
+  { href: "/", label: "Inicio", icon: "🏆" },
+  { href: "/introduccion", label: "Introducción", icon: "👋" },
+  { href: "/advertencias", label: "Advertencias", icon: "⚠️" },
+];
+
+const NAV_B = [
+  { href: "/transporte", label: "Transporte", icon: "🛵" },
+  { href: "/barrios", label: "Barrios", icon: "🏙️" },
+  { href: "/mapa", label: "Mapa", icon: "🧭" },
+];
+
+const NAV_C = [
+  { href: "/comida", label: "Comida", icon: "🍽️" },
+  { href: "/copete", label: "Copete", icon: "🍸" },
+  { href: "/cafe", label: "Café", icon: "☕️" },
+];
+
+const NAV_D = [
+  { href: "/actividades", label: "Actividades", icon: "🗺️" },
+  { href: "/carretes", label: "Carretes", icon: "🕺🏼" },
+  { href: "/itinerarios", label: "Itinerarios", icon: "📘" },
+];
+
+const NAV_E = [{ href: "/contacto", label: "Contacto", icon: "📞" }];
+
 export default function SidebarComponent() {
   const pathname = usePathname();
 
@@ -60,11 +86,11 @@ export default function SidebarComponent() {
     <aside
       className={cx(
         "relative hidden md:block h-full shrink-0 border-r bg-gray-100",
-        "transition-[width] duration-300 ease-in-out [will-change:width]",
-        collapsed ? "w-16" : "w-[220px]"
+        "transition-[width] duration-200 ease-[cubic-bezier(.22,.61,.36,1)] [will-change:width]",
+        collapsed ? "w-19" : "w-[220px]"
       )}
     >
-      {/* Edge-anchored toggle: center of circle sits on the edge */}
+      {/* Collapse toggle */}
       <button
         type="button"
         onClick={() => setCollapsed((v) => !v)}
@@ -72,23 +98,24 @@ export default function SidebarComponent() {
         aria-expanded={!collapsed}
         className={cx(
           "absolute right-0 top-10 -translate-y-1/2 translate-x-1/2",
-          "z-20 h-8 w-8 rounded-full border bg-white text-black shadow-sm",
-          "flex items-center justify-center hover:bg-white transition-colors"
+          "z-20 h-8 w-8 rounded-full border bg-white text-black",
+          "flex items-center justify-center align hover:bg-gray-100 transition-colors cursor-pointer"
         )}
         title={collapsed ? "Expandir (⌘/Ctrl + \\)" : "Colapsar (⌘/Ctrl + \\)"}
       >
         {collapsed ? "›" : "‹"}
       </button>
 
+      {/* Width */}
       <div
         className={cx(
           "flex h-full flex-col",
-          collapsed ? "mt-10 p-2 pt-6" : "mt-10 p-2 pt-6"
+          collapsed ? "mt-10 p-1 pt-6" : "mt-10 p-1 pt-6"
         )}
       >
         {/* Nav menu */}
-        <nav className="mt-6 grid gap-2 text-sm">
-          {NAV.map((item) => {
+        <nav className="mt-6 grid gap-2 text-sm border-b-1 pb-2 border-gray-300">
+          {NAV_A.map((item) => {
             const active =
               pathname === item.href || pathname.startsWith(item.href + "/");
 
@@ -98,18 +125,19 @@ export default function SidebarComponent() {
                 href={item.href}
                 title={item.label}
                 className={cx(
-                  // grid = [icon | label]; icon width fixed, label collapses
-                  "group grid grid-cols-[2rem_1fr] items-center rounded-md px-3 py-2",
-                  "transition-[background-color,grid-template-columns] duration-300 hover:bg-white",
-                  active ? " bg-white" : "text-gray-700",
-                  collapsed && "grid-cols-[2rem_0]" // <-- label column to 0; icon stays put
+                  "group grid grid-cols-[2rem_1fr] items-center rounded-md px-2 py-2",
+                  "transition-colors duration-150 ease-out hover:bg-white",
+                  active ? " font-bold" : "text-gray-700",
+                  collapsed && "grid-cols-[2rem_0]"
                 )}
                 aria-label={collapsed ? item.label : undefined}
               >
-                {/* ICON: perfectly centered 8x8 square; never moves */}
                 <span
                   aria-hidden
-                  className="grid h-8 w-8 place-items-center rounded-md bg-card/60 text-base leading-none shrink-0"
+                  className={cx(
+                    "grid h-8 px-4 place-items-center rounded-xl text-base leading-none shrink-0",
+                    collapsed ? "h-2 w-2" : ""
+                  )}
                 >
                   {item.icon}
                 </span>
@@ -118,7 +146,7 @@ export default function SidebarComponent() {
                 <span
                   className={cx(
                     "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
-                    "transition-opacity duration-200 ease-in-out",
+                    "transition-opacity duration-100 ease-in-out",
                     collapsed ? "opacity-0" : "opacity-100"
                   )}
                 >
@@ -128,7 +156,174 @@ export default function SidebarComponent() {
             );
           })}
         </nav>
+        <nav className="mt-2 grid gap-2 text-sm border-b-1 pb-2 border-gray-300">
+          {NAV_B.map((item) => {
+            const active =
+              pathname === item.href || pathname.startsWith(item.href + "/");
 
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                title={item.label}
+                className={cx(
+                  "group grid grid-cols-[2rem_1fr] items-center rounded-md px-2 py-2",
+                  "transition-colors duration-150 ease-out hover:bg-white",
+                  active ? " font-bold" : "text-gray-700",
+                  collapsed && "grid-cols-[2rem_0]"
+                )}
+                aria-label={collapsed ? item.label : undefined}
+              >
+                <span
+                  aria-hidden
+                  className={cx(
+                    "grid h-8 px-4 place-items-center rounded-xl text-base leading-none shrink-0",
+                    collapsed ? "h-2 w-2" : ""
+                  )}
+                >
+                  {item.icon}
+                </span>
+
+                {/* LABEL: fades while its column collapses */}
+                <span
+                  className={cx(
+                    "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
+                    "transition-opacity duration-100 ease-in-out",
+                    collapsed ? "opacity-0" : "opacity-100"
+                  )}
+                >
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
+        </nav>
+        <nav className="mt-2 grid gap-2 text-sm border-b-1 pb-2 border-gray-300">
+          {NAV_C.map((item) => {
+            const active =
+              pathname === item.href || pathname.startsWith(item.href + "/");
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                title={item.label}
+                className={cx(
+                  "group grid grid-cols-[2rem_1fr] items-center rounded-md px-2 py-2",
+                  "transition-colors duration-150 ease-out hover:bg-white",
+                  active ? " font-bold" : "text-gray-700",
+                  collapsed && "grid-cols-[2rem_0]"
+                )}
+                aria-label={collapsed ? item.label : undefined}
+              >
+                <span
+                  aria-hidden
+                  className={cx(
+                    "grid h-8 px-4 place-items-center rounded-xl text-base leading-none shrink-0",
+                    collapsed ? "h-2 w-2" : ""
+                  )}
+                >
+                  {item.icon}
+                </span>
+
+                {/* LABEL: fades while its column collapses */}
+                <span
+                  className={cx(
+                    "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
+                    "transition-opacity duration-100 ease-in-out",
+                    collapsed ? "opacity-0" : "opacity-100"
+                  )}
+                >
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
+        </nav>
+        <nav className="mt-2 grid gap-2 text-sm border-b-1 pb-2 border-gray-300">
+          {NAV_D.map((item) => {
+            const active =
+              pathname === item.href || pathname.startsWith(item.href + "/");
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                title={item.label}
+                className={cx(
+                  "group grid grid-cols-[2rem_1fr] items-center rounded-md px-2 py-2",
+                  "transition-colors duration-150 ease-out hover:bg-white",
+                  active ? " font-bold" : "text-gray-700",
+                  collapsed && "grid-cols-[2rem_0]"
+                )}
+                aria-label={collapsed ? item.label : undefined}
+              >
+                <span
+                  aria-hidden
+                  className={cx(
+                    "grid h-8 px-4 place-items-center rounded-xl text-base leading-none shrink-0",
+                    collapsed ? "h-2 w-2" : ""
+                  )}
+                >
+                  {item.icon}
+                </span>
+
+                {/* LABEL: fades while its column collapses */}
+                <span
+                  className={cx(
+                    "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
+                    "transition-opacity duration-100 ease-in-out",
+                    collapsed ? "opacity-0" : "opacity-100"
+                  )}
+                >
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
+        </nav>
+        <nav className="mt-2 grid gap-2 text-sm">
+          {NAV_E.map((item) => {
+            const active =
+              pathname === item.href || pathname.startsWith(item.href + "/");
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                title={item.label}
+                className={cx(
+                  "group grid grid-cols-[2rem_1fr] items-center rounded-md px-2 py-2",
+                  "transition-colors duration-150 ease-out hover:bg-white",
+                  active ? " font-bold" : "text-gray-700",
+                  collapsed && "grid-cols-[2rem_0]"
+                )}
+                aria-label={collapsed ? item.label : undefined}
+              >
+                <span
+                  aria-hidden
+                  className={cx(
+                    "grid h-8 px-4 place-items-center rounded-xl text-base leading-none shrink-0",
+                    collapsed ? "h-2 w-2" : ""
+                  )}
+                >
+                  {item.icon}
+                </span>
+
+                {/* LABEL: fades while its column collapses */}
+                <span
+                  className={cx(
+                    "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
+                    "transition-opacity duration-100 ease-in-out",
+                    collapsed ? "opacity-0" : "opacity-100"
+                  )}
+                >
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
+        </nav>
         <div className="mt-auto" />
       </div>
     </aside>
