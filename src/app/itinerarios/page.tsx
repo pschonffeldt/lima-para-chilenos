@@ -342,7 +342,7 @@ export default function ItinerariosPage() {
         </p>
       </header>
 
-      {/* Quick advice (unchanged) */}
+      {/* Quick advice */}
       <div className="grid gap-3 sm:grid-cols-3">
         <div className="rounded-lg border p-4">
           <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -382,7 +382,7 @@ export default function ItinerariosPage() {
         </div>
       </div>
 
-      {/* Filters + list via ChipFilterBoard */}
+      {/* Filter component */}
       <ChipFilterBoard
         items={ITINERARIOS}
         filters={[DURATION_FILTER, TAG_FILTER]}
