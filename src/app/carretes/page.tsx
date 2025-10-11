@@ -1,7 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import * as React from "react";
+import {
+  FilterConfig,
+  ChipFilterBoard,
+} from "../components/filter-board-component";
 
+// Barrios object
 const BARRIOS = [
   {
     name: "Barranco — Terrazas & Clubes",
@@ -26,6 +32,116 @@ const BARRIOS = [
   },
 ];
 
+// Start of Chips
+
+type PartiesLima = {
+  id: string;
+  title: string;
+  price: Price;
+  location: Location[];
+};
+
+const PARTIES_LIMA: PartiesLima[] = [
+  {
+    id: "a",
+    title: "Carrete barato en Barranco",
+    price: "Economico",
+    location: ["Barranco"],
+  },
+  {
+    id: "b",
+    title: "Carrete promedio en Miraflores",
+    price: "Promedio",
+    location: ["Miraflores"],
+  },
+  {
+    id: "c",
+    title: "Carrete fino en San Isidro",
+    price: "Fino",
+    location: ["San Isidro"],
+  },
+  {
+    id: "d",
+    title: "Carrete promedio en Barranco",
+    price: "Promedio",
+    location: ["Barranco"],
+  },
+  {
+    id: "e",
+    title: "Carrete fino en Miraflores",
+    price: "Fino",
+    location: ["Miraflores"],
+  },
+  {
+    id: "f",
+    title: "Carrete promedio en San Isidro",
+    price: "Promedio",
+    location: ["San Isidro"],
+  },
+  {
+    id: "g",
+    title: "Carrete fino en Barranco",
+    price: "Fino",
+    location: ["Barranco"],
+  },
+  {
+    id: "h",
+    title: "Carrete barato en Miraflores",
+    price: "Economico",
+    location: ["Miraflores"],
+  },
+  {
+    id: "i",
+    title: "Carrete barato en San Isidro",
+    price: "Economico",
+    location: ["San Isidro"],
+  },
+];
+
+// --- Chips (options) ---
+
+// ---  types & data ---
+type Location = "Barranco" | "Miraflores" | "San Isidro";
+type Price = "Economico" | "Promedio" | "Fino";
+
+// Chips values
+const PRICE_CHIPS: Array<{
+  label: "Todos" | Price;
+  value: "Todos" | Price;
+}> = [
+  { label: "Todos", value: "Todos" },
+  { label: "Economico", value: "Economico" },
+  { label: "Promedio", value: "Promedio" },
+  { label: "Fino", value: "Fino" },
+];
+
+const LOCATION_CHIPS: Array<{ label: string; value: Location | "Todos" }> = [
+  { label: "Todos", value: "Todos" },
+  { label: "Miraflores", value: "Miraflores" },
+  { label: "Barranco", value: "Barranco" },
+  { label: "San Isidro", value: "San Isidro" },
+];
+
+// Filter configs wired to ChipFilterBoard
+const PRICE_FILTER: FilterConfig<PartiesLima> = {
+  id: "price",
+  label: "Precio",
+  options: PRICE_CHIPS,
+  defaultValue: "Todos",
+  isMatch: (item, selected) => selected === "Todos" || item.price === selected,
+};
+
+const LOCATION_FILTER: FilterConfig<PartiesLima> = {
+  id: "location",
+  label: "Ubicación",
+  options: LOCATION_CHIPS,
+  defaultValue: "Todos",
+  isMatch: (item, selected) =>
+    selected === "Todos" || item.location.includes(selected as Location),
+};
+
+// End of Chips
+
 export default function CarretesPage() {
   return (
     <section className="space-y-10 py-10">
@@ -33,24 +149,27 @@ export default function CarretesPage() {
       <header className="space-y-3">
         <h1 className="text-3xl font-bold tracking-tight">Carretes</h1>
         <p className="max-w-[70ch] text-muted-foreground">
-          Si vienes a Lima a pasarlo bien, no necesitas cruzar toda la ciudad.
-          La mayor parte de la vida nocturna —bares, terrazas, clubes y
-          rooftops— se concentra en <strong>Miraflores</strong>,{" "}
-          <strong>Barranco</strong> y <strong>San Isidro</strong>.
+          Si vienes a Lima a carretiar, no necesitas cruzar toda la ciudad. La
+          mayor parte de la vida nocturna —bares, terrazas, clubes y rooftops—
+          se concentra en <strong>Miraflores</strong>, <strong>Barranco</strong>{" "}
+          y <strong>San Isidro</strong>.
         </p>
       </header>
 
       {/* Introducción explicativa */}
       <div className="rounded-xl border p-5">
-        <h2 className="text-lg font-semibold">Cómo salir sin complicarte</h2>
+        <h2 className="text-lg font-semibold">
+          ¿Qué deberías considerar antes de ir de carrete en Lima?
+        </h2>
         <div className="mt-3 grid gap-3 sm:grid-cols-3">
           <div className="rounded-lg border p-4">
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Zonas para salir
+              Zonas para carretiar
             </p>
             <ul className="space-y-1 text-sm">
               <li>
-                <strong>Miraflores</strong>: rooftops, pubs y afters tranquilos.
+                <strong>Miraflores</strong>: rooftops, pubs, clubes y afters
+                tranquilos.
               </li>
               <li>
                 <strong>Barranco</strong>: terrazas, bares con música y clubes.
@@ -75,15 +194,15 @@ export default function CarretesPage() {
               Consejos rápidos
             </p>
             <ul className="space-y-1 text-sm">
-              <li>Reservas recomendadas en lugares populares.</li>
-              <li>Dress code casual; algunos clubes piden lista.</li>
+              <li>Necesitarás reservas para los lugares populares.</li>
+              <li>Dress code casual; viste lo mismo que en Stgo.</li>
               <li>Hidrátate y cuida tus pertenencias.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Tarjetas de opciones (mantenemos exactamente la estructura) */}
+      {/* Barrios */}
       <ul className="grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {BARRIOS.map((barrio) => {
           return (
@@ -126,17 +245,51 @@ export default function CarretesPage() {
         })}
       </ul>
 
-      {/* Nota de cierre */}
-      <p className="text-sm text-muted-foreground">
-        Consejo: muévete entre <strong>Miraflores</strong> y{" "}
-        <strong>Barranco</strong> para la noche; usa{" "}
-        <Link href="/transporte" className="underline underline-offset-4">
-          apps de transporte
-        </Link>{" "}
-        para volver al alojamiento. Si vas al <strong>Centro de Lima</strong>,
-        haz pregame temprano y regresa en app. <strong>Callao</strong>, solo
-        para aeropuerto/logística.
-      </p>
+      <h2 className="text-3xl font-bold tracking-tight">
+        ¿Donde carretiar en Lima?
+      </h2>
+
+      {/* Filter chips */}
+      <ChipFilterBoard
+        items={PARTIES_LIMA}
+        filters={[LOCATION_FILTER, PRICE_FILTER]}
+      >
+        {(filtered) => (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {filtered.map((parties) => (
+              <article
+                key={parties.id}
+                className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {parties.title}
+                </h3>
+                <div className="mt-1 text-xs text-gray-600">
+                  {parties.location} • {parties.price}
+                </div>
+
+                {/* Tags as chips (sentence case, no helper) */}
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {parties.location.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[11px] font-medium text-gray-700 lowercase first-letter:uppercase"
+                    >
+                      {tag.replaceAll("-", " ")}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+            {filtered.length === 0 && (
+              <div className="col-span-full rounded-lg border border-dashed p-6 text-sm text-muted-foreground">
+                No hay resultados con los filtros actuales.
+              </div>
+            )}
+          </div>
+        )}
+      </ChipFilterBoard>
+      <div className="h-9"></div>
     </section>
   );
 }
