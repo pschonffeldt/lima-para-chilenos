@@ -4,34 +4,6 @@ import Button from "./components/button-component";
 import InfoBox from "./components/info-box";
 import Footer from "./components/footer-component";
 
-// Top essentials
-const ESSENTIALS = [
-  {
-    title: "Pago & cambio",
-    items: [
-      "Yape/Plin: para tiendas pequeñas",
-      "Tarjeta: aceptada en la mayoría",
-      "Efectivo: lleva dólares o habilita tus tarjetas",
-    ],
-  },
-  {
-    title: "Conectividad",
-    items: [
-      "Roaming: Claro, Entel, Movistar",
-      "4G/5G en zonas céntricas",
-      "Wi-Fi en cafés y malls",
-    ],
-  },
-  {
-    title: "Seguridad",
-    items: [
-      "App de transporte; evita taxis informales",
-      "Cuida el teléfono en esquinas concurridas",
-      "Malecón: ok de día; ojo de noche",
-    ],
-  },
-] as const;
-
 // Districts
 export const DISTRICTS = [
   {
