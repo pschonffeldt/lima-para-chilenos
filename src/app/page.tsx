@@ -8,19 +8,19 @@ import TextSection from "./components/content-section-component";
 export const DISTRICTS = [
   {
     id: "miraflores",
-    slug: "miraflores",
+    slug: "/barrios/miraflores",
     name: "Miraflores",
     note: "Base clásica para quedarse: malecón con vista al mar, ciclovías y parques, mucha oferta de cafés para trabajar y restaurantes de todo tipo. Seguro de día y bien conectado; puede haber ruido cerca de Kennedy/Larco y fines de semana.",
   },
   {
     id: "barranco",
-    slug: "barranco",
+    slug: "/barrios/barranco",
     name: "Barranco",
     note: "Bohemio y caminable: galerías, murales, bares y música en vivo. Ideal para salir de noche y pasear de día por bajadas al mar. Mantente por las avenidas principales y usa apps de transporte si vuelves tarde.",
   },
   {
     id: "san-isidro",
-    slug: "san-isidro",
+    slug: "/barrios/san-isidro",
     name: "San Isidro",
     note: "Residencial/empresarial, muy ordenado y seguro. Parques (Bosque El Olivar), restaurantes top y cafés tranquilos. Vida nocturna más baja y precios más altos; excelente para hospedaje tranquilo y trabajo.",
   },
