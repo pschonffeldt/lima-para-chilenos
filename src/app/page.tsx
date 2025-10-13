@@ -2,6 +2,7 @@ import Link from "next/link";
 import HeroSection from "./components/hero-component";
 import Button from "./components/button-component";
 import InfoBox from "./components/info-box";
+import Footer from "./components/footer-component";
 
 // Top essentials
 const ESSENTIALS = [

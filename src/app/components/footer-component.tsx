@@ -1,33 +1,33 @@
-export default function MarketingFooter() {
+import Link from "next/link";
+
+export default function Footer() {
   return (
-    <footer className="mt-auto border-t border-gray-200 bg-gray-50">
+    <footer className="mt-0 w-full border-gray-200 bg-gray-50 full-bleed-bg pb-[env(safe-area-inset-bottom)]">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          {/* left: brand / copyright */}
           <small className="text-gray-500">
             &copy; {new Date().getFullYear()}{" "}
             <a
               href="https://pschonffeldt.dev/"
-              className="font-medium text-gray-700 hover:text-blue-600 transition-colors"
+              className="font-medium text-gray-700 transition-colors hover:text-blue-600"
             >
               pschonffeldt
             </a>
-            . All rights reserved.
+            . Todos los derechos reservados.
           </small>
 
-          {/* right: optional links */}
           <div className="flex gap-4 text-sm text-gray-500">
-            {/* <a href="/privacy" className="hover:text-blue-600 transition-colors">
-              Privacy
-            </a>
-            <a href="/terms" className="hover:text-blue-600 transition-colors">
-              Terms
-            </a> */}
+            <Link
+              href="/contacto"
+              className="transition-colors hover:text-blue-600"
+            >
+              Contacto
+            </Link>
             <a
               href="mailto:info@mitkof.cl"
-              className="hover:text-blue-600 transition-colors"
+              className="transition-colors hover:text-blue-600"
             >
-              Contact
+              info@mitkof.cl
             </a>
           </div>
         </div>
