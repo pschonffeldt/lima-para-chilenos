@@ -60,6 +60,7 @@ type PartiesLima = {
   googleMapsUrl?: GoogleMapsUrl;
   socialMedia?: SocialMediaUrl;
   website?: WebsiteUrl;
+  tips?: string[];
 };
 
 const PARTIES_LIMA: PartiesLima[] = [
@@ -73,18 +74,28 @@ const PARTIES_LIMA: PartiesLima[] = [
     googleMapsUrl: "https://maps.app.goo.gl/eDKvY53tMcu2m4bY6",
     socialMedia: "https://www.instagram.com/tardeo.oficial",
     website: "https://tardeooficial.pe/",
+    tips: [
+      "Es formato tarde-noche: revisa el post del día para el horario (suelen anunciar 6–11 pm).",
+      "La dirección suele comunicarse como Bolognesi sector Barranco; confirma en stories el acceso del día.",
+      "Ojo con la fila: si vas en grupo, coordina punto de encuentro fuera para entrar juntos.",
+    ],
   },
   {
     id: "Damian",
     title: "Damian",
     description:
-      "Club con música electrónica/house y reggaeton. Aforo acotado, si no estas en lista llega temprano, de lo contrario tendrás que comprar una botella para entrar.",
+      "Club con música electrónica/house y reggaetón. Aforo acotado; si no estás en lista, llega temprano o evalúa mesa/botella.",
     price: "Promedio",
     location: ["Barranco"],
     googleMapsUrl: "https://maps.app.goo.gl/mcd3JDnwe8Y9mDaCA",
     socialMedia: "https://www.instagram.com/damian.club",
     website:
       "https://hotspot.us5.list-manage.com/subscribe?u=bbe11d3e0d5cfe9de6101ffba&id=825da919eb",
+    tips: [
+      "Ubicación de referencia: Av. República de Panamá 240, Barranco.",
+      "Revisa el line-up del día en el IG; suelen anunciar invitados y temática.",
+      "Si hay RSVP/lista en bio, hazlo antes de las 8–9 pm para evitar sorpresas en puerta.",
+    ],
   },
   {
     id: "Kova",
@@ -95,6 +106,11 @@ const PARTIES_LIMA: PartiesLima[] = [
     location: ["Miraflores"],
     googleMapsUrl: "https://maps.app.goo.gl/zgUWfRRwHo9x4rgD9",
     socialMedia: "https://www.instagram.com/kocaclublima",
+    tips: [
+      "Los jueves suelen tener ingreso libre y promos hasta las 22:00; aprovecha el happy hour.",
+      "Dirección que comunican: Héroes de Tarapacá 177 (verifica en el post del día).",
+      "Si vas en grupo grande, consulta por mesas con anticipación vía DM.",
+    ],
   },
   {
     id: "Jarango",
@@ -106,28 +122,43 @@ const PARTIES_LIMA: PartiesLima[] = [
     googleMapsUrl: "https://maps.app.goo.gl/cPANUyUDqeUwR2Wu6",
     socialMedia: "https://www.instagram.com/jarangomiraflores",
     website: "https://grupobros.pe/locales/jarango/",
+    tips: [
+      "Sábados suelen activar temprano en modo ‘tardeo’; útil para pre antes de otro club.",
+      "Si quieres mesa, coordina por web/DM porque los fines de semana se llena.",
+      "Revisa stories por listas/happy hour del día.",
+    ],
   },
   {
     id: "Bulbo",
     title: "Casa Bulbo",
     description:
-      "Casa-club con música electrónica. Según la fecha puede ser tener Dj's locales o internacionales. Se llena rápido.",
+      "Casa-club con música electrónica. Según la fecha puede tener DJs locales o internacionales. Se llena rápido.",
     price: "Promedio",
     location: ["Barranco"],
     googleMapsUrl: "https://maps.app.goo.gl/ZexKGiJHZ7P1qk4L8",
     socialMedia: "https://www.instagram.com/casabulbo/",
+    tips: [
+      "Abren típicamente de miércoles a sábado, 8 pm–3 am; revisa agenda en su IG.",
+      "Reservas y QRs por DM; coordina antes si vas en grupo.",
+      "Para eventos con DJs, revisa horario de apertura de puertas (a veces 23:00) y llega con tiempo.",
+    ],
   },
   {
     id: "Valetodo",
     title: "Valetodo Downtown",
     description:
-      "El más icónico club LGBTQ+ en Miraflores: shows drag, karaoke y perreo/pop toda la noche. Ambiente muy prendido.",
+      "El más icónico club LGBTQ+ en Barranco: shows drag, karaoke y perreo/pop toda la noche. Ambiente muy prendido.",
     price: "Promedio",
     location: ["Barranco"],
     googleMapsUrl: "https://maps.app.goo.gl/e4Jpo5QGGxohf6QA8",
     socialMedia: "https://www.instagram.com/valetododowntownpe/",
     website:
       "https://linktr.ee/somasvala?fbclid=PAZXh0bgNhZW0CMTEAAafTjt_NWye51-5AXsnAw-oa1IOQwqIO_iGJl8a2nPBwMWTRrM5nIOr8sja1DQ_aem_rGds0lCkXIe752qF8Qi2lg",
+    tips: [
+      "Los shows drag tienen horarios; mira el post del evento para no perderte el principal.",
+      "Abierto hasta muy tarde (finde 3–5 am).",
+      "Entradas y eventos se centralizan en su link en bio.",
+    ],
   },
   {
     id: "Baalsaal",
@@ -139,6 +170,11 @@ const PARTIES_LIMA: PartiesLima[] = [
     googleMapsUrl: "https://maps.app.goo.gl/uJ2xRbCiwQCTa2C56",
     socialMedia: "https://www.instagram.com/baalsaal.club.lima/",
     website: "https://www.baalsaal.info/es/baalsaal-lima",
+    tips: [
+      "Dirección: Jr. Camaná 856, Centro de Lima (confirma en el evento del día).",
+      "Políticas claras: no VIP y ‘all equals’; respeta el dancefloor.",
+      "Para horarios/line-up compra de entradas, revisa el post del evento.",
+    ],
   },
 ];
 
@@ -291,79 +327,109 @@ export default function CarretesPage() {
         ¿Donde carretiar en Lima?
       </h2>
 
-      {/* Filter chips */}
+      {/* PArties Cards with filter */}
       <ChipFilterBoard
         items={PARTIES_LIMA}
         filters={[LOCATION_FILTER, PRICE_FILTER]}
       >
         {(filtered) => (
-          <div className="grid gap-4 sm:grid-cols-2">
-            {filtered.map((parties) => (
-              <article
-                key={parties.id}
-                className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
-              >
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {parties.title}
-                </h3>
-                <p className="text-md text-gray-900">{parties.description}</p>
-                <div className="mt-1 text-xs text-gray-600">
-                  {parties.location} • {parties.price}
-                </div>
+          <div className="mb-6 grid gap-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+              {filtered.map((parties) => (
+                <article
+                  key={parties.id}
+                  className="group relative flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-md transition"
+                >
+                  {/* Title */}
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {parties.title}
+                    </h3>
+                  </div>
 
-                {/* Tags as chips (sentence case, no helper) */}
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {parties.location.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[11px] font-medium text-gray-700 lowercase first-letter:uppercase"
-                    >
-                      {tag.replaceAll("-", " ")}
-                    </span>
-                  ))}
-                </div>
-                {/* Links */}
-                <div className="mt-3 flex gap-2 sm:mt-0">
-                  {parties.googleMapsUrl && (
-                    <a
-                      href={parties.googleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex rounded-lg border bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-white/80"
-                    >
-                      Ver ubicación en Google Maps
-                    </a>
-                  )}
+                  {/* Top tags */}
+                  <div>
+                    <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <h3 className="text-sm text-gray-700">Ubicación:</h3>
+                      <span className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground">
+                        {parties.location}
+                      </span>
+                    </div>
 
-                  {parties.socialMedia && (
-                    <a
-                      href={parties.socialMedia}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex rounded-lg border bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-white/80"
-                    >
-                      Ver perfil en RRSS
-                    </a>
-                  )}
+                    <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <h3 className="text-sm text-gray-700">Precio:</h3>
 
-                  {parties.website && (
-                    <a
-                      href={parties.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex rounded-lg border bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-white/80"
-                    >
-                      Ver website
-                    </a>
-                  )}
+                      <span
+                        key={parties.id}
+                        className="rounded-full border px-2 py-0.5 text-xs text-muted-foreground lowercase first-letter:uppercase"
+                      >
+                        {parties.price.replaceAll("-", " ")}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-700">
+                    <li> {parties.description}</li>
+                  </ul>
+
+                  {/* Tips */}
+                  <div className="mt-5 w-full rounded-2xl border border-gray-200 bg-indigo-50/50 p-6">
+                    <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                      Recomendaciones
+                    </h3>
+                    {parties.tips && (
+                      <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                        {parties.tips.map((n, i) => (
+                          <li key={i}>• {n}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+
+                  {/* Links */}
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {parties.googleMapsUrl && (
+                      <a
+                        href={parties.googleMapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
+                      >
+                        Ver ubicación
+                      </a>
+                    )}
+
+                    {parties.socialMedia && (
+                      <a
+                        href={parties.socialMedia}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
+                      >
+                        Ver perfil en RRSS
+                      </a>
+                    )}
+
+                    {parties.website && (
+                      <a
+                        href={parties.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
+                      >
+                        Visitar website
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+              {filtered.length === 0 && (
+                <div className="col-span-full rounded-lg border border-dashed p-6 text-sm text-muted-foreground">
+                  No hay resultados con los filtros actuales.
                 </div>
-              </article>
-            ))}
-            {filtered.length === 0 && (
-              <div className="col-span-full rounded-lg border border-dashed p-6 text-sm text-muted-foreground">
-                No hay resultados con los filtros actuales.
-              </div>
-            )}
+              )}
+            </div>
           </div>
         )}
       </ChipFilterBoard>
