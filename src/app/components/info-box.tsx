@@ -25,7 +25,12 @@ export default function InfoBox({
 }: InfoBoxProps) {
   const bg = variant === "tinted" ? "bg-indigo-50/50" : "bg-white";
   const border = borderStyle === "bordered" ? "border border-gray-200" : "";
-  const boxClasses = ["w-full rounded-2xl p-6", bg, border, className]
+  const boxClasses = [
+    "w-full rounded-2xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12",
+    bg,
+    border,
+    className,
+  ]
     .filter(Boolean)
     .join(" ");
 

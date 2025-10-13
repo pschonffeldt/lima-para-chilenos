@@ -235,7 +235,7 @@ export default function Home() {
       />
 
       {/* Core topics grid section */}
-      <section className="pb-5">
+      <section className="py-2 sm:py-2">
         <h2 className="sr-only">Contenido esencial</h2>
 
         <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -267,9 +267,9 @@ export default function Home() {
       </section>
 
       {/* Districs cards and map section */}
-      <section aria-labelledby="types-heading" className="pb-5 ">
+      <section aria-labelledby="types-heading" className="py-2">
         {/* Section title */}
-        <div className="pb-5">
+        <div className="pb-12">
           <TextSection
             as="h3"
             title="Distritos destacados en Lima"

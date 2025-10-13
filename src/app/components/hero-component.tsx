@@ -42,13 +42,12 @@ export default function HeroSection({
   actions = [],
   bgClassName = "bg-indigo-50/50",
   className = "",
-  containerClassName = "",
   children,
 }: HeroSectionProps) {
   return (
     <section className={`border-b border-gray-100 ${bgClassName} ${className}`}>
       <div
-        className={`mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12 ${containerClassName}`}
+        className={`mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12 `}
       >
         <div className="flex items-start gap-3">
           <div>
