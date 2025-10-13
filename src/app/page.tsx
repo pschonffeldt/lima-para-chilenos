@@ -2,6 +2,7 @@ import Link from "next/link";
 import HeroSection from "./components/hero-component";
 import Button from "./components/button-component";
 import InfoBox from "./components/info-box";
+import TextSection from "./components/content-section-component";
 
 // Districts
 export const DISTRICTS = [
@@ -116,7 +117,7 @@ export const SECTIONS = [
 export default function Home() {
   return (
     <main className="space-y-10 py-10">
-      {/* HERO */}
+      {/* Hero section */}
       <HeroSection
         title="🇨🇱→🇵🇪 Lima para chilenos, crudo y sin censura."
         description={
@@ -134,7 +135,7 @@ export default function Home() {
           { href: "/mapa", label: "Ver mapa con destinos", variant: "dark" },
         ]}
       />
-      {/* SAFETY CTA */}
+      {/* Quick help section */}
       <InfoBox
         title="Ayuda rápida"
         items={[
@@ -232,8 +233,8 @@ export default function Home() {
         ]}
       />
 
-      {/* Core topics grid */}
-      <section className="py-4">
+      {/* Core topics grid section */}
+      <section className="pb-5">
         <h2 className="sr-only">Contenido esencial</h2>
 
         <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -264,26 +265,17 @@ export default function Home() {
         </div>
       </section>
 
-      <HeroSection
-        title="🇨🇱→🇵🇪 Lima para chilenos, crudo y sin censura."
-        description={
-          <>
-            Consejos de un chileno que vive en Lima, con mapas y listas para que
-            te adaptes en horas — no en días. Menos bla bla y más datos útiles.
-          </>
-        }
-        actions={[
-          {
-            href: "/introduccion",
-            label: "Empezar por la Introducción",
-            variant: "primary",
-          },
-          { href: "/mapa", label: "Ver mapa con destinos", variant: "dark" },
-        ]}
-      />
-
-      {/* Districs cards */}
-      <section aria-labelledby="types-heading" className="py-12 ">
+      {/* Districs cards and map section */}
+      <section aria-labelledby="types-heading" className="pb-5 ">
+        {/* Section title */}
+        <div className="pb-5">
+          <TextSection
+            as="h3"
+            title="Distritos destacados en Lima"
+            description="Estos son los barrios principales donde tú como Chileno, quieres invertir tu tiempo. Apreta el botón para ver los detalles de cada distrto."
+            bgClassName="bg-indigo-50/50"
+          />
+        </div>
         <div className="">
           <h2 id="types-heading" className="sr-only">
             Distritos destacados
@@ -329,11 +321,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* MAP */}
-      <section id="mapa" className="space-y-3">
-        <div className="overflow-hidden rounded-xl border">
+        {/* MAP */}
+        <div className="py-10 overflow-hidden rounded-xl">
           <iframe
             title="Mapa Lima"
             src="https://www.google.com/maps/d/embed?mid=14jhDKUBm-_vNZ0z0Mw97JKX2C7n0_MQ&ehbc=2E312F"
