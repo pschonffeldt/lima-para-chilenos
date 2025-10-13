@@ -9,6 +9,8 @@ type InfoBoxProps = {
   children?: React.ReactNode;
   /** Background style */
   variant?: "tinted" | "plain"; // tinted = bg-indigo-50/50, plain = bg-white
+  /** Border style */
+  borderStyle?: "bordered" | "plain"; // bordered = border border-gray-200" : "", plain = ""
   /** Extra classes for the inner box */
   className?: string;
 };
@@ -18,19 +20,17 @@ export default function InfoBox({
   items,
   children,
   variant = "tinted",
+  borderStyle = "bordered",
   className = "",
 }: InfoBoxProps) {
   const bg = variant === "tinted" ? "bg-indigo-50/50" : "bg-white";
-  const boxClasses = [
-    "w-full rounded-2xl border border-gray-200 p-6",
-    bg,
-    className,
-  ]
+  const border = borderStyle === "bordered" ? "border border-gray-200" : "";
+  const boxClasses = ["w-full rounded-2xl p-6", bg, border, className]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 border-gray-100">
+    <section className="border-gray-100">
       <div className={boxClasses}>
         {title &&
           (typeof title === "string" ? (

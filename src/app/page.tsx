@@ -138,6 +138,7 @@ export default function Home() {
       {/* Quick help section */}
       <InfoBox
         title="Ayuda rápida"
+        variant="plain"
         items={[
           <>
             ¿Recién llegaste? Parte por{" "}
