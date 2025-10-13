@@ -32,76 +32,118 @@ const BARRIOS = [
   },
 ];
 
+// Parties links types
+type GoogleMapsUrl =
+  | `https://www.google.com/maps${string}`
+  | `https://maps.app.goo.gl/${string}`
+  | `https://goo.gl/maps/${string}`;
+
+type SocialMediaUrl =
+  | `https://www.instagram.com/${string}`
+  | `https://instagram.com/${string}`
+  | `https://www.facebook.com/${string}`
+  | `https://facebook.com/${string}`
+  | `https://fb.me/${string}`
+  | `https://www.tiktok.com/${string}`
+  | `https://tiktok.com/${string}`;
+
+type WebsiteUrl = `http${"s" | ""}://${string}`; // allows http:// and https://
+
 // Start of Chips
 
 type PartiesLima = {
   id: string;
   title: string;
+  description: string;
   price: Price;
   location: Location[];
+  googleMapsUrl?: GoogleMapsUrl;
+  socialMedia?: SocialMediaUrl;
+  website?: WebsiteUrl;
 };
 
 const PARTIES_LIMA: PartiesLima[] = [
   {
-    id: "a",
-    title: "Carrete barato en Barranco",
-    price: "Economico",
-    location: ["Barranco"],
-  },
-  {
-    id: "b",
-    title: "Carrete promedio en Miraflores",
-    price: "Promedio",
-    location: ["Miraflores"],
-  },
-  {
-    id: "c",
-    title: "Carrete fino en San Isidro",
-    price: "Fino",
-    location: ["San Isidro"],
-  },
-  {
-    id: "d",
-    title: "Carrete promedio en Barranco",
+    id: "Tardeo",
+    title: "Tardeo",
+    description:
+      "Para partir temprano y quedar prendido: pop/latino noventero y perreo piola. Ambiente buena onda; llega antes de las 6 para poder entrar.",
     price: "Promedio",
     location: ["Barranco"],
+    googleMapsUrl: "https://maps.app.goo.gl/eDKvY53tMcu2m4bY6",
+    socialMedia: "https://www.instagram.com/tardeo.oficial",
+    website: "https://tardeooficial.pe/",
   },
   {
-    id: "e",
-    title: "Carrete fino en Miraflores",
-    price: "Fino",
-    location: ["Miraflores"],
-  },
-  {
-    id: "f",
-    title: "Carrete promedio en San Isidro",
+    id: "Damian",
+    title: "Damian",
+    description:
+      "Club con música electrónica/house y reggaeton. Aforo acotado, si no estas en lista llega temprano, de lo contrario tendrás que comprar una botella para entrar.",
     price: "Promedio",
-    location: ["San Isidro"],
-  },
-  {
-    id: "g",
-    title: "Carrete fino en Barranco",
-    price: "Fino",
     location: ["Barranco"],
+    googleMapsUrl: "https://maps.app.goo.gl/mcd3JDnwe8Y9mDaCA",
+    socialMedia: "https://www.instagram.com/damian.club",
+    website:
+      "https://hotspot.us5.list-manage.com/subscribe?u=bbe11d3e0d5cfe9de6101ffba&id=825da919eb",
   },
   {
-    id: "h",
-    title: "Carrete barato en Miraflores",
-    price: "Economico",
+    id: "Kova",
+    title: "Kova club",
+    description:
+      "Reggaetón y clásicos para bailar sin apretarse. Ideal para cumpleaños y grupos: mesas, botellas y dress code relajado.",
+    price: "Promedio",
     location: ["Miraflores"],
+    googleMapsUrl: "https://maps.app.goo.gl/zgUWfRRwHo9x4rgD9",
+    socialMedia: "https://www.instagram.com/kocaclublima",
   },
   {
-    id: "i",
-    title: "Carrete barato en San Isidro",
+    id: "Jarango",
+    title: "Jarango",
+    description:
+      "Formato bar-club. Bailable latino y pop para cantar a todo pulmón. Buen spot para ir en grupo.",
+    price: "Promedio",
+    location: ["Miraflores"],
+    googleMapsUrl: "https://maps.app.goo.gl/cPANUyUDqeUwR2Wu6",
+    socialMedia: "https://www.instagram.com/jarangomiraflores",
+    website: "https://grupobros.pe/locales/jarango/",
+  },
+  {
+    id: "Bulbo",
+    title: "Casa Bulbo",
+    description:
+      "Casa-club con música electrónica. Según la fecha puede ser tener Dj's locales o internacionales. Se llena rápido.",
+    price: "Promedio",
+    location: ["Barranco"],
+    googleMapsUrl: "https://maps.app.goo.gl/ZexKGiJHZ7P1qk4L8",
+    socialMedia: "https://www.instagram.com/casabulbo/",
+  },
+  {
+    id: "Valetodo",
+    title: "Valetodo Downtown",
+    description:
+      "El más icónico club LGBTQ+ en Miraflores: shows drag, karaoke y perreo/pop toda la noche. Ambiente muy prendido.",
+    price: "Promedio",
+    location: ["Barranco"],
+    googleMapsUrl: "https://maps.app.goo.gl/e4Jpo5QGGxohf6QA8",
+    socialMedia: "https://www.instagram.com/valetododowntownpe/",
+    website:
+      "https://linktr.ee/somasvala?fbclid=PAZXh0bgNhZW0CMTEAAafTjt_NWye51-5AXsnAw-oa1IOQwqIO_iGJl8a2nPBwMWTRrM5nIOr8sja1DQ_aem_rGds0lCkXIe752qF8Qi2lg",
+  },
+  {
+    id: "Baalsaal",
+    title: "Baalsaal",
+    description:
+      "Sede limeña del club alemán: techno/house con line-ups seleccionados. Es un club pequeño para público más under.",
     price: "Economico",
-    location: ["San Isidro"],
+    location: ["Centro"],
+    googleMapsUrl: "https://maps.app.goo.gl/uJ2xRbCiwQCTa2C56",
+    socialMedia: "https://www.instagram.com/baalsaal.club.lima/",
+    website: "https://www.baalsaal.info/es/baalsaal-lima",
   },
 ];
 
-// --- Chips (options) ---
-
 // ---  types & data ---
-type Location = "Barranco" | "Miraflores" | "San Isidro";
+type Location = "Barranco" | "Miraflores" | "San Isidro" | "Centro";
 type Price = "Economico" | "Promedio" | "Fino";
 
 // Chips values
@@ -264,6 +306,7 @@ export default function CarretesPage() {
                 <h3 className="text-lg font-semibold text-gray-900">
                   {parties.title}
                 </h3>
+                <p className="text-md text-gray-900">{parties.description}</p>
                 <div className="mt-1 text-xs text-gray-600">
                   {parties.location} • {parties.price}
                 </div>
@@ -278,6 +321,41 @@ export default function CarretesPage() {
                       {tag.replaceAll("-", " ")}
                     </span>
                   ))}
+                </div>
+                {/* Links */}
+                <div className="mt-3 flex gap-2 sm:mt-0">
+                  {parties.googleMapsUrl && (
+                    <a
+                      href={parties.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex rounded-lg border bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-white/80"
+                    >
+                      Ver ubicación en Google Maps
+                    </a>
+                  )}
+
+                  {parties.socialMedia && (
+                    <a
+                      href={parties.socialMedia}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex rounded-lg border bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-white/80"
+                    >
+                      Ver perfil en RRSS
+                    </a>
+                  )}
+
+                  {parties.website && (
+                    <a
+                      href={parties.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex rounded-lg border bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-white/80"
+                    >
+                      Ver website
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
