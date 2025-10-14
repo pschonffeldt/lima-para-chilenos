@@ -1105,3 +1105,36 @@ export const MINI_ITINERARIES: TwoWaySectionItem[] = [
     ],
   },
 ];
+
+export const PREPARTY_PRIMER: ThreeWaySectionItem[] = [
+  {
+    // href: "/carretes#zonas",
+    label: "Zonas para carretear",
+    icon: "🎉",
+    blurb: [
+      "Miraflores: rooftops, pubs, clubes y afters tranquilos.",
+      "Barranco: terrazas, bares con música y clubes.",
+      "San Isidro: after-office y coctelería fina.",
+    ],
+  },
+  {
+    // href: "/carretes#traslados",
+    label: "Traslados y seguridad",
+    icon: "🚕",
+    blurb: [
+      "Usa apps (Cabify/Uber) ida y vuelta.",
+      "Define punto de recojo antes de cerrar la cuenta.",
+      "Evita caminar tramos largos de noche.",
+    ],
+  },
+  {
+    // href: "/carretes#tips",
+    label: "Consejos rápidos",
+    icon: "💡",
+    blurb: [
+      "Necesitarás reservas para los lugares populares.",
+      "Dress code casual; viste lo mismo que en Stgo.",
+      "Hidrátate y cuida tus pertenencias.",
+    ],
+  },
+];
