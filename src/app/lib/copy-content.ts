@@ -979,3 +979,129 @@ export const BUY_BEANS: ThreeWaySectionItem[] = [
     ],
   },
 ];
+
+// ActividadesPage content
+export const QUICK_BASICS: ThreeWaySectionItem[] = [
+  {
+    label: "Mejor horario",
+    icon: "🕒",
+    blurb: [
+      "Mañana y tarde (evita 1–4 pm si hay sol fuerte).",
+      "Atardecer en el malecón = apuesta segura.",
+      "De noche: prefiere zonas iluminadas y concurridas.",
+    ],
+  },
+  {
+    label: "Qué llevar",
+    icon: "🎒",
+    blurb: [
+      "Bloqueador, cortaviento ligero y agua.",
+      "Tarjeta/efectivo chico; documento a mano.",
+      "Celular guardado en esquinas muy concurridas.",
+    ],
+  },
+  {
+    label: "Traslados",
+    icon: "🚕",
+    blurb: [
+      "Apps (Cabify/Uber) para moverte fácil.",
+      "Metropolitano sirve si tu ruta coincide.",
+      "Evita taxi de calle. No es seguro.",
+    ],
+  },
+];
+
+export const MALECON_Y_COSTA: ContentGridWithTagItem[] = [
+  {
+    name: "Caminatas & miradores",
+    href: "/actividades/paseo-malecon",
+    icon: "🏞️",
+    note: "Tramo Miraflores ↔ Barranco (parques y acantilados). Parque del Amor y faro: vistas clásicas. Atardeceres frente al mar, panorama seguro.",
+    tags: ["malecón", "miradores", "atardecer"],
+  },
+  {
+    name: "Correr & bicicleta",
+    href: "/actividades/correr-bici-malecon",
+    icon: "🏃‍♂️",
+    note: "Loops 5K/10K por el malecón, mejor en la mañana. Bici: ciclovías en buen tramo; ojo con cruces. Hidratación y bloqueador siempre.",
+    tags: ["running", "bici", "mañana"],
+  },
+  {
+    name: "Playa & surf",
+    href: "/actividades/surf-principiantes",
+    icon: "🏄‍♂️",
+    note: "Clases para principiantes disponibles en la costa. Corriente fría: traje corto ayuda. Deja objetos de valor en el alojamiento.",
+    tags: ["surf", "principiantes", "frío"],
+  },
+];
+
+export const CULTURA_Y_PASEOS: ContentGridWithTagItem[] = [
+  {
+    name: "Centro histórico",
+    href: "/actividades/centro-historico-dia",
+    icon: "🏛️",
+    note: "Plaza Mayor, balcones y arquitectura clásica. Ve de día y define punto de recojo para volver. Combínalo con un museo y algo para comer.",
+    tags: ["día", "arquitectura", "balcones"],
+  },
+  {
+    name: "Museos & sitios",
+    href: "/actividades/museos-sitios",
+    icon: "🖼️",
+    note: "Arte, historia y arqueología en varios distritos. Revisa horarios antes (muchos cierran lunes). Compra entrada online si existe.",
+    tags: ["museos", "horarios", "tickets"],
+  },
+  {
+    name: "Barranco creativo",
+    href: "/actividades/barranco-creativo",
+    icon: "🎨",
+    note: "Murales, galerías y el Puente de los Suspiros. Camina de día; de noche vuelve en app. Cafecitos y bares para cerrar el paseo.",
+    tags: ["murales", "puente", "cafés"],
+  },
+];
+
+export const DEPORTE_Y_NATURALEZA: ContentGridWithTagItem[] = [
+  {
+    name: "Parques & áreas verdes",
+    href: "/actividades/parques-verdes",
+    icon: "🌳",
+    note: "Parques amplios para trotar o picnic. Rutas planas y seguras de día. Siempre guarda tus cosas a la vista.",
+    tags: ["parques", "picnic", "trote"],
+  },
+  {
+    name: "Observación de aves / humedales",
+    href: "/actividades/aves-humedales",
+    icon: "🐦",
+    note: "Reserva paseos para ver fauna local. Ideal en la mañana con guía o grupo. Lleva gorro, agua y protección solar.",
+    tags: ["aves", "mañana", "humedales"],
+  },
+  {
+    name: "Salidas de media jornada",
+    href: "/itinerarios/medio-dia-costero-miraflores-barranco",
+    icon: "🧭",
+    note: "Costa y miradores + café en Barranco. Parque + museo cercano + sunset en malecón. Combina con Comida o Copete.",
+    tags: ["media jornada", "sunset", "malecón"],
+  },
+];
+
+export const MINI_ITINERARIES: TwoWaySectionItem[] = [
+  {
+    href: "/itinerarios/medio-dia-costero",
+    label: "1/2 día costero",
+    icon: "🌊",
+    blurb: [
+      "Café y paseo por el malecón (miradores).",
+      "Bajada a la costa, fotos y snack.",
+      "Sube a Barranco, galería y puente icónico.",
+    ],
+  },
+  {
+    href: "/itinerarios/un-dia-mixto",
+    label: "1 día mixto",
+    icon: "🧭",
+    blurb: [
+      "Mañana de museo + almuerzo tranquilo.",
+      "Tarde de parques o bici ligera.",
+      "Atardecer en malecón y bar suave para cerrar.",
+    ],
+  },
+];

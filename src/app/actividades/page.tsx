@@ -1,18 +1,15 @@
-import Link from "next/link";
-import { ActividadSlug } from "../lib/actividades-content";
-
-const to = (slug: ActividadSlug) => `/actividades/${slug}`;
-const SLUG = {
-  paseoMalecon: "paseo-malecon" as ActividadSlug,
-  correrBici: "correr-bici-malecon" as ActividadSlug,
-  surf: "surf-principiantes" as ActividadSlug,
-  centro: "centro-historico-dia" as ActividadSlug,
-  museos: "museos-sitios" as ActividadSlug,
-  barrancoCreativo: "barranco-creativo" as ActividadSlug,
-  parques: "parques-areas-verdes" as ActividadSlug,
-  aves: "aves-humedales" as ActividadSlug,
-  mediaJornada: "media-jornada-barranco" as ActividadSlug,
-} as const;
+import HeroSection from "../components/hero-component";
+import { ThreeWaySection } from "../components/3way-column-section-component";
+import {
+  CULTURA_Y_PASEOS,
+  DEPORTE_Y_NATURALEZA,
+  MALECON_Y_COSTA,
+  MINI_ITINERARIES,
+  QUICK_BASICS,
+} from "../lib/copy-content";
+import { ContentGridWithTag } from "../components/content-grid-tag-component";
+import { CtaBanner } from "../components/cta-component";
+import { TwoWaySection } from "../components/2way-column-section-component";
 
 export const metadata = {
   title: "Actividades — Lima para Chilenos",
@@ -22,308 +19,73 @@ export const metadata = {
 
 export default function ActividadesPage() {
   return (
-    <section className="space-y-10 py-10">
-      {/* Title */}
-      <header className="space-y-3">
-        <h1 className="text-3xl font-bold tracking-tight">Actividades</h1>
-        <p className="max-w-[70ch] text-muted-foreground">
-          Planes fáciles para conocer Lima sin complicarte: malecón, cultura,
-          deporte y naturaleza. Ideas de medio día y día completo con foco en
-          Miraflores, Barranco y San Isidro.
-        </p>
-      </header>
+    <main className="space-y-10 py-10">
+      <HeroSection
+        title="Actividades"
+        description={
+          <>
+            Planes fáciles para conocer Lima sin complicarte: malecón, cultura,
+            deporte y naturaleza. Ideas de medio día y día completo con foco en
+            Miraflores, Barranco y San Isidro.
+          </>
+        }
+      />
 
-      {/* Quick facts */}
-      <div className="grid gap-3 sm:grid-cols-3">
-        <div className="rounded-lg border p-4">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Mejor horario
-          </p>
-          <ul className="space-y-1 text-sm">
-            <li>Mañana y tarde (evita 1–4 pm si hay sol fuerte).</li>
-            <li>Atardecer en el malecón = apuesta segura.</li>
-            <li>De noche: prefiere zonas iluminadas y concurridas.</li>
-          </ul>
-        </div>
-        <div className="rounded-lg border p-4">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Qué llevar
-          </p>
-          <ul className="space-y-1 text-sm">
-            <li>Bloqueador, cortaviento ligero y agua.</li>
-            <li>Tarjeta/efectivo chico; documento a mano.</li>
-            <li>Celular guardado en esquinas muy concurridas.</li>
-          </ul>
-        </div>
-        <div className="rounded-lg border p-4">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Traslados
-          </p>
-          <ul className="space-y-1 text-sm">
-            <li>Apps (Cabify/Uber) para moverte fácil.</li>
-            <li>Metropolitano sirve si tu ruta coincide.</li>
-            <li>Evita taxi de calle. No es seguro.</li>
-          </ul>
-        </div>
-      </div>
+      {/* Quick facts actividades section */}
+      <ThreeWaySection
+        srTitle="Cómo organizarte en Lima"
+        sectionTitle="Cómo organizarte en Lima"
+        items={QUICK_BASICS}
+        defaultCtaVariant="primary"
+      />
 
-      {/* Malecón y costa */}
-      <div id="malecon" className="space-y-3">
-        <h2 className="text-lg font-semibold">Malecón y costa</h2>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <div className="flex flex-col rounded-lg border p-4">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Caminatas & miradores
-            </p>
-            <ul className="space-y-1 text-sm">
-              <li>Tramo Miraflores ↔ Barranco (parques y acantilados).</li>
-              <li>Parque del Amor y faro: vistas clásicas.</li>
-              <li>Atardeceres frente al mar, panorama seguro.</li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href={to(SLUG.paseoMalecon)}
-                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Abrir sección →
-              </Link>
-            </div>
-          </div>
+      {/* Malecón y costa section */}
+      <ContentGridWithTag
+        items={MALECON_Y_COSTA}
+        sectionTitle="Malecón y costa"
+        srTitle="Listado de barrios"
+        cols={{ sm: 3, lg: 3 }}
+        className="mt-6"
+      />
 
-          <div className="flex flex-col rounded-lg border p-4">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Correr & bicicleta
-            </p>
-            <ul className="space-y-1 text-sm">
-              <li>Loops 5K/10K por malecón, en la mañana es ideal.</li>
-              <li>Bici: ciclovías en buen tramo; ojo con cruces.</li>
-              <li>Hidratación y bloqueador siempre.</li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href={to(SLUG.correrBici)}
-                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Abrir sección →
-              </Link>
-            </div>
-          </div>
-
-          <div className="flex flex-col rounded-lg border p-4">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Playa & surf
-            </p>
-            <ul className="space-y-1 text-sm">
-              <li>Clases para principiantes disponibles en la costa.</li>
-              <li>Corriente fría: traje corto ayuda.</li>
-              <li>Deja objetos de valor en el alojamiento.</li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href={to(SLUG.surf)}
-                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Abrir sección →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Cultura */}
-      <div id="cultura" className="space-y-3">
-        <h2 className="text-lg font-semibold">Cultura y paseos urbanos</h2>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <div className="flex flex-col rounded-lg border p-4">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Centro histórico
-            </p>
-            <ul className="space-y-1 text-sm">
-              <li>Plaza Mayor, balcones y arquitectura clásica.</li>
-              <li>Visítalo de día; define punto de recojo para volver.</li>
-              <li>Combínalo con un museo y algo para comer.</li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href={to(SLUG.centro)}
-                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Abrir sección →
-              </Link>
-            </div>
-          </div>
-
-          <div className="flex flex-col rounded-lg border p-4">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Museos & sitios
-            </p>
-            <ul className="space-y-1 text-sm">
-              <li>Arte, historia y arqueología en varios distritos.</li>
-              <li>Verifica horarios antes de ir (muchos cierran lunes).</li>
-              <li>Compra entrada online si existe esa opción.</li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href={to(SLUG.museos)}
-                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Abrir sección →
-              </Link>
-            </div>
-          </div>
-
-          <div className="flex flex-col rounded-lg border p-4">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Barranco creativo
-            </p>
-            <ul className="space-y-1 text-sm">
-              <li>Murales, galerías y el puente icónico.</li>
-              <li>Camina de día; en la noche, vuelve en app.</li>
-              <li>Cafecitos y bares para cerrar el paseo.</li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href={to(SLUG.barrancoCreativo)}
-                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Abrir sección →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Cultura section */}
+      <ContentGridWithTag
+        items={CULTURA_Y_PASEOS}
+        sectionTitle="Cultura y paseos"
+        srTitle="Listado de barrios"
+        cols={{ sm: 3, lg: 3 }}
+        className="mt-6"
+      />
 
       {/* Deporte & naturaleza */}
-      <div id="deporte-naturaleza" className="space-y-3">
-        <h2 className="text-lg font-semibold">Deporte y naturaleza</h2>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <div className="flex flex-col rounded-lg border p-4">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Parques & áreas verdes
-            </p>
-            <ul className="space-y-1 text-sm">
-              <li>Parques amplios para trotar o picnic.</li>
-              <li>Rutas planas y seguras de día.</li>
-              <li>Siempre guarda tus cosas a la vista.</li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href={to(SLUG.parques)}
-                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Abrir sección →
-              </Link>
-            </div>
-          </div>
+      <ContentGridWithTag
+        items={DEPORTE_Y_NATURALEZA}
+        sectionTitle="Deporte y naturaleza"
+        srTitle="Listado de barrios"
+        cols={{ sm: 3, lg: 3 }}
+        className="mt-6"
+      />
 
-          <div className="flex flex-col rounded-lg border p-4">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Observación de aves / humedales
-            </p>
-            <ul className="space-y-1 text-sm">
-              <li>Reserva paseos para ver fauna local.</li>
-              <li>Ideal en la mañana con guía o grupo.</li>
-              <li>Lleva gorro, agua y protección solar.</li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href={to(SLUG.aves)}
-                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Abrir sección →
-              </Link>
-            </div>
-          </div>
+      {/* Itinerarios section */}
+      <TwoWaySection
+        srTitle="Itinerarios fáciles"
+        sectionTitle="Itinerarios fáciles"
+        items={MINI_ITINERARIES}
+      />
 
-          <div className="flex flex-col rounded-lg border p-4">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Salidas de media jornada
-            </p>
-            <ul className="space-y-1 text-sm">
-              <li>Costa y miradores + café en Barranco.</li>
-              <li>Parque + museo cercano + sunset en malecón.</li>
-              <li>
-                Combina con{" "}
-                <Link href="/comida" className="underline underline-offset-4">
-                  Comida
-                </Link>{" "}
-                o{" "}
-                <Link href="/copete" className="underline underline-offset-4">
-                  Copete
-                </Link>
-                .
-              </li>
-            </ul>
-            <div className="mt-auto pt-5">
-              <Link
-                href={to(SLUG.mediaJornada)}
-                className="inline-block text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Abrir sección →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Itinerarios */}
-      <div id="itinerarios" className="space-y-3">
-        <h2 className="text-lg font-semibold">Itinerarios fáciles</h2>
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div className="rounded-lg border p-4">
-            <p className="mb-1 text-sm font-medium">1/2 día costero</p>
-            <ol className="list-decimal pl-5 space-y-1 text-sm">
-              <li>Café y paseo por el malecón (miradores).</li>
-              <li>Bajada a la costa, fotos y snack.</li>
-              <li>Sube a Barranco, galería y puente icónico.</li>
-            </ol>
-          </div>
-          <div className="rounded-lg border p-4">
-            <p className="mb-1 text-sm font-medium">1 día mixto</p>
-            <ol className="list-decimal pl-5 space-y-1 text-sm">
-              <li>Mañana de museo + almuerzo tranquilo.</li>
-              <li>Tarde de parques o bici ligera.</li>
-              <li>Atardecer en malecón y bar suave para cerrar.</li>
-            </ol>
-          </div>
-        </div>
-        <p className="text-sm text-muted-foreground">
-          Tip: define el punto de encuentro para la app de transporte antes de
-          terminar cada actividad.
-        </p>
-      </div>
-
-      {/* CTA final */}
-      <div className="rounded-xl border p-4 sm:flex sm:items-center sm:justify-between">
-        <div>
-          <h3 className="text-base font-semibold">¿Te mueves ahora?</h3>
-          <p className="text-sm text-muted-foreground">
-            Abre el{" "}
-            <Link href="/mapa" className="underline underline-offset-4">
-              mapa
-            </Link>{" "}
-            y combina con{" "}
-            <Link href="/transporte" className="underline underline-offset-4">
-              Transporte
-            </Link>{" "}
-            para llegar fácil.
-          </p>
-        </div>
-        <div className="mt-3 flex gap-2 sm:mt-0">
-          <Link
-            href="/barrios"
-            className="inline-flex rounded-lg border bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-white/80"
-          >
-            Ver barrios
-          </Link>
-          <Link
-            href="/advertencias"
-            className="inline-flex rounded-lg border bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-white/80"
-          >
-            Advertencias
-          </Link>
-        </div>
-      </div>
-    </section>
+      {/* CTA section */}
+      <CtaBanner
+        title="¿Te mueves ahora?"
+        description="Abre el mapa y combina con Transporte para llegar fácil."
+        actions={[
+          {
+            href: "/barrios",
+            label: "Ver Barrios",
+            variant: "primary",
+          },
+          { href: "/advertencias", label: "Advertencias", variant: "dark" },
+        ]}
+      />
+    </main>
   );
 }
