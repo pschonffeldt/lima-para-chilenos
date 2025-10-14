@@ -407,3 +407,139 @@ export const HOODS: BarrioItem[] = [
     tags: ["aeropuerto", "logística", "evitar"],
   },
 ];
+
+// Advertencias Content
+export const COMMON_SCAMS: ThreeWaySectionItem[] = [
+  {
+    // href: "/advertencias#taxis-informales",
+    label: "Taxis informales",
+    icon: "🚕",
+    blurb: [
+      "Evita “ofertas” de taxi en la calle/aeropuerto.",
+      "Usa Cabify/Uber y verifica la patente & conductor.",
+      "Si no te cuadra, cancela y pide otro.",
+    ],
+  },
+  {
+    // href: "/advertencias#cambio",
+    label: "Cambio de dinero",
+    icon: "💵",
+    blurb: [
+      "No hay problema en cambiar USD en la calle.",
+      "Cuenta y guarda el dinero sin hacerlo a la vista.",
+      "Evita montos grandes en público.",
+    ],
+  },
+  {
+    // href: "/advertencias#distracciones",
+    label: "Distracciones",
+    icon: "🎒",
+    blurb: [
+      "Empujones o “derrame” para distraer.",
+      "No dejes el celu sobre la mesa cerca de la calle.",
+      "Usa bolsos que cierren y llévalos al frente.",
+    ],
+  },
+];
+
+export const ZONES_AND_HOURS: TwoWaySectionItem[] = [
+  {
+    href: "/advertencias#dia",
+    label: "De día",
+    icon: "🌞",
+    blurb: [
+      "Malecón, parques y zonas turísticas: ok con precauciones básicas.",
+      "Centro Histórico: preferible en tour o con plan claro; vuelve en app.",
+      "Si llevas cámara, usa correa.",
+    ],
+  },
+  {
+    href: "/advertencias#noche",
+    label: "De noche",
+    icon: "🌙",
+    blurb: [
+      "Prefiere calles iluminadas y concurridas.",
+      "Evita caminar largas distancias; usa app desde la puerta del local.",
+      "Define punto de recojo antes de pagar la cuenta.",
+    ],
+  },
+];
+
+export const CASH_CARDS_CASH: ThreeWaySectionItem[] = [
+  {
+    // href: "/introduccion#atms",
+    label: "Cajeros (ATMs)",
+    icon: "🏧",
+    blurb: [
+      "Usa ATMs dentro de malls/bancos/hoteles.",
+      "Cubre el teclado y guarda el dinero.",
+      "Evita retirar montos grandes; mejor varios chicos.",
+    ],
+  },
+  {
+    // href: "/introduccion#tarjetas",
+    label: "Tarjetas & apps",
+    icon: "💳",
+    blurb: [
+      "Tarjeta aceptada en casi todas partes.",
+      "Lleva algo de S/ para imprevistos.",
+      "Activa alertas de tu banco y revisa movimientos.",
+    ],
+  },
+  {
+    // href: "/introduccion#efectivo",
+    label: "Efectivo",
+    icon: "💵",
+    blurb: [
+      "No muestres fajos y lleves todo junto.",
+      "Guarda una tarjeta de “reserva” separada del resto.",
+      "Evita contar dinero en la calle.",
+    ],
+  },
+];
+
+export const WHAT_TO_DO: TwoWaySectionItem[] = [
+  {
+    href: "/advertencias#robo",
+    label: "Te roban el celular/cartera",
+    icon: "🚨",
+    blurb: [
+      "Busca un lugar seguro.",
+      "Bloquea líneas y sesiones (Google/Apple, banco, WhatsApp).",
+      "Llama a la policía y pide constancia para el seguro.",
+      "Rastreo: solo si es seguro y con apoyo policial.",
+    ],
+  },
+  {
+    href: "/advertencias#emergencia",
+    label: "Tienes una urgencia médica",
+    icon: "🚑",
+    blurb: [
+      "Si es grave, llama al SAMU 106 (ambulancia/teleasistencia).",
+      "Indica dirección de referencia (cruce de avenidas/punto notable).",
+      "Contacta a tu seguro de viaje y sigue sus indicaciones.",
+      "Si puedes, anda a la Clínica Delgado, es de las mejores.",
+    ],
+  },
+];
+
+export const EMERGENCY_NUMBERS: ThreeWaySectionItem[] = [
+  {
+    // href: "/advertencias#policia",
+    label: "Policía Nacional del Perú",
+    icon: "👮‍♂️",
+    blurb: ["Emergencias: 105"],
+  },
+  {
+    // href: "/advertencias#samu",
+    label: "SAMU (ambulancia)",
+    icon: "🚑",
+    blurb: ["Urgencias médicas: 106"],
+  },
+  {
+    // href: "/advertencias#bomberos",
+    label: "Bomberos",
+    icon: "🚒",
+    blurb: ["Incendios/rescate: 116"],
+  },
+];
