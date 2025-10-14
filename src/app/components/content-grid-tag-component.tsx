@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import Button from "./button-component";
 
 export type BarrioItem = {

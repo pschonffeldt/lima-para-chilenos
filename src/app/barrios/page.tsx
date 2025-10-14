@@ -1,4 +1,3 @@
-import Link from "next/link";
 import HeroSection from "../components/hero-component";
 import { ThreeWaySection } from "../components/3way-column-section-component";
 import { WHY_MOVE_LITTLE, HOODS } from "../lib/copy-content";
