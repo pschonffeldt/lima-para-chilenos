@@ -699,3 +699,144 @@ export const DINING_ETIQUETTE: TwoWaySectionItem[] = [
     ],
   },
 ];
+
+// CopetePage content
+export const NIGHTLIFE_BASICS: ThreeWaySectionItem[] = [
+  {
+    // href: "/copete#edad",
+    label: "Edad & documentos",
+    icon: "🪪",
+    blurb: [
+      "Edad legal de consumo: 18 años.",
+      "Lleva documento de identidad por si lo piden.",
+      "Evita beber en vía pública: suele estar prohibido.",
+    ],
+  },
+  {
+    // href: "/copete#reservas",
+    label: "Reservas & cover",
+    icon: "🎟️",
+    blurb: [
+      "Viernes/sábado: reserva o llega temprano.",
+      "Algunos lugares cobran cover.",
+      "Vístete casual pero no con sandalias.",
+    ],
+  },
+  {
+    // href: "/copete#seguridad",
+    label: "Seguridad nocturna",
+    icon: "🌙",
+    blurb: [
+      "Vuelta a casa: apps (Cabify/Uber).",
+      "Cuida el celu al salir a la calle del bar.",
+      "Si decides caminar, no lo hagas solo/a.",
+    ],
+  },
+];
+
+export const WHAT_TO_ORDER_PERU: ThreeWaySectionItem[] = [
+  {
+    // href: "/copete#pisco-sour",
+    label: "Pisco sour",
+    icon: "🍸",
+    blurb: [
+      "Clásico limeño: pisco, limón, jarabe, clara y amargo.",
+      "Potente; ideal para abrir.",
+      "Después del segundo ya estás entrando a la zona borracha.",
+    ],
+  },
+  {
+    // href: "/copete#chilcano",
+    label: "Chilcano",
+    icon: "🥂",
+    blurb: [
+      "Pisco + ginger ale + limón.",
+      "Más liviano y refrescante; va toda la noche.",
+      "Algo así como una piscola blanca.",
+    ],
+  },
+  {
+    // href: "/copete#cervezas",
+    label: "Cervezas locales",
+    icon: "🍺",
+    blurb: [
+      "Las populares: Cusqueña, Pilsen, Cristal.",
+      "También hay artesanales: Barbarian, Valle Sagrado.",
+    ],
+  },
+];
+
+export const BARS_BY_ZONE: ThreeWaySectionItem[] = [
+  {
+    // href: "/barrios/barranco",
+    label: "Barranco",
+    icon: "🎨",
+    blurb: [
+      "Onda bohemia, terrazas y coctelería.",
+      "Bueno para viernes/sábado.",
+    ],
+  },
+  {
+    // href: "/barrios/miraflores",
+    label: "Miraflores",
+    icon: "🌊",
+    blurb: [
+      "Bares variados cerca del Parque Kennedy y malecón.",
+      "Fácil volver en app.",
+    ],
+  },
+  {
+    // href: "/barrios/san-isidro",
+    label: "San Isidro",
+    icon: "🌳",
+    blurb: [
+      "Coctelería más tranquila, opciones más íntimas para conversar y comer algo.",
+    ],
+  },
+];
+
+export const QUICK_BUYS: TwoWaySectionItem[] = [
+  {
+    href: "/copete#donde-comprar",
+    label: "Dónde comprar",
+    icon: "🛍️",
+    blurb: [
+      "Minimarkets y tiendas de barrio en zonas céntricas.",
+      "Supermercados: más variedad y mejores precios.",
+      "Apps de delivery nocturno en distritos principales.",
+    ],
+  },
+  {
+    href: "/copete#horarios",
+    label: "Horarios",
+    icon: "⏰",
+    blurb: [
+      "Tiendas chicas cierran más tarde que supermercados.",
+      "Fines de semana: más oferta abierta de noche.",
+      "Respeta normas locales sobre venta y consumo.",
+    ],
+  },
+];
+
+export const DO_DONT_NIGHT: TwoWaySectionItem[] = [
+  {
+    href: "/copete#haz",
+    label: "Haz",
+    icon: "✅",
+    blurb: [
+      "Pide auto con app y verifica patente/conductor.",
+      "Cuida tu vaso y no lo pierdas de vista.",
+      "Camina por calles iluminadas y concurridas.",
+    ],
+  },
+  {
+    href: "/copete#evita",
+    label: "Evita",
+    icon: "⛔️",
+    blurb: [
+      "Beber en plazas o calles (es sancionado).",
+      "Dejar mochilas/carteras sin supervisión.",
+      "Tomar taxi de la calle sin acuerdo claro.",
+    ],
+  },
+];
