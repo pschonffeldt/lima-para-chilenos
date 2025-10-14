@@ -4,8 +4,6 @@ import { ThreeWaySection } from "../components/3way-column-section-component";
 import {
   DINING_ETIQUETTE,
   DINING_STYLES,
-  HOODS,
-  OTHER_TIPS,
   SCHEDULE_TIPPING_HYGIENE,
   WHAT_TO_EAT,
 } from "../lib/copy-content";
