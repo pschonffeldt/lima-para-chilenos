@@ -1,162 +1,17 @@
 import HeroSection from "../components/hero-component";
-import {
-  ThreeWaySectionItem,
-  ThreeWaySection,
-} from "../components/3way-column-section-component";
+import { ThreeWaySection } from "../components/3way-column-section-component";
 import InfoBox from "../components/info-box";
 import { CtaBanner } from "../components/cta-component";
 import { TwoWaySection } from "../components/2way-column-section-component";
+import {
+  COMMUNICATIONS,
+  ESSENTIALS,
+  MONEY,
+  OTHER_TIPS,
+  ROUTES,
+} from "../lib/copy-content";
 
 // Sections content
-const ESSENTIALS: ThreeWaySectionItem[] = [
-  {
-    href: "/barrios",
-    label: "¿Donde te deberías quedar?",
-    icon: "👋",
-    blurb: [
-      "Miraflores — cómoda, caminable, malecón",
-      "Barranco — arte y bares, bohemio.",
-      "San Isidro — seguro, oficinas y restaurantes top.",
-    ],
-  },
-  {
-    href: "/transporte",
-    label: "Transporte a la ciudad",
-    icon: "🛵",
-    blurb: [
-      "El tráfico en Lima es horrible.",
-      "Salir del aeropuerto puede ser desafiante",
-      "Evita taxi de calle y la combis.",
-      "Usa los servicios oficiales o apps de transporte.",
-    ],
-  },
-  {
-    href: "/pagos-conectividad",
-    label: "Pagos & conectividad",
-    icon: "🍽️",
-    blurb: [
-      "Trae USD y habilita tu tarjeta bancaria Chilena.",
-      "Cambia un poco de Soles en el aeropuerto",
-      "El resto lo puedes cambiar en la calle o en casas de cambio",
-      "eSIM o roaming, no compres una SIM fisica en Lima",
-    ],
-  },
-];
-
-const COMMUNICATIONS: ThreeWaySectionItem[] = [
-  {
-    // href: "/introduccion",
-    label: "Operadores recomendados",
-    icon: "📡",
-    blurb: [
-      "Claro — buena cobertura en zonas céntricas",
-      "Entel — alternativa estable",
-      "Movistar — muy extendido, señal variable por distrito",
-    ],
-  },
-  {
-    // href: "/transporte",
-    label: "Dónde comprar eSIM",
-    icon: "📱",
-    blurb: [
-      "Mobimatter, marketplace de eSIM",
-      "Holafly, segúramente has visto sus comerciales",
-      "Maya, no es tan famoso, pero igual es bueno",
-    ],
-  },
-  {
-    // href: "/comida",
-    label: "Tips rápidos",
-    icon: "⁉️",
-    blurb: [
-      "Activa datos/roaming solo si tu plan lo permite",
-      "Guarda el QR de eSIM y anota tu número local",
-      "Wi-Fi en cafés y malls, usa siempre un VPN",
-    ],
-  },
-];
-
-const MONEY: ThreeWaySectionItem[] = [
-  {
-    // href: "/introduccion#cambio",
-    label: "Cambio seguro",
-    icon: "💱",
-    blurb: [
-      "Casas de cambio formales (en locales comerciales).",
-      "Casas de cambio informales (en calle).",
-      "Evita cambiar montos grandes en público.",
-    ],
-  },
-  {
-    // href: "/introduccion#dinero",
-    label: "Tarjeta & cajeros",
-    icon: "💳",
-    blurb: [
-      "Tarjeta aceptada en la mayoría de locales.",
-      "Cajeros de bancos grandes para retirar soles.",
-      "Bajas comisiones para tarjetas Chilenas.",
-    ],
-  },
-  {
-    // href: "/introduccion#yape",
-    label: "Billeteras digitales",
-    icon: "📲",
-    blurb: [
-      "NO pierdas tiempo, no podrás usar estas Apps.",
-      "Tienes que ser Peruano o tener residencia.",
-      "En Perú, todos los Peruanos Yapean, los turistas pagan con tarjeta.",
-    ],
-  },
-];
-
-export const ROUTES: ThreeWaySectionItem[] = [
-  {
-    href: "/barrios/miraflores",
-    label: "Miraflores",
-    icon: "🌊",
-    blurb: [
-      "Un buen lugar para quedarte en tu primera visita.",
-      "Malecón con parques y cafés cerca.",
-    ],
-  },
-  {
-    href: "/barrios/barranco",
-    label: "Barranco",
-    icon: "🎨",
-    blurb: ["Arte y bares, caminable.", "Conexión rápida a Miraflores."],
-  },
-  {
-    href: "/barrios/san-isidro",
-    label: "San Isidro",
-    icon: "🌳",
-    blurb: ["Seguro y tranquilo.", "Restaurantes top y parques amplios."],
-  },
-];
-
-export const OTHER_TIPS: ThreeWaySectionItem[] = [
-  {
-    href: "/introduccion#horarios",
-    label: "Horarios & costumbres",
-    icon: "🕒",
-    blurb: [
-      "Almuerzo 1–3 pm; cena 8–10 pm.",
-      "Restaurantes top piden reserva.",
-      "Propina no obligatoria; 10% es bien recibida.",
-      "A las rotondas les dicen óvalos.",
-    ],
-  },
-  {
-    href: "/introduccion#clima",
-    label: "Clima & seguridad ligera",
-    icon: "🌤️",
-    blurb: [
-      "Clima templado con cielos nublados en invierno.",
-      "Sol fuerte en verano; bloqueador siempre.",
-      "Evita exhibir el celular en esquinas muy concurridas.",
-      "Para correr/caminar: malecón de día es tu mejor opción.",
-    ],
-  },
-];
 
 // Metadata
 export const metadata = {
