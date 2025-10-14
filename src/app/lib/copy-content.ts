@@ -1,6 +1,7 @@
 // lib/content/intro.ts
 import { TwoWaySectionItem } from "../components/2way-column-section-component";
 import type { ThreeWaySectionItem } from "../components/3way-column-section-component";
+import { BarrioItem } from "../components/content-grid-tag-component";
 
 // IntroPage Content
 export const ESSENTIALS: ThreeWaySectionItem[] = [
@@ -298,10 +299,6 @@ export const COMMON_ROUTES: TwoWaySectionItem[] = [
   },
 ];
 
-// Nota bajo la sección de rutas
-export const COMMON_ROUTES_NOTE =
-  "Tiempos y precios son referenciales; el tráfico limeño puede variar bastante por clima, hora, partidos de futbol, conciertos y protestas.";
-
 export const OTHER_MEANS: ThreeWaySectionItem[] = [
   {
     // href: "/transporte#otros-micros",
@@ -329,5 +326,84 @@ export const OTHER_MEANS: ThreeWaySectionItem[] = [
       "Malls y hoteles suelen tener estacionamiento pagado.",
       "En calle, fíjate en parquímetros/señalización y evita dejar objetos a la vista.",
     ],
+  },
+];
+
+// BarriosPage Content
+export const WHY_MOVE_LITTLE: ThreeWaySectionItem[] = [
+  {
+    // href: "/barrios",
+    label: "Base principal",
+    icon: "🏠",
+    blurb: [
+      "Miraflores: caminable + malecón + cafés.",
+      "Barranco: arte + terrazas + bares.",
+      "San Isidro: parques + restaurantes top.",
+    ],
+  },
+  {
+    // href: "/barrios#salidas",
+    label: "Salidas puntuales",
+    icon: "🧭",
+    blurb: [
+      "Callao: aeropuerto y logística, nada más.",
+      "Chorrillos: running/bici o Morro Solar, mejor de día.",
+      "Centro de Lima: “casco histórico”, ideal de día.",
+    ],
+  },
+  {
+    // href: "/barrios#resultado",
+    label: "Resultado",
+    icon: "✅",
+    blurb: [
+      "Menos traslados largos y menos tráfico.",
+      "Te mueves más seguro y con más tiempo útil.",
+      "Experiencia muy similar a la que te gusta en 🇨🇱.",
+    ],
+  },
+];
+
+export const HOODS: BarrioItem[] = [
+  {
+    name: "Miraflores",
+    href: "/barrios/miraflores",
+    icon: "🌊",
+    note: "Caminable, malecón, cafés para trabajar. Base cómoda para primera visita.",
+    tags: ["malecón", "caminable", "cafés"],
+  },
+  {
+    name: "Barranco",
+    href: "/barrios/barranco",
+    icon: "🎨",
+    note: "Bohemio: arte, terrazas y bares. Conexión rápida a Miraflores.",
+    tags: ["arte", "bares", "bohemio"],
+  },
+  {
+    name: "San Isidro",
+    href: "/barrios/san-isidro",
+    icon: "🌳",
+    note: "Tranquilo y seguro, parques amplios y restaurantes top.",
+    tags: ["parques", "tranquilo", "restaurantes"],
+  },
+  {
+    name: "Chorrillos",
+    href: "/barrios/chorrillos",
+    icon: "🏖️",
+    note: "Playas y Morro Solar; mejor de día. De noche muévete en app.",
+    tags: ["playa", "Morro Solar", "vistas"],
+  },
+  {
+    name: "Centro de Lima",
+    href: "/barrios/lima-centro",
+    icon: "🏛️",
+    note: "Casco histórico: arquitectura y plazas. Visítalo de día y vuelve en app.",
+    tags: ["historia", "arquitectura", "día"],
+  },
+  {
+    name: "Callao (solo aeropuerto)",
+    href: "/barrios/callao",
+    icon: "✈️",
+    note: "Úsalo para el aeropuerto. Fuera de rutas turísticas puede ser inseguro; evita paseos improvisados.",
+    tags: ["aeropuerto", "logística", "evitar"],
   },
 ];
