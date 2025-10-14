@@ -1,4 +1,3 @@
-import Link from "next/link";
 import HeroSection from "../components/hero-component";
 import { ThreeWaySection } from "../components/3way-column-section-component";
 import {
@@ -7,7 +6,6 @@ import {
   METROPOLITANO_INFO,
   MOVE_WITH_APPS,
   OTHER_MEANS,
-  OTHER_TIPS,
   TRANSPORT_QUICK_TIPS,
 } from "../lib/copy-content";
 import { TwoWaySection } from "../components/2way-column-section-component";
