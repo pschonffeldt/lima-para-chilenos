@@ -26,7 +26,7 @@ export default function InfoBox({
   const bg = variant === "tinted" ? "bg-indigo-50/50" : "bg-white";
   const border = borderStyle === "bordered" ? "border border-gray-200" : "";
   const boxClasses = [
-    "w-full rounded-2xl px-6 py-12 sm:px-8 sm:py-16 lg:px-12",
+    "w-full rounded-2xl px-5 py-5 text-sm shadow-sm transition hover:shadow-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60",
     bg,
     border,
     className,
