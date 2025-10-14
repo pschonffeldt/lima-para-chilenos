@@ -1,7 +1,7 @@
 // lib/content/intro.ts
 import { TwoWaySectionItem } from "../components/2way-column-section-component";
 import type { ThreeWaySectionItem } from "../components/3way-column-section-component";
-import { BarrioItem } from "../components/content-grid-tag-component";
+import { ContentGridWithTagItem } from "../components/content-grid-tag-component";
 
 // IntroPage Content
 export const ESSENTIALS: ThreeWaySectionItem[] = [
@@ -363,7 +363,7 @@ export const WHY_MOVE_LITTLE: ThreeWaySectionItem[] = [
   },
 ];
 
-export const HOODS: BarrioItem[] = [
+export const HOODS: ContentGridWithTagItem[] = [
   {
     name: "Miraflores",
     href: "/barrios/miraflores",
@@ -541,5 +541,161 @@ export const EMERGENCY_NUMBERS: ThreeWaySectionItem[] = [
     label: "Bomberos",
     icon: "🚒",
     blurb: ["Incendios/rescate: 116"],
+  },
+];
+
+// FoodPage content
+export const SCHEDULE_TIPPING_HYGIENE: ThreeWaySectionItem[] = [
+  {
+    // href: "/introduccion#horarios",
+    label: "Horarios",
+    icon: "🕰️",
+    blurb: [
+      "Almuerzo 1–3 pm; cena 8–10 pm.",
+      "Restaurantes top: reserva (finde se llena).",
+      "Muchos locales cierran entre 4–7 pm.",
+    ],
+  },
+  {
+    // href: "/introduccion#propina",
+    label: "Propina & pagos",
+    icon: "💳",
+    blurb: [
+      "Propina no obligatoria; 10% si fue bueno.",
+      "Tarjeta funciona en casi todos los restaurantes.",
+      "Pregunta si incluyen “servicio” antes de pagar.",
+    ],
+  },
+  {
+    // href: "/introduccion#higiene",s
+    label: "Agua & higiene",
+    icon: "💧",
+    blurb: [
+      "Solo toma agua embotellada.",
+      "Hielo suele ser seguro en zonas turísticas.",
+      "Ceviche al mediodía y en locales bien conocidos.",
+    ],
+  },
+];
+
+export const WHAT_TO_EAT: ContentGridWithTagItem[] = [
+  {
+    name: "Ceviche",
+    // href: "/comida/ceviche",
+    icon: "🐟",
+    note: "Pescado del día, limón, ají. Mejor a la hora de almuerzo.",
+    tags: ["marino", "almuerzo"],
+  },
+  {
+    name: "Lomo saltado",
+    // href: "/comida/lomo-saltado",
+    icon: "🥩",
+    note: "Salteado criollo con papas y arroz. Infaltable.",
+    tags: ["criollo", "carne", "clásico"],
+  },
+  {
+    name: "Chifa",
+    // href: "/comida/chifa",
+    icon: "🥢",
+    note: "China-peruana. Arroz chaufa, taypá, wantán.",
+    tags: ["china-peruana", "arroz", "wok"],
+  },
+  {
+    name: "Nikkei",
+    // href: "/comida/nikkei",
+    icon: "🍣",
+    note: "Peruano-japonés. Tiraditos, makis con ajíes.",
+    tags: ["fusión", "tiraditos", "makis"],
+  },
+  {
+    name: "Pollo a la brasa",
+    // href: "/comida/pollo-a-la-brasa",
+    icon: "🍗",
+    note: "Clásico para la noche o compartir.",
+    tags: ["pollo", "noche", "compartir"],
+  },
+  {
+    name: "Anticuchos",
+    // href: "/comida/anticuchos",
+    icon: "🍢",
+    note: "Brochetas a la parrilla, típicas de noche.",
+    tags: ["parrilla", "brochetas", "noche"],
+  },
+  {
+    name: "Causa",
+    // href: "/comida/causa",
+    icon: "🥔",
+    note: "Plato frío de papa amarilla con relleno.",
+    tags: ["frío", "papa", "entrada"],
+  },
+  {
+    name: "Ají de gallina",
+    // href: "/comida/aji-de-gallina",
+    icon: "🍛",
+    note: "Guiso cremoso con ají amarillo.",
+    tags: ["guiso", "ají amarillo", "cremoso"],
+  },
+  {
+    name: "Suspiro limeño",
+    // href: "/comida/suspiro-limeno",
+    icon: "🍮",
+    note: "Postre tradicional, dulce y cremoso.",
+    tags: ["postre", "dulce", "tradicional"],
+  },
+];
+
+export const DINING_STYLES: ThreeWaySectionItem[] = [
+  {
+    // href: "/comida#rapido",
+    label: "Rápido & bueno",
+    icon: "⚡️",
+    blurb: [
+      "“Menú del día”: entrada + fondo + bebida.",
+      "Pollerías y sangucherías para la noche.",
+      "Cevicherías informales solo al almuerzo.",
+    ],
+  },
+  {
+    // href: "/comida#sentarse",
+    label: "Para sentarse tranqui",
+    icon: "🪑",
+    blurb: [
+      "Bistrós y nikkei con carta variada.",
+      "Chifas de barrio (porciones generosas).",
+      "Reservas recomendadas viernes/sábado.",
+    ],
+  },
+  {
+    // href: "/comida#top",
+    label: "Experiencia top",
+    icon: "👨‍🍳",
+    blurb: [
+      "Restaurantes de autor: reserva con tiempo.",
+      "Degustaciones/menús largos (2–3 horas).",
+      "Dress code casual cuidado; llega puntual.",
+    ],
+  },
+];
+
+export const DINING_ETIQUETTE: TwoWaySectionItem[] = [
+  {
+    // href: "/comida#pedir",
+    label: "Al pedir",
+    icon: "🍽️",
+    blurb: [
+      "Pide recomendaciones de la casa (suelen acertar).",
+      "Indica picor: “suave / medio / picante”.",
+      "Si compartes, pregunta por medias porciones.",
+    ],
+  },
+  {
+    // href: "/comida#cuenta",
+    label: "Bebida, propina y boleta",
+    icon: "💧",
+    blurb: [
+      "Agua: embotellada sin hielo si prefieres ir a la segura.",
+      "Propina: agrega 10% si el servicio fue bueno.",
+      "Boleta/factura: pídela al final si la necesitas.",
+    ],
   },
 ];

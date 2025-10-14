@@ -3,9 +3,9 @@
 import * as React from "react";
 import Button from "./button-component";
 
-export type BarrioItem = {
+export type ContentGridWithTagItem = {
   name: string;
-  href: string;
+  href?: string;
   icon?: React.ReactNode;
   note?: string;
   tags?: string[];
@@ -13,8 +13,8 @@ export type BarrioItem = {
   linkLabel?: string;
 };
 
-type BarrioGridProps = {
-  items: BarrioItem[];
+type ContentGridWithTagProps = {
+  items: ContentGridWithTagItem[];
   /** Optional visually-hidden section title for a11y */
   srTitle?: string;
   /** Optional visible section title above the grid */
@@ -25,13 +25,13 @@ type BarrioGridProps = {
   cols?: { sm?: 1 | 2 | 3 | 4; lg?: 1 | 2 | 3 | 4 };
 };
 
-export function BarrioGrid({
+export function ContentGridWithTag({
   items,
   srTitle,
   sectionTitle,
   className = "",
   cols,
-}: BarrioGridProps) {
+}: ContentGridWithTagProps) {
   const smCols = cols?.sm ?? 2;
   const lgCols = cols?.lg ?? 3;
 
@@ -83,15 +83,17 @@ export function BarrioGrid({
               </div>
             ) : null}
 
-            <div className="mt-auto pt-5">
-              <Button
-                href={barrio.href}
-                className="text-sm text-primary underline-offset-4"
-                aria-label={`Ver detalles de ${barrio.name}`}
-              >
-                {barrio.linkLabel ?? "Ver detalles →"}
-              </Button>
-            </div>
+            {barrio.href ? (
+              <div className="mt-auto pt-5">
+                <Button
+                  href={barrio.href}
+                  className="text-sm text-primary underline-offset-4"
+                  aria-label={`Ver detalles de ${barrio.name}`}
+                >
+                  {barrio.linkLabel ?? "Ver detalles →"}
+                </Button>
+              </div>
+            ) : null}
           </li>
         ))}
       </ul>

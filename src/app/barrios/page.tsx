@@ -1,7 +1,7 @@
 import HeroSection from "../components/hero-component";
 import { ThreeWaySection } from "../components/3way-column-section-component";
 import { WHY_MOVE_LITTLE, HOODS } from "../lib/copy-content";
-import { BarrioGrid } from "../components/content-grid-tag-component";
+import { ContentGridWithTag } from "../components/content-grid-tag-component";
 import { CtaBanner } from "../components/cta-component";
 
 export const metadata = {
@@ -28,7 +28,7 @@ export default function BarriosPage() {
       />
 
       {/* Districts section */}
-      <BarrioGrid
+      <ContentGridWithTag
         items={HOODS}
         sectionTitle="Barrios"
         srTitle="Listado de barrios"
