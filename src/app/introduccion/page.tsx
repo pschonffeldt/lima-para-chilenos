@@ -7,10 +7,10 @@ import InfoBox from "../components/info-box";
 import { CtaBanner } from "../components/cta-component";
 import { TwoWaySection } from "../components/2way-column-section-component";
 
-// Copy content
-const SECTIONS: ThreeWaySectionItem[] = [
+// Sections content
+const ESSENTIALS: ThreeWaySectionItem[] = [
   {
-    href: "/introduccion",
+    href: "/barrios",
     label: "¿Donde te deberías quedar?",
     icon: "👋",
     blurb: [
@@ -31,12 +31,13 @@ const SECTIONS: ThreeWaySectionItem[] = [
     ],
   },
   {
-    href: "/comida",
+    href: "/pagos-conectividad",
     label: "Pagos & conectividad",
     icon: "🍽️",
     blurb: [
       "Trae USD y habilita tu tarjeta bancaria Chilena.",
       "Cambia un poco de Soles en el aeropuerto",
+      "El resto lo puedes cambiar en la calle o en casas de cambio",
       "eSIM o roaming, no compres una SIM fisica en Lima",
     ],
   },
@@ -44,7 +45,7 @@ const SECTIONS: ThreeWaySectionItem[] = [
 
 const COMMUNICATIONS: ThreeWaySectionItem[] = [
   {
-    href: "/introduccion",
+    // href: "/introduccion",
     label: "Operadores recomendados",
     icon: "📡",
     blurb: [
@@ -54,7 +55,7 @@ const COMMUNICATIONS: ThreeWaySectionItem[] = [
     ],
   },
   {
-    href: "/transporte",
+    // href: "/transporte",
     label: "Dónde comprar eSIM",
     icon: "📱",
     blurb: [
@@ -64,7 +65,7 @@ const COMMUNICATIONS: ThreeWaySectionItem[] = [
     ],
   },
   {
-    href: "/comida",
+    // href: "/comida",
     label: "Tips rápidos",
     icon: "⁉️",
     blurb: [
@@ -77,7 +78,7 @@ const COMMUNICATIONS: ThreeWaySectionItem[] = [
 
 const MONEY: ThreeWaySectionItem[] = [
   {
-    href: "/introduccion#cambio",
+    // href: "/introduccion#cambio",
     label: "Cambio seguro",
     icon: "💱",
     blurb: [
@@ -87,7 +88,7 @@ const MONEY: ThreeWaySectionItem[] = [
     ],
   },
   {
-    href: "/introduccion#dinero",
+    // href: "/introduccion#dinero",
     label: "Tarjeta & cajeros",
     icon: "💳",
     blurb: [
@@ -97,8 +98,8 @@ const MONEY: ThreeWaySectionItem[] = [
     ],
   },
   {
-    href: "/introduccion#yape",
-    label: "Yape/Plin (billeteras digitales)",
+    // href: "/introduccion#yape",
+    label: "Billeteras digitales",
     icon: "📲",
     blurb: [
       "NO pierdas tiempo, no podrás usar estas Apps.",
@@ -186,12 +187,15 @@ export default function IntroPage() {
           { href: "/mapa", label: "Ver mapa con destinos", variant: "dark" },
         ]}
       />
+
       {/* Essentials upon arrival section */}
       <ThreeWaySection
         srTitle="Esenciales al llegar"
         sectionTitle="Esenciales al llegar"
-        items={SECTIONS}
+        items={ESSENTIALS}
+        defaultCtaVariant="primary"
       />
+
       {/* Arrival checklist section */}
       <InfoBox
         title="Checklist al aterrizar"
@@ -206,18 +210,21 @@ export default function IntroPage() {
           <>Cuídate: Guarda el teléfono en esquinas muy concurridas.</>,
         ]}
       />
+
       {/* Communications section */}
       <ThreeWaySection
         srTitle="Conectividad"
         sectionTitle="Conectividad"
         items={COMMUNICATIONS}
+        defaultCtaVariant="primary"
       />
 
       {/* Money and payments section */}
       <ThreeWaySection
-        srTitle="Dinero, pagos y cambios"
-        sectionTitle="Dinero, pagos y cambios"
+        srTitle="Dinero: cambio, tarjetas y Yape/Plin"
+        sectionTitle="Dinero: cambio, tarjetas y Yape/Plin"
         items={MONEY}
+        defaultCtaVariant="primary"
       />
 
       {/* Rutas rection */}
@@ -225,6 +232,7 @@ export default function IntroPage() {
         srTitle="Barrios recomendados para alojar"
         sectionTitle="Barrios recomendados para alojar"
         items={ROUTES}
+        defaultCtaVariant="primary"
       />
 
       {/* Horarios & costumbres section  */}

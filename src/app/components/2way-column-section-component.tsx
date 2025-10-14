@@ -2,15 +2,15 @@
 
 import * as React from "react";
 
-export type EssentialItem = {
-  href: string;
+export type TwoWaySectionItem = {
+  href?: string;
   label: string;
   icon?: React.ReactNode;
   blurb?: string[];
 };
 
-type EssentialSectionTwoUpProps = {
-  items: EssentialItem[]; // we'll show only the first two
+type TwoWaySectionItemProps = {
+  items: TwoWaySectionItem[];
   srTitle?: string;
   sectionTitle?: string;
   className?: string;
@@ -21,9 +21,7 @@ export function TwoWaySection({
   srTitle = "Contenido esencial",
   sectionTitle,
   className,
-}: EssentialSectionTwoUpProps) {
-  const twoItems = items.slice(0, 2);
-
+}: TwoWaySectionItemProps) {
   return (
     <section className={["py-2 sm:py-2", className].filter(Boolean).join(" ")}>
       {/* Screen-reader title */}
@@ -35,7 +33,7 @@ export function TwoWaySection({
       ) : null}
 
       <div className="grid items-stretch gap-6 sm:grid-cols-2">
-        {twoItems.map(({ href, label, icon, blurb }) => (
+        {items.map(({ href, label, icon, blurb }) => (
           <article
             key={href}
             className="group h-full rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"

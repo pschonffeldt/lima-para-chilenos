@@ -1,4 +1,3 @@
-// components/cta-banner.tsx
 import Link from "next/link";
 import * as React from "react";
 
@@ -7,7 +6,7 @@ type CtaVariant = "primary" | "dark" | "outline";
 type CtaAction = {
   href: string;
   label: string;
-  variant?: CtaVariant; // <— same variants as HeroSection
+  variant?: CtaVariant;
   prefetch?: boolean;
 };
 
@@ -38,7 +37,7 @@ export function CtaBanner({
   return (
     <div
       className={[
-        "rounded-xl border p-4 sm:flex sm:items-center sm:justify-between",
+        "rounded-xl border border-gray-200 p-4 shadow-sm transition hover:shadow-md sm:flex sm:items-center sm:justify-between",
         className,
       ]
         .filter(Boolean)
