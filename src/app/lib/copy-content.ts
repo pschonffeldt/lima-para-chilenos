@@ -840,3 +840,142 @@ export const DO_DONT_NIGHT: TwoWaySectionItem[] = [
     ],
   },
 ];
+
+// CafePage content
+export const COFFEE_BASICS: ThreeWaySectionItem[] = [
+  {
+    // href: "/cafe#origen",
+    label: "Origen & perfiles",
+    icon: "🌱",
+    blurb: [
+      "Regiones: Cajamarca, Cusco, Amazonas, Junín, Puno.",
+      "Perfiles que se repiten: chocolate, panela, frutal.",
+      "Mucho enfoque en trazabilidad y tueste reciente.",
+    ],
+  },
+  {
+    // href: "/cafe#metodos",
+    label: "Métodos",
+    icon: "☕️",
+    blurb: [
+      "Espresso & leche: espresso, cappuccino, flat white, latte.",
+      "Filtro: V60, Kalita, Aeropress, Chemex (según cafetería).",
+      "Fríos: cold brew, espresso tonic (verano).",
+    ],
+  },
+  {
+    // href: "/cafe#tips",
+    label: "Tips rápidos",
+    icon: "💡",
+    blurb: [
+      "Pide el origen del día y fecha de tueste.",
+      "Si compras granos: tueste < 30 días y molienda a pedido.",
+      "Mejor horario: mañana / media tarde (menos fila).",
+    ],
+  },
+];
+
+export const COFFEE_SPOTS: ContentGridWithTagItem[] = [
+  {
+    name: "Miraflores",
+    // href: "/barrios/miraflores",
+    icon: "🌊",
+    note: "Espresso bar y filtro a pasos del malecón. Buenas opciones para comprar granos de origen. Combínalo con paseo por el malecón y parques.",
+    tags: ["malecón", "filtro", "origen"],
+  },
+  {
+    name: "Barranco",
+    // href: "/barrios/barranco",
+    icon: "🎨",
+    note: "Cafecitos con terrazas, arte y murales cerca. Ideal para espresso tonic o cold brew en verano. Ruta: café → puente icónico → sunset en mirador.",
+    tags: ["terrazas", "espresso tonic", "murales"],
+  },
+  {
+    name: "San Isidro",
+    // href: "/barrios/san-isidro",
+    icon: "🌳",
+    note: "Cafeterías tranquilas cerca de parques (El Olivar). Perfecto para trabajar un rato con buen Wi-Fi. Compra granos y vuelve caminando por áreas verdes.",
+    tags: ["parques", "Wi-Fi", "trabajar"],
+  },
+  {
+    name: "Centro de Lima (de día)",
+    // href: "/barrios/lima-centro",
+    icon: "🏛️",
+    note: "Cafés de especialidad cerca de plazas y museos. Plan: museo + café + fotos, y regreso en app. Evita alejarte de las zonas concurridas.",
+    tags: ["museos", "fotos", "de día"],
+  },
+  {
+    name: "Para trabajar un rato",
+    // href: "/cafe#trabajar",
+    icon: "💻",
+    note: "Busca enchufes, Wi-Fi estable y mesas cómodas. Compra algo cada cierto tiempo (buena práctica). Si vas en grupo, prefiere mesas grandes afuera.",
+    tags: ["Wi-Fi", "enchufes", "mesas"],
+  },
+  {
+    name: "Dulces y panadería",
+    // href: "/cafe#dulces",
+    icon: "🥐",
+    note: "Muchas cafeterías hornean y rotan pastelería propia. Combina con un paseo por el malecón o por Barranco. Dato: pregunta por la torta del día o la “galleta de la casa”.",
+    tags: ["pastelería", "torta del día", "galleta"],
+  },
+];
+
+export const HOW_TO_ORDER: ThreeWaySectionItem[] = [
+  {
+    label: "Espresso & leche",
+    icon: "☕️",
+    blurb: [
+      "Flat white (más café, menos leche).",
+      "Cappuccino (equilibrado).",
+      "Latte (más leche, suave).",
+    ],
+  },
+  {
+    label: "Filtro",
+    icon: "🫖",
+    blurb: [
+      "V60 / Kalita (limpio y aromático).",
+      "Chemex (suave y claro, para compartir).",
+      "Aeropress (cuerpo medio, versátil).",
+    ],
+  },
+  {
+    label: "Leches & frío",
+    icon: "🥛",
+    blurb: [
+      "Entera, descremada, avena, almendra (según local).",
+      "Cold brew o espresso tonic para el calor.",
+      "Azúcar: prueba primero — muchos orígenes son dulces solos.",
+    ],
+  },
+];
+
+export const BUY_BEANS: ThreeWaySectionItem[] = [
+  {
+    label: "Qué pedir",
+    icon: "🧾",
+    blurb: [
+      "Origen, proceso y fecha de tueste (< 30 días).",
+      "Molienda a tu método (espresso, V60, prensa, etc.).",
+      "250 g es buen tamaño para probar 1–2 semanas.",
+    ],
+  },
+  {
+    label: "Perfiles recomendados",
+    icon: "🍫",
+    blurb: [
+      "Chocolate/nuez (todo público, va bien con leche).",
+      "Frutal/cítrico (ideal en filtro).",
+      "Panela/caramelo (dulzor natural, muy peruano).",
+    ],
+  },
+  {
+    label: "Conservación",
+    icon: "📦",
+    blurb: [
+      "Bolsa cerrada, lejos de luz/calor/humedad.",
+      "Evita congelar si lo vas a consumir pronto.",
+      "Mejor moler justo antes de preparar.",
+    ],
+  },
+];
