@@ -53,6 +53,7 @@ const LOCATION_FILTER: FilterConfig<PartiesLima> = {
 export default function CarretesPage() {
   return (
     <main className="space-y-10 py-10">
+      {/* Hero section */}
       <HeroSection
         title="Carretes"
         description={
@@ -63,28 +64,17 @@ export default function CarretesPage() {
             <strong>Barranco</strong> y <strong>San Isidro</strong>.
           </>
         }
-        actions={[
-          {
-            href: "/introduccion",
-            label: "Empezar por la Introducción",
-            variant: "primary",
-          },
-          { href: "/mapa", label: "Ver mapa con destinos", variant: "dark" },
-        ]}
       />
 
+      {/* Donde carretiar en lima section */}
       <ThreeWaySection
-        srTitle="¿Qué deberías considerar antes de ir de carrete en Lima?"
-        sectionTitle="¿Qué deberías considerar antes de ir de carrete en Lima?"
+        srTitle="¿Donde carretiar en Lima?"
+        sectionTitle="¿Donde carretiar en Lima?"
         items={PREPARTY_PRIMER}
         defaultCtaVariant="primary"
       />
 
-      <h2 className="text-3xl font-bold tracking-tight">
-        ¿Donde carretiar en Lima?
-      </h2>
-
-      <div className="h-9" />
+      {/* Carrete filter section */}
       <ChipFilterBoard
         items={PARTIES_LIMA}
         filters={[LOCATION_FILTER, PRICE_FILTER]}
