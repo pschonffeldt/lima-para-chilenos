@@ -2,35 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
-
-export type Etiqueta =
-  | "comida"
-  | "cafe"
-  | "running"
-  | "surf"
-  | "fiesta"
-  | "otros"
-  | "museos"
-  | "caminar"
-  | "malecon";
-
-export type Duración = "1-2h" | "2-4h" | "Medio día" | "Día completo";
+import { Itinerary } from "../lib/itineraries-content";
 
 export type ItineraryLink = { href: string; label: string };
-
-export type Itinerary = {
-  id: string;
-  title: string;
-  duration: Duración;
-  region: string;
-  tags: Etiqueta[];
-  best: string;
-  areas: string[];
-  steps: string[];
-  notes?: string[];
-  price?: string;
-  links?: ItineraryLink[];
-};
 
 type ItineraryCardProps = {
   itinerary: Itinerary;
@@ -72,8 +46,11 @@ export default function ItineraryCard({
       {/* Meta */}
       <div className="mt-1">
         <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span className="text-sm text-gray-700">Duración y horario:</span>
+          <span className="text-sm text-gray-700">Duración:</span>
           <span className={chip()}>{g.duration}</span>
+        </div>
+        <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span className="text-sm text-gray-700">Horario:</span>
           <span className={chip()}>{g.best}</span>
         </div>
 

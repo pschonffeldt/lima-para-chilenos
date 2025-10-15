@@ -1143,12 +1143,12 @@ export const PREPARTY_PRIMER: ThreeWaySectionItem[] = [
 export const OUTING_BASICS: ThreeWaySectionItem[] = [
   {
     // href: "/transporte",
-    label: "Traslados",
-    icon: "🚕",
+    label: "Revisa los itineratios",
+    icon: "👇🏼",
     blurb: [
-      "Usa apps (Cabify/Uber). Evita taxi de calle.",
-      "Define punto de encuentro antes de pagar la cuenta.",
-      "Revisa Transporte.",
+      "Usa los filtros para seleccionar el tipo de actividad que más te interesa.",
+      "Puedes filtrar por duración o actividad (eqiqueta)",
+      "Revisa el itinerario completo apretando el boton de cada tarjeta",
     ],
   },
   {

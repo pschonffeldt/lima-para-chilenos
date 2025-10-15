@@ -359,6 +359,26 @@ export function getActividad(slug: string): Activity | undefined {
 }
 export const toActividadHref = (slug: ActividadSlug) => `/actividades/${slug}`;
 
+export type ItineraryDur =
+  | "1-2h"
+  | "2-4h"
+  | "día" // you use this exact literal below
+  | "Medio día"
+  | "Día completo";
+
+export type ItineraryLink = { href: string; label: string };
+
+export type Itinerary = {
+  title: string;
+  duration: ItineraryDur;
+  best: string;
+  areas: string[];
+  steps: string[];
+  notes?: string[];
+  price?: string;
+  links?: ItineraryLink[];
+};
+
 export const ITINERARIOS: Itinerary[] = [
   {
     title: "1/2 día costero (Miraflores → Barranco)",
@@ -375,7 +395,7 @@ export const ITINERARIOS: Itinerary[] = [
       "Traslados en app si se hace tarde.",
       "Bloqueador + cortaviento según clima.",
     ],
-    price: "Aprox 400 soles",
+    price: "Aprox 200 soles",
     links: [
       { href: "/actividades/paseo-malecon", label: "Paseo por el malecón" },
       { href: "/actividades/barranco-creativo", label: "Barranco creativo" },
@@ -394,6 +414,7 @@ export const ITINERARIOS: Itinerary[] = [
       "Atardecer y bar/cena en Barranco.",
     ],
     notes: ["Revisa horarios (varios museos cierran lunes)."],
+    price: "Aprox 200 soles",
     links: [
       { href: "/actividades/museos-sitios", label: "Museos & sitios" },
       { href: "/actividades/bici-malecon", label: "Bici por el malecón" },
