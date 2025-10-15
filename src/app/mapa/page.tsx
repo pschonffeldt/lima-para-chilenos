@@ -2,6 +2,7 @@ import HeroSection from "../components/hero-component";
 import { ThreeWaySection } from "../components/3way-column-section-component";
 import { INTRO_MAP_BASICS } from "../lib/copy-content";
 import { CtaBanner } from "../components/cta-component";
+import { MapEmbed } from "../components/map-component";
 
 export const metadata = {
   title: "Mapa — Lima para Chilenos",
@@ -36,17 +37,8 @@ export default function MapaPage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Big map */}
-      <div className="overflow-hidden rounded-xl border">
-        <iframe
-          title="Mapa Lima para Chilenos"
-          src={MAP_EMBED}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="h-[70vh] w-full"
-          allowFullScreen
-        />
-      </div>
+      {/* MAP */}
+      <MapEmbed iframeClassName="w-full h-[500px]" />
 
       {/* CTA section */}
       <CtaBanner
