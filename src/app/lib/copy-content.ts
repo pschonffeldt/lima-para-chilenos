@@ -1138,3 +1138,37 @@ export const PREPARTY_PRIMER: ThreeWaySectionItem[] = [
     ],
   },
 ];
+
+// ItinerariosPage content
+export const OUTING_BASICS: ThreeWaySectionItem[] = [
+  {
+    // href: "/transporte",
+    label: "Traslados",
+    icon: "🚕",
+    blurb: [
+      "Usa apps (Cabify/Uber). Evita taxi de calle.",
+      "Define punto de encuentro antes de pagar la cuenta.",
+      "Revisa Transporte.",
+    ],
+  },
+  {
+    // href: "/transporte",
+    label: "Horarios",
+    icon: "🕒",
+    blurb: [
+      "Mañana y atardecer para malecón.",
+      "Museos: revisa horarios (muchos cierran lunes).",
+      "Noches: prefiere zonas iluminadas y concurridas.",
+    ],
+  },
+  {
+    // href: "/transporte",
+    label: "Qué llevar",
+    icon: "🎒",
+    blurb: [
+      "Bloqueador + agua + cortaviento ligero.",
+      "Tarjeta/efectivo chico; documento a mano.",
+      "Celular guardado en esquinas muy concurridas.",
+    ],
+  },
+];

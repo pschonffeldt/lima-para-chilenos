@@ -6,6 +6,9 @@ import {
   FilterConfig,
   ChipFilterBoard,
 } from "../components/filter-board-component";
+import HeroSection from "../components/hero-component";
+import { ThreeWaySection } from "../components/3way-column-section-component";
+import { OUTING_BASICS } from "../lib/copy-content";
 
 // --- Types ---
 type Etiqueta =
@@ -323,64 +326,36 @@ const TAG_FILTER: FilterConfig<Itinerary> = {
 
 export default function ItinerariosPage() {
   return (
-    <section className="space-y-10 py-10">
+    <main className="space-y-10 py-10">
       {/* Title */}
-      <header className="space-y-3">
-        <h1 className="text-3xl font-bold tracking-tight">Itinerarios</h1>
-        <p className="max-w-[70ch] text-muted-foreground">
-          Rutas listas para usar —sin humo— pensadas para moverte entre
-          Miraflores, Barranco y San Isidro. Hay opciones de 1/2 día, día
-          completo y mañanas activas. Combina con{" "}
-          <Link href="/mapa" className="underline underline-offset-4">
-            el mapa
-          </Link>{" "}
-          y revisa{" "}
-          <Link href="/advertencias" className="underline underline-offset-4">
-            advertencias
-          </Link>{" "}
-          antes de salir.
-        </p>
-      </header>
+      {/* Hero section */}
+      <HeroSection
+        title="Itinerarios"
+        description={
+          <>
+            Rutas listas para usar —sin humo— pensadas para moverte entre
+            Miraflores, Barranco y San Isidro. Hay opciones de 1/2 día, día
+            completo y mañanas activas. Combina con el mapa y revisa
+            advertencias antes de salir.
+          </>
+        }
+        actions={[
+          {
+            href: "/introduccion",
+            label: "Empezar por la Introducción",
+            variant: "primary",
+          },
+          { href: "/mapa", label: "Ver mapa con destinos", variant: "dark" },
+        ]}
+      />
 
       {/* Quick advice */}
-      <div className="grid gap-3 sm:grid-cols-3">
-        <div className="rounded-lg border p-4">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Traslados
-          </p>
-          <ul className="space-y-1 text-sm">
-            <li>Usa apps (Cabify/Uber). Evita taxi de calle.</li>
-            <li>Define punto de encuentro antes de pagar la cuenta.</li>
-            <li>
-              Revisa{" "}
-              <Link href="/transporte" className="underline underline-offset-4">
-                Transporte
-              </Link>
-              .
-            </li>
-          </ul>
-        </div>
-        <div className="rounded-lg border p-4">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Horarios
-          </p>
-          <ul className="space-y-1 text-sm">
-            <li>Mañana y atardecer para malecón.</li>
-            <li>Museos: revisa horarios (muchos cierran lunes).</li>
-            <li>Noches: prefiere zonas iluminadas y concurridas.</li>
-          </ul>
-        </div>
-        <div className="rounded-lg border p-4">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Qué llevar
-          </p>
-          <ul className="space-y-1 text-sm">
-            <li>Bloqueador + agua + cortaviento ligero.</li>
-            <li>Tarjeta/efectivo chico; documento a mano.</li>
-            <li>Celular guardado en esquinas muy concurridas.</li>
-          </ul>
-        </div>
-      </div>
+      <ThreeWaySection
+        srTitle="Prepara tus actividades"
+        sectionTitle="Prepara tus actividades"
+        items={OUTING_BASICS}
+        defaultCtaVariant="primary"
+      />
 
       {/* Filter component */}
       <ChipFilterBoard
@@ -509,6 +484,6 @@ export default function ItinerariosPage() {
           </div>
         )}
       </ChipFilterBoard>
-    </section>
+    </main>
   );
 }
