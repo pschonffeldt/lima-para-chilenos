@@ -11,16 +11,16 @@ function cx(...parts: Array<string | false | undefined>) {
 const NAV = [
   { href: "/", label: "Inicio", icon: "🏆" },
   { href: "/introduccion", label: "Introducción", icon: "👋" },
+  { href: "/advertencias", label: "Advertencias", icon: "⚠️" },
   { href: "/transporte", label: "Transporte", icon: "🛵" },
+  { href: "/barrios", label: "Barrios", icon: "🏙️" },
+  { href: "/mapa", label: "Mapa", icon: "🧭" },
   { href: "/comida", label: "Comida", icon: "🍽️" },
   { href: "/copete", label: "Copete", icon: "🍸" },
   { href: "/cafe", label: "Café", icon: "☕️" },
   { href: "/actividades", label: "Actividades", icon: "🗺️" },
   { href: "/carretes", label: "Carretes", icon: "🕺🏼" },
-  { href: "/advertencias", label: "Advertencias", icon: "⚠️" },
-  { href: "/barrios", label: "Barrios", icon: "🏙️" },
   { href: "/itinerarios", label: "Itinerarios", icon: "📘" },
-  { href: "/mapa", label: "Mapa", icon: "🧭" },
   { href: "/contacto", label: "Contacto", icon: "📞" },
 ];
 
