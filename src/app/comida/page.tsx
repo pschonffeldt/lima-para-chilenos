@@ -1,4 +1,3 @@
-import Link from "next/link";
 import HeroSection from "../components/hero-component";
 import { ThreeWaySection } from "../components/3way-column-section-component";
 import {
@@ -11,6 +10,8 @@ import { ContentGridWithTag } from "../components/content-grid-tag-component";
 import InfoBox from "../components/info-box";
 import { TwoWaySection } from "../components/2way-column-section-component";
 import { CtaBanner } from "../components/cta-component";
+import RowContentSection from "../components/row-content-component";
+import { EAT_HOODS } from "../lib/food-content";
 
 export const metadata = {
   title: "Comida — Lima para Chilenos",
@@ -32,7 +33,6 @@ export default function FoodPage() {
           </>
         }
       />
-
       {/* Quick facts */}
       <ThreeWaySection
         srTitle="¿Cómo comer en Lima?"
@@ -40,7 +40,6 @@ export default function FoodPage() {
         items={SCHEDULE_TIPPING_HYGIENE}
         defaultCtaVariant="primary"
       />
-
       {/* Qué probar section */}
       <ContentGridWithTag
         items={WHAT_TO_EAT}
@@ -49,7 +48,6 @@ export default function FoodPage() {
         cols={{ sm: 3, lg: 3 }}
         className="mt-6"
       />
-
       {/* Dónde comer (por estilo) section */}
       <ThreeWaySection
         srTitle="Dónde comer (por estilo de salida)"
@@ -57,7 +55,6 @@ export default function FoodPage() {
         items={DINING_STYLES}
         defaultCtaVariant="primary"
       />
-
       {/* Menú del día (cómo funciona) section */}
       <InfoBox
         title="Menú del día: cómo funciona"
@@ -77,61 +74,11 @@ export default function FoodPage() {
         items={DINING_ETIQUETTE}
       />
 
-      {/* Zonas para comer (barrios) */}
-      <div className="space-y-3" id="barrios-para-comer">
-        <h2 className="text-lg font-semibold">Barrios con buena oferta</h2>
-        <ul className="space-y-2">
-          {[
-            {
-              name: "Miraflores",
-              note: "Gran mezcla: cevicherías, nikkei, bistrós y cafés.",
-              href: "/barrios/miraflores",
-            },
-            {
-              name: "Barranco",
-              note: "Bares y restaurantes con onda; ideal noche y finde.",
-              href: "/barrios/barranco",
-            },
-            {
-              name: "San Isidro",
-              note: "Restaurantes de nivel y propuestas de autor.",
-              href: "/barrios/san-isidro",
-            },
-          ].map((barrio) => (
-            <li
-              key={barrio.name}
-              className="flex items-center justify-between rounded-lg border px-3 py-2"
-            >
-              <div className="min-w-0">
-                <p className="font-medium">{barrio.name}</p>
-                <p className="truncate text-sm text-muted-foreground">
-                  {barrio.note}
-                </p>
-              </div>
-              <Link
-                href={barrio.href}
-                className="text-sm text-primary underline-offset-4 hover:underline"
-              >
-                Ver
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* CTA section */}
-      <CtaBanner
-        title="¿Acompañarlo con algo?"
-        description="Revisa bares y botillerías en la sección Copete o
-            mira qué hacer luego de comer."
-        actions={[
-          {
-            href: "/copete",
-            label: "Ir a Copete",
-            variant: "primary",
-          },
-          { href: "/actividades", label: "Ver Actividades", variant: "dark" },
-        ]}
+      {/* Zonas para comer (barrios) section */}
+      <RowContentSection
+        id="barrios-para-comer"
+        sectionTitle="Barrios con buena oferta"
+        items={EAT_HOODS}
       />
     </main>
   );
