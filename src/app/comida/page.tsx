@@ -9,7 +9,6 @@ import {
 import { ContentGridWithTag } from "../components/content-grid-tag-component";
 import InfoBox from "../components/info-box";
 import { TwoWaySection } from "../components/2way-column-section-component";
-import { CtaBanner } from "../components/cta-component";
 import RowContentSection from "../components/row-content-component";
 import { EAT_HOODS } from "../lib/food-content";
 
