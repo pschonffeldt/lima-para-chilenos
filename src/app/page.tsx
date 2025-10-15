@@ -3,6 +3,8 @@ import HeroSection from "./components/hero-component";
 import Button from "./components/button-component";
 import InfoBox from "./components/info-box";
 import TextSection from "./components/content-section-component";
+import { CtaBanner } from "./components/cta-component";
+import { MapEmbed } from "./components/map-component";
 
 // Districts
 export const DISTRICTS = [
@@ -322,24 +324,23 @@ export default function Home() {
             ))}
           </div>
         </div>
+
         {/* MAP */}
-        <div className="py-10 overflow-hidden rounded-xl">
-          <iframe
-            title="Mapa Lima"
-            src="https://www.google.com/maps/d/embed?mid=14jhDKUBm-_vNZ0z0Mw97JKX2C7n0_MQ&ehbc=2E312F"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-[360px] sm:h-[420px] lg:h-[520px]"
-            allowFullScreen
-          />
-        </div>
-        <p className="text-sm text-muted-foreground">
-          Marcadores de barrios, cafés para trabajar, restaurantes y spots para
-          correr.
-        </p>
-        <div className="mt-auto pt-5 flex flex-wrap gap-2">
-          <Button href="/mapa">Ver mapa completo</Button>
-        </div>
+        <MapEmbed iframeClassName="w-full h-[500px]" />
+
+        {/* CTA section */}
+        <CtaBanner
+          title="Revisa nuestro mapa"
+          description="Marcadores de barrios, cafés para trabajar, restaurantes y spots para."
+          actions={[
+            {
+              href: "/mapa",
+              label: "Ver mapa",
+              variant: "primary",
+            },
+            { href: "/itinerarios", label: "Ver itinerarios", variant: "dark" },
+          ]}
+        />
       </section>
     </main>
   );
