@@ -1172,3 +1172,31 @@ export const OUTING_BASICS: ThreeWaySectionItem[] = [
     ],
   },
 ];
+
+// MapPage content
+export const INTRO_MAP_BASICS: ThreeWaySectionItem[] = [
+  {
+    label: "Barrios base",
+    icon: "🏙️",
+    blurb: [
+      "Miraflores, Barranco y San Isidro",
+      "Puntos para caminar, cafés y miradores",
+    ],
+  },
+  {
+    label: "Vida diaria",
+    icon: "☕️",
+    blurb: [
+      "Cafés para trabajar, restaurantes, barras",
+      "ATMs / casas de cambio (cuando aplique)",
+    ],
+  },
+  {
+    label: "Movimiento",
+    icon: "🏃‍♂️",
+    blurb: [
+      "Rutas para correr por el malecón",
+      "Referencias para pedir app con seguridad",
+    ],
+  },
+];
