@@ -3,6 +3,115 @@ import { TwoWaySectionItem } from "../components/2way-column-section-component";
 import type { ThreeWaySectionItem } from "../components/3way-column-section-component";
 import { ContentGridWithTagItem } from "../components/content-grid-tag-component";
 
+// HomePage content
+export const SECTIONS = [
+  {
+    href: "/introduccion",
+    label: "Introducción",
+    icon: "👋",
+    blurb:
+      "Cómo usar la guía y qué esperar de Lima: clima, horarios, propinas, barrios para alojarse, cambio de dinero y normas básicas para moverte tranquilo desde el día 1.",
+  },
+  {
+    href: "/advertencias",
+    label: "Advertencias",
+    icon: "⚠️",
+    blurb:
+      "Estafas frecuentes (taxis, cambio, comisiones), zonas y horarios a evitar, cajeros más seguros, cómo actuar ante imprevistos y teléfonos de emergencia útiles.",
+  },
+  {
+    href: "/transporte",
+    label: "Transporte",
+    icon: "🛵",
+    blurb:
+      "Desde/hacia el aeropuerto, apps (Cabify/Uber/Beat), Metropolitano y combis, scooters/bicis, tarifas de referencia, tiempos reales y consejos de seguridad por zona.",
+  },
+  {
+    href: "/barrios",
+    label: "Barrios",
+    icon: "🏙️",
+    blurb:
+      "Comparativa de Miraflores, Barranco, San Isidro y más: vibra, presupuesto, pros/contras, dónde alojarse y qué hay cerca para comer, salir, trabajar y caminar seguro.",
+  },
+  {
+    href: "/mapa",
+    label: "Mapa",
+    icon: "🧭",
+    blurb:
+      "Mapa interactivo con capas: restaurantes, cafés con Wi-Fi, miradores, cajeros, spots de surf y museos. Filtros por barrio y enlaces directos a Google Maps.",
+  },
+  {
+    href: "/comida",
+    label: "Comida",
+    icon: "🍽️",
+    blurb:
+      "Qué probar (ceviche, chifa, nikkei, anticuchos), rangos de precio, reservas y horarios, menús del día, mercados y picadas para comer bien sin gastar de más.",
+  },
+  {
+    href: "/copete",
+    label: "Copete",
+    icon: "🍸",
+    blurb:
+      "Barras de autor, pisco y chilcanos, cervecerías artesanales, happy hours y compras rápidas (botillerías/supers). Reglas de ingreso y horarios por zona.",
+  },
+  {
+    href: "/cafe",
+    label: "Café",
+    icon: "☕️",
+    blurb:
+      "Cafeterías de especialidad para trabajar o descansar: Wi-Fi, enchufes, mesas, tostadores locales y horarios. Recomendaciones prácticas por barrio.",
+  },
+  {
+    href: "/actividades",
+    label: "Actividades",
+    icon: "🗺️",
+    blurb:
+      "Malecón, surf y bici; museos, galerías y tours a pie; compras y miradores. Incluye duración, dificultad, costos aproximados y enlaces a tickets cuando aplica.",
+  },
+  {
+    href: "/carretes",
+    label: "Carretes",
+    icon: "🕺",
+    blurb:
+      "Clubs y fiestas por estilo musical, cover y políticas de acceso. Consejos de listas/RSVP, dress code, horarios y cómo volver seguro de noche.",
+  },
+  {
+    href: "/itinerarios",
+    label: "Itinerarios",
+    icon: "📘",
+    blurb:
+      "Rutas listas por tiempo (2–4 h, medio día, día completo) y estilo (foodie, arte, mar). Con mapas, tiempos de traslado y enlaces a cada lugar.",
+  },
+  {
+    href: "/contacto",
+    label: "Contacto",
+    icon: "📞",
+    blurb:
+      "Tines alguna suferencia o eres una marca interesada en participar? Ponte en contacto con nosotros",
+  },
+] as const;
+
+export const DISTRICTS = [
+  {
+    id: "miraflores",
+    slug: "/barrios/miraflores",
+    name: "Miraflores",
+    note: "Base clásica para quedarse: malecón con vista al mar, ciclovías y parques, mucha oferta de cafés para trabajar y restaurantes de todo tipo. Seguro de día y bien conectado; puede haber ruido cerca de Kennedy/Larco y fines de semana.",
+  },
+  {
+    id: "barranco",
+    slug: "/barrios/barranco",
+    name: "Barranco",
+    note: "Bohemio y caminable: galerías, murales, bares y música en vivo. Ideal para salir de noche y pasear de día por bajadas al mar. Mantente por las avenidas principales y usa apps de transporte si vuelves tarde.",
+  },
+  {
+    id: "san-isidro",
+    slug: "/barrios/san-isidro",
+    name: "San Isidro",
+    note: "Residencial/empresarial, muy ordenado y seguro. Parques (Bosque El Olivar), restaurantes top y cafés tranquilos. Vida nocturna más baja y precios más altos; excelente para hospedaje tranquilo y trabajo.",
+  },
+] as const;
+
 // IntroPage Content
 export const ESSENTIALS: ThreeWaySectionItem[] = [
   {
