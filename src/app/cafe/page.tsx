@@ -65,33 +65,6 @@ export default function CafePage() {
         defaultCtaVariant="primary"
       />
 
-      {/* MAPA */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">Mapa de cafés</h2>
-          <Link
-            href="/mapa"
-            className="text-sm text-muted-foreground underline-offset-4 hover:underline"
-          >
-            Abrir mapa completo →
-          </Link>
-        </div>
-        <div className="overflow-hidden rounded-xl border">
-          <iframe
-            title="Mapa de cafés en Lima"
-            src="https://www.google.com/maps/d/embed?mid=14jhDKUBm-_vNZ0z0Mw97JKX2C7n0_MQ&ehbc=2E312F"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-[360px] sm:h-[420px] lg:h-[520px]"
-            allowFullScreen
-          />
-        </div>
-        <p className="text-sm text-muted-foreground">
-          Capas con cafeterías de especialidad en Miraflores, Barranco, San
-          Isidro y Centro. Súmale tus favoritos y arma tu propia ruta.
-        </p>
-      </div>
-
       {/* CTA section */}
       <CtaBanner
         title="¿Listo para un café?"
