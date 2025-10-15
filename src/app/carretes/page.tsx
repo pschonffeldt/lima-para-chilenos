@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import * as React from "react";
 import {
   FilterConfig,
@@ -9,31 +8,6 @@ import {
 import HeroSection from "../components/hero-component";
 import { ThreeWaySection } from "../components/3way-column-section-component";
 import { PREPARTY_PRIMER } from "../lib/copy-content";
-
-// Barrios object
-const BARRIOS = [
-  {
-    name: "Barranco — Terrazas & Clubes",
-    icon: "🎶",
-    note: "Zona bohemia con bares de autor, música en vivo y clubes pequeños. Ideal viernes/sábado.",
-    tags: ["terrazas", "club", "reggaeton", "cocteleria"],
-    href: "/carretes/barranco",
-  },
-  {
-    name: "Miraflores — Rooftops & Pubs",
-    icon: "🌆",
-    note: "Rooftops con vista al mar y pubs para pre y after. Fácil combinar con cena.",
-    tags: ["rooftop", "pub", "cerveza-artesanal", "vista-mar"],
-    href: "/carretes/miraflores",
-  },
-  {
-    name: "San Isidro — After-office",
-    icon: "🍸",
-    note: "Barras de coctelería y ambiente adulto. Ideal para jueves/viernes.",
-    tags: ["after-office", "cocteleria", "wine-bar"],
-    href: "/carretes/san-isidro",
-  },
-];
 
 // Parties links types
 type GoogleMapsUrl =
@@ -51,8 +25,6 @@ type SocialMediaUrl =
   | `https://tiktok.com/${string}`;
 
 type WebsiteUrl = `http${"s" | ""}://${string}`; // allows http:// and https://
-
-// Start of Chips
 
 type PartiesLima = {
   id: string;
@@ -220,8 +192,6 @@ const LOCATION_FILTER: FilterConfig<PartiesLima> = {
   isMatch: (item, selected) =>
     selected === "Todos" || item.location.includes(selected as Location),
 };
-
-// End of Chips
 
 export default function CarretesPage() {
   return (
