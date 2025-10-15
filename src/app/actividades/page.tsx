@@ -43,7 +43,7 @@ export default function ActividadesPage() {
       <ContentGridWithTag
         items={MALECON_Y_COSTA}
         sectionTitle="Malecón y costa"
-        srTitle="Listado de barrios"
+        srTitle="Malecón y costa"
         cols={{ sm: 3, lg: 3 }}
         className="mt-6"
       />
@@ -52,7 +52,7 @@ export default function ActividadesPage() {
       <ContentGridWithTag
         items={CULTURA_Y_PASEOS}
         sectionTitle="Cultura y paseos"
-        srTitle="Listado de barrios"
+        srTitle="Cultura y paseos"
         cols={{ sm: 3, lg: 3 }}
         className="mt-6"
       />
@@ -61,7 +61,7 @@ export default function ActividadesPage() {
       <ContentGridWithTag
         items={DEPORTE_Y_NATURALEZA}
         sectionTitle="Deporte y naturaleza"
-        srTitle="Listado de barrios"
+        srTitle="Deporte y naturaleza"
         cols={{ sm: 3, lg: 3 }}
         className="mt-6"
       />

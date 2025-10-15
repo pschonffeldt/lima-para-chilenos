@@ -19,7 +19,7 @@ export function MapEmbed({
 }: MapEmbedProps) {
   return (
     <div
-      className={["py-10 overflow-hidden rounded-xl", containerClassName]
+      className={["py-6 overflow-hidden rounded-xl", containerClassName]
         .filter(Boolean)
         .join(" ")}
     >

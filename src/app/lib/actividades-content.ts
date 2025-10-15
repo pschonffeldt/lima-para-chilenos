@@ -1,11 +1,10 @@
-// src/app/lib/actividades-content.ts
-
 // ---------- Types ----------
 export type Activity = {
   slug: string; // e.g. "paseo-malecon"
   icon: string; // emoji
   title: string; // "Paseo por el malecón"
   summary: string; // short blurb
+  description?: string; // long description
   duration: "1-2h" | "2-4h" | "día";
   bestTime: string[]; // ["mañana", "atardecer"]
   areas: string[]; // ["Miraflores", "Barranco"]
@@ -19,11 +18,6 @@ export type Activity = {
 const MAP_EMBED =
   "https://www.google.com/maps/d/embed?mid=14jhDKUBm-_vNZ0z0Mw97JKX2C7n0_MQ&ehbc=2E312F";
 
-// ---------------------------------
-// Activities (detail data) — LITERAL
-// ---------------------------------
-// Use `satisfies` so values are validated as Activity
-// while **preserving the exact literal keys**.
 export const ACTIVIDADES = {
   // Malecón y costa
   "paseo-malecon": {
@@ -32,6 +26,15 @@ export const ACTIVIDADES = {
     title: "Paseo por el malecón",
     summary:
       "Caminata fácil con miradores y acantilados entre Miraflores y Barranco.",
+    description: `El malecón es la gran terraza de Lima: un paseo peatonal sobre los acantilados con
+      vista abierta al Pacífico. La ruta es casi plana y muy fácil, con parques, miradores y bancas para
+      detenerse. Es el mejor primer contacto con la ciudad porque ayuda a orientarse entre Miraflores y
+      Barranco sin entrar en calles complicadas. Hay cafés y heladerías a pocos minutos de la senda, y
+      varias bajadas hacia la costa si quieres acercarte al mar. Suele haber brisa incluso con cielo
+      nublado (“panza de burro”), así que un cortaviento ligero salva. De tarde el atardecer es precioso,
+      pero baja la temperatura rápido. Si se hace de noche, prefiere zonas iluminadas y vuelve en app
+      (Cabify/Uber). Lleva bloqueador, agua y cámara; los mejores puntos de foto están cerca del Faro,
+      Parque del Amor y los miradores de Barranco.`,
     duration: "1-2h",
     bestTime: ["mañana", "atardecer"],
     areas: ["Miraflores", "Barranco"],
@@ -57,10 +60,7 @@ export const ACTIVIDADES = {
       },
     ],
     map: { embedUrl: MAP_EMBED, note: "Sigue el borde del malecón." },
-    ctas: [
-      { href: "/barrios/miraflores", label: "Ver Miraflores" },
-      { href: "/barrios/barranco", label: "Ver Barranco" },
-    ],
+    ctas: [{ href: "/transporte", label: "Ver Miraflores" }],
   },
 
   // Correr & bicicleta
@@ -70,6 +70,14 @@ export const ACTIVIDADES = {
     title: "Correr o bici por el malecón",
     summary:
       "Loops 5K/10K y ciclovías con vista al mar. Ideal temprano o al final de la tarde.",
+    description: `Entre parques y miradores encontrarás un corredor continuo para trotar o pedalear con
+      muy poco desnivel—perfecto si vienes de viaje y no quieres complicarte con rutas. La ciclovía está
+      señalizada, pero hay tramos compartidos con peatones: reduce la velocidad en cruces y sé amable con
+      el timbre. Temprano hay menos gente y el viento es más suave; al final de la tarde el ambiente es
+      lindo, aunque puede soplar fuerte. Hay puntos para estirar y comprar agua a pocas cuadras del
+      circuito. Si sales de noche, usa luces/casco y evita zonas muy vacías; lo más cómodo es volver en
+      app. Un cortaviento ligero y bloqueador son tus mejores amigos, incluso con nubes. Si no traes
+      bicicleta, en Miraflores hay arriendos por horas cerca del malecón.`,
     duration: "1-2h",
     bestTime: ["mañana", "tarde"],
     areas: ["Miraflores", "Barranco"],
@@ -104,6 +112,14 @@ export const ACTIVIDADES = {
     title: "Playa & surf para principiantes (Costa Verde)",
     summary:
       "Clases con tabla y traje. Ideal en la mañana, agua fría todo el año.",
+    description: `Las playas de la Costa Verde (Makaha, Waikiki, Redondo) son el patio de los
+      principiantes: olas nobles, escuelas serias y clases donde el instructor te acompaña en la orilla
+      hasta que te paras por primera vez. Incluyen tabla y traje corto; el agua es fría todo el año, así
+      que no te confíes con el clima nublado. Suele haber duchas y estacionamiento, pero lo más práctico
+      es llegar y volver en app para no cargar con cosas. Evita llevar objetos de valor a la playa; deja
+      lo importante en el alojamiento. Lleva toalla, sandalias y muda de ropa. Después de la clase, un
+      ceviche cercano es el plan clásico. Las mañanas son más tranquilas y con mejor marea para
+      aprender.`,
     duration: "2-4h",
     bestTime: ["mañana"],
     areas: ["Costa Verde"],
@@ -139,6 +155,13 @@ export const ACTIVIDADES = {
     title: "Centro histórico (de día)",
     summary:
       "Plazas, balcones y museos. Plan cultural breve con regreso en app.",
+    description: `El Centro de Lima condensa balcones de madera, iglesias coloniales y plazas muy
+      fotogénicas. Es ideal para una salida cultural corta combinando una plaza, un museo y un café. Ve de
+      día (mejor luz, más movimiento) y quédate en calles concurridas; procura no alejarte por pasajes
+      vacíos. El sol puede pegar fuerte cuando despeja—bloqueador y agua ayudan mucho. Define un punto
+      claro para pedir la app de regreso antes de terminar el paseo y evita caminar largas cuadras con el
+      celular en la mano. Si te interesan museos, revisa horarios: varios espacios cierran los lunes. Con
+      niños o adultos mayores, planifica descansos en cafés cerca de la Plaza Mayor.`,
     duration: "2-4h",
     bestTime: ["mañana"],
     areas: ["Centro de Lima"],
@@ -173,6 +196,13 @@ export const ACTIVIDADES = {
     title: "Museos & sitios",
     summary:
       "Arte, historia y arqueología en varios distritos. Verifica horarios (muchos cierran lunes).",
+    description: `Lima tiene museos para todos los gustos y repartidos en varios distritos: fotografía
+      contemporánea (MATE), arte moderno (MAC), arqueología de primer nivel (Museo Larco) y colecciones
+      nacionales (MALI). Es un plan perfecto para días nublados o cuando quieres bajar el ritmo. Compra
+      entradas online si existe la opción y revisa horarios con antelación—muchos lugares cierran los
+      lunes. Moverse entre museos en app es lo más sencillo; no necesitas cruzar toda la ciudad en
+      transporte público. Cerca de casi todos hay cafés para descansar y baños limpios. Si vas con poco
+      tiempo, el Larco + café en su patio es una combinación redonda.`,
     duration: "2-4h",
     bestTime: ["mañana", "tarde"],
     areas: ["Barranco", "Miraflores", "Pueblo Libre", "Centro de Lima"],
@@ -206,6 +236,13 @@ export const ACTIVIDADES = {
     title: "Barranco creativo",
     summary:
       "Murales, puente icónico y terrazas. Camina de día; de noche vuelve en app.",
+    description: `Barranco es el lado bohemio de Lima: murales, galerías pequeñas y callecitas que
+      bajan hacia el mar. El recorrido clásico une el Puente de los Suspiros con la Bajada de Baños y los
+      miradores cercanos. De día los colores lucen mejor y hay buenas fotos en cada esquina; por la tarde
+      aparecen terrazas y bares con música suave. Es un sector muy caminable, pero las distancias largos
+      de noche no son buena idea: termina en una avenida principal y pide la app desde ahí. Lleva
+      bloqueador, agua y calzado cómodo; el piso puede tener adoquines y desniveles. Si te gusta el arte,
+      pregunta por exposiciones temporales en MATE y el MAC a pocas cuadras.`,
     duration: "2-4h",
     bestTime: ["tarde", "atardecer"],
     areas: ["Barranco"],
@@ -234,11 +271,18 @@ export const ACTIVIDADES = {
 
   // Deporte y naturaleza
   "parques-areas-verdes": {
-    slug: "parques-areas-verdes",
+    slug: "parques-verdes",
     icon: "🌳",
     title: "Parques & áreas verdes",
     summary:
       "Parques amplios para trotar o picnic. Zonas planas y seguras de día.",
+    description: `Para respirar un poco fuera del tráfico, los parques de San Isidro y Miraflores son
+      perfectos. El Olivar ofrece sombra y senderos entre olivos centenarios; es ideal para trotar suave o
+      hacer picnic. El Parque Kennedy tiene más movimiento, puestos y cafés alrededor. Sobre el malecón
+      encontrarás parques con bancas y vista al mar, muy agradables para leer o pasear con niños. Son
+      espacios seguros y amables **de día**; por la noche baja la luz y conviene volver en app si estás
+      lejos del hotel. Lleva agua, algo ligero para picar y mantén a la vista tus pertenencias. Si viajas
+      con mascotas, varios parques son pet-friendly (lleva bolsitas).`,
     duration: "1-2h",
     bestTime: ["mañana", "tarde"],
     areas: ["San Isidro", "Miraflores"],
@@ -269,6 +313,13 @@ export const ACTIVIDADES = {
     icon: "🐦",
     title: "Observación de aves / humedales",
     summary: "Reserva y camina por humedales; ideal con guía por la mañana.",
+    description: `Los Pantanos de Villa, en Chorrillos, son un área natural protegida donde se mezclan
+      lagunas, totorales y una gran variedad de aves residentes y migratorias. Es una salida distinta al
+      perfil urbano de Lima y se disfruta mucho temprano por la mañana, cuando hay más canto y menos
+      calor. El recorrido es sencillo por senderos marcados; con guía aprenderás a identificar especies y
+      usar binoculares. Lleva gorro, protector solar, repelente, agua y calzado cómodo que puedas ensuciar
+      un poco. Es una zona alejada del circuito turístico: llega y vuelve en app, y evita llevar objetos
+      de alto valor. Si te gusta la fotografía de naturaleza, considera un lente largo.`,
     duration: "2-4h",
     bestTime: ["mañana"],
     areas: ["Chorrillos (Pantanos de Villa)"],
@@ -299,6 +350,13 @@ export const ACTIVIDADES = {
     title: "Salida de media jornada (Barranco + costa)",
     summary:
       "Costa y miradores + cafés en Barranco. Combina con museo o atardecer.",
+    description: `Media jornada bien aprovechada para ver “lo Lima” sin cruzar media ciudad. Parte por
+      el malecón (miradores y brisa), baja a Barranco para murales y el Puente de los Suspiros, súmale un
+      museo cercano (MATE/MAC) o un café, y cierra con atardecer en un mirador. Es un itinerario muy
+      amigable para el primer o segundo día porque combina mar, cultura ligera y descanso. Lleva
+      bloqueador y un abrigo liviano: la temperatura cae después de las 5 pm. Si se hace de noche, pide la
+      app desde una avenida principal; evita caminar tramos largos con el celular a la vista. Excelente
+      para viajeros que quieren “sentir” Lima sin maratones ni tráfico eterno.`,
     duration: "2-4h",
     bestTime: ["tarde", "atardecer"],
     areas: ["Miraflores", "Barranco"],
@@ -324,10 +382,6 @@ export const ACTIVIDADES = {
     ],
   },
 } satisfies Record<string, Activity>;
-
-// -------------------------------------
-// Derived types & exports (type-safe)
-// -------------------------------------
 
 // Union of valid slugs derived from the object above
 export type ActividadSlug = keyof typeof ACTIVIDADES;
@@ -362,7 +416,7 @@ export const toActividadHref = (slug: ActividadSlug) => `/actividades/${slug}`;
 export type ItineraryDur =
   | "1-2h"
   | "2-4h"
-  | "día" // you use this exact literal below
+  | "día"
   | "Medio día"
   | "Día completo";
 

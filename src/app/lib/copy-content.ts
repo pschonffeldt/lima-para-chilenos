@@ -1171,7 +1171,7 @@ export const CULTURA_Y_PASEOS: ContentGridWithTagItem[] = [
 export const DEPORTE_Y_NATURALEZA: ContentGridWithTagItem[] = [
   {
     name: "Parques & áreas verdes",
-    href: "/actividades/parques-verdes",
+    href: "/actividades/parques-areas-verdes",
     icon: "🌳",
     note: "Parques amplios para trotar o picnic. Rutas planas y seguras de día. Siempre guarda tus cosas a la vista.",
     tags: ["parques", "picnic", "trote"],
@@ -1185,7 +1185,7 @@ export const DEPORTE_Y_NATURALEZA: ContentGridWithTagItem[] = [
   },
   {
     name: "Salidas de media jornada",
-    href: "/itinerarios/medio-dia-costero-miraflores-barranco",
+    href: "/actividades/media-jornada-barranco",
     icon: "🧭",
     note: "Costa y miradores + café en Barranco. Parque + museo cercano + sunset en malecón. Combina con Comida o Copete.",
     tags: ["media jornada", "sunset", "malecón"],
