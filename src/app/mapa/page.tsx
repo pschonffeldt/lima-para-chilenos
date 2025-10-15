@@ -10,11 +10,6 @@ export const metadata = {
     "Mapa con barrios recomendados, cafés para trabajar, restaurantes, running por el malecón y puntos útiles.",
 };
 
-const MAP_EMBED =
-  "https://www.google.com/maps/d/embed?mid=14jhDKUBm-_vNZ0z0Mw97JKX2C7n0_MQ&ehbc=2E312F";
-const MAP_LINK =
-  "https://www.google.com/maps/d/viewer?mid=14jhDKUBm-_vNZ0z0Mw97JKX2C7n0_MQ&hl=es&usp=sharing";
-
 export default function MapaPage() {
   return (
     <main className="space-y-10 py-10">
