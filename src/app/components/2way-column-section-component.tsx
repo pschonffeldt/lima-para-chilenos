@@ -3,13 +3,16 @@
 import * as React from "react";
 
 export type TwoWaySectionItem = {
+  /** unique id you can set from content (recommended) */
+  id?: string;
+  /** optional href for future CTAs; not required */
   href?: string;
   label: string;
   icon?: React.ReactNode;
   blurb?: string[];
 };
 
-type TwoWaySectionItemProps = {
+type TwoWaySectionProps = {
   items: TwoWaySectionItem[];
   srTitle?: string;
   sectionTitle?: string;
@@ -21,7 +24,9 @@ export function TwoWaySection({
   srTitle = "Contenido esencial",
   sectionTitle,
   className,
-}: TwoWaySectionItemProps) {
+}: TwoWaySectionProps) {
+  const twoItems = items.slice(0, 2);
+
   return (
     <section className={["py-2 sm:py-2", className].filter(Boolean).join(" ")}>
       {/* Screen-reader title */}
@@ -33,29 +38,32 @@ export function TwoWaySection({
       ) : null}
 
       <div className="grid items-stretch gap-6 sm:grid-cols-2">
-        {items.map(({ href, label, icon, blurb }) => (
-          <article
-            key={href}
-            className="group h-full rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
-          >
-            <div className="flex h-full flex-col p-6">
-              <div className="flex items-center justify-between">
-                <h3 className="flex items-center gap-2 text-xl font-semibold text-gray-900">
-                  {icon && <span aria-hidden>{icon}</span>}
-                  {label}
-                </h3>
-              </div>
+        {twoItems.map(({ id, href, label, icon, blurb }, idx) => {
+          const key = id ?? href ?? label ?? `item-${idx}`;
+          return (
+            <article
+              key={key}
+              className="group h-full rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+            >
+              <div className="flex h-full flex-col p-6">
+                <div className="flex items-center justify-between">
+                  <h3 className="flex items-center gap-2 text-xl font-semibold text-gray-900">
+                    {icon && <span aria-hidden>{icon}</span>}
+                    {label}
+                  </h3>
+                </div>
 
-              {blurb?.length ? (
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-600">
-                  {blurb.map((line, i) => (
-                    <li key={i}>{line}</li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-          </article>
-        ))}
+                {blurb?.length ? (
+                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-600">
+                    {blurb.map((line, i) => (
+                      <li key={i}>{line}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

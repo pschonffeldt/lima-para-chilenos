@@ -97,19 +97,19 @@ export default function FoodPage() {
               note: "Restaurantes de nivel y propuestas de autor.",
               href: "/barrios/san-isidro",
             },
-          ].map((b) => (
+          ].map((barrio) => (
             <li
-              key={b.name}
+              key={barrio.name}
               className="flex items-center justify-between rounded-lg border px-3 py-2"
             >
               <div className="min-w-0">
-                <p className="font-medium">{b.name}</p>
+                <p className="font-medium">{barrio.name}</p>
                 <p className="truncate text-sm text-muted-foreground">
-                  {b.note}
+                  {barrio.note}
                 </p>
               </div>
               <Link
-                href={b.href}
+                href={barrio.href}
                 className="text-sm text-primary underline-offset-4 hover:underline"
               >
                 Ver
