@@ -11,8 +11,6 @@ import {
   WHERE_TO_STAY,
 } from "../lib/copy-content";
 
-// Sections content
-
 // Metadata
 export const metadata = {
   title: "Transporte — Lima para Chilenos",
