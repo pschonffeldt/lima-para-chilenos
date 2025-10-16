@@ -1,12 +1,55 @@
 "use client";
 
 import * as React from "react";
-import { Itinerary } from "../lib/itineraries-content";
+import { ActivityTag, Duration, Itinerary } from "../lib/itineraries-content";
 import Button from "./button-component";
+import { FilterConfig } from "./filter-board-component";
 
 export type ItineraryLink = { href: string; label: string };
 
-type ItineraryCardProps = {
+export const DURATION_CHIPS: Array<{
+  label: "Todos" | Duration;
+  value: "Todos" | Duration;
+}> = [
+  { label: "Todos", value: "Todos" },
+  { label: "1-2h", value: "1-2h" },
+  { label: "2-4h", value: "2-4h" },
+  { label: "Medio día", value: "Medio día" },
+  { label: "Día completo", value: "Día completo" },
+];
+
+export const TAG_CHIPS: Array<{ label: string; value: ActivityTag | "Todos" }> =
+  [
+    { label: "Todos", value: "Todos" },
+    { label: "Comida", value: "comida" },
+    { label: "Café", value: "cafe" },
+    { label: "Running", value: "running" },
+    { label: "Surf", value: "surf" },
+    { label: "Otros", value: "otros" },
+    { label: "Museos", value: "museos" },
+    { label: "Caminata", value: "caminata" },
+    { label: "Malecón", value: "malecon" },
+    { label: "Parques", value: "parques" },
+  ];
+
+// --- Filter configs for ChipFilterBoard (string-only) ---
+export const DURATION_FILTER: FilterConfig<Itinerary> = {
+  id: "duration",
+  label: "Duración",
+  options: DURATION_CHIPS,
+  defaultValue: "Todos",
+  isMatch: (g, v) => v === "Todos" || g.duration === v,
+};
+
+export const TAG_FILTER: FilterConfig<Itinerary> = {
+  id: "tag",
+  label: "Etiqueta",
+  options: TAG_CHIPS,
+  defaultValue: "Todos",
+  isMatch: (g, v) => v === "Todos" || g.tags.includes(v as ActivityTag),
+};
+
+export type ItineraryCardProps = {
   itinerary: Itinerary;
   className?: string;
   /** Hide the Tips box (default: false = show it if notes exist) */
