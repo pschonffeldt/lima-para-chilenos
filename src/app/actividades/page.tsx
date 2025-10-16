@@ -20,6 +20,7 @@ export const metadata = {
 export default function ActividadesPage() {
   return (
     <main className="space-y-10 py-10">
+      {/* Hero section */}
       <HeroSection
         title="Actividades"
         description={
@@ -31,7 +32,7 @@ export default function ActividadesPage() {
         }
       />
 
-      {/* Quick facts actividades section */}
+      {/* Get organized section */}
       <ThreeWaySection
         srTitle="Cómo organizarte en Lima"
         sectionTitle="Cómo organizarte en Lima"
@@ -39,7 +40,7 @@ export default function ActividadesPage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Malecón y costa section */}
+      {/* Malecón section */}
       <ContentGridWithTag
         items={MALECON_Y_COSTA}
         sectionTitle="Malecón y costa"
@@ -48,7 +49,7 @@ export default function ActividadesPage() {
         className="mt-6"
       />
 
-      {/* Cultura section */}
+      {/* Cultire section */}
       <ContentGridWithTag
         items={CULTURA_Y_PASEOS}
         sectionTitle="Cultura y paseos"
@@ -57,7 +58,7 @@ export default function ActividadesPage() {
         className="mt-6"
       />
 
-      {/* Deporte & naturaleza */}
+      {/* Sports section */}
       <ContentGridWithTag
         items={DEPORTE_Y_NATURALEZA}
         sectionTitle="Deporte y naturaleza"
@@ -66,24 +67,24 @@ export default function ActividadesPage() {
         className="mt-6"
       />
 
-      {/* Itinerarios section */}
+      {/* Itineraries section */}
       <TwoWaySection
         srTitle="Itinerarios fáciles"
         sectionTitle="Itinerarios fáciles"
         items={MINI_ITINERARIES}
       />
 
-      {/* CTA section */}
+      {/* CTA */}
       <CtaBanner
-        title="¿Te mueves ahora?"
-        description="Abre el mapa y combina con Transporte para llegar fácil."
+        title="Encuentra tu ruta"
+        description="Compara barrios y abre el mapa con puntos clave."
         actions={[
           {
             href: "/barrios",
             label: "Ver Barrios",
             variant: "primary",
           },
-          { href: "/advertencias", label: "Advertencias", variant: "dark" },
+          { href: "/mapa", label: "Ver Mapa", variant: "dark" },
         ]}
       />
     </main>

@@ -1144,8 +1144,8 @@ export const QUICK_BASICS: ThreeWaySectionItem[] = [
     icon: "🚕",
     blurb: [
       "Apps (Cabify/Uber) para moverte fácil.",
-      "Metropolitano sirve si tu ruta coincide.",
       "Evita taxi de calle. No es seguro.",
+      "Lima es muy caminable",
     ],
   },
 ];
@@ -1156,21 +1156,21 @@ export const MALECON_Y_COSTA: ContentGridWithTagItem[] = [
     href: "/actividades/paseo-malecon",
     icon: "🏞️",
     note: "Tramo Miraflores ↔ Barranco (parques y acantilados). Parque del Amor y faro: vistas clásicas. Atardeceres frente al mar, panorama seguro.",
-    tags: ["malecón", "miradores", "atardecer"],
+    tags: ["Malecón", "Miradores", "Atardecer"],
   },
   {
     name: "Correr & bicicleta",
     href: "/actividades/correr-bici-malecon",
     icon: "🏃‍♂️",
-    note: "Loops 5K/10K por el malecón, mejor en la mañana. Bici: ciclovías en buen tramo; ojo con cruces. Hidratación y bloqueador siempre.",
-    tags: ["running", "bici", "mañana"],
+    note: "Running 5K/10K por parques costeros (malecón), mejor en la mañana. Bici: buenas ciclovías, ojo con cruces. Hidratación y bloqueador siempre.",
+    tags: ["Running", "Bici", "Mañana"],
   },
   {
     name: "Playa & surf",
     href: "/actividades/surf-principiantes",
     icon: "🏄‍♂️",
-    note: "Clases para principiantes disponibles en la costa. Corriente fría: traje corto ayuda. Deja objetos de valor en el alojamiento.",
-    tags: ["surf", "principiantes", "frío"],
+    note: "Clases para principiantes en la costa (tabla + instructor). Deja objetos de valor en el alojamiento.",
+    tags: ["Surf", "Principiantes", "Frío"],
   },
 ];
 
@@ -1179,21 +1179,21 @@ export const CULTURA_Y_PASEOS: ContentGridWithTagItem[] = [
     name: "Centro histórico",
     href: "/actividades/centro-historico-dia",
     icon: "🏛️",
-    note: "Plaza Mayor, balcones y arquitectura clásica. Ve de día y define punto de recojo para volver. Combínalo con un museo y algo para comer.",
+    note: "Plaza Mayor, balcones y arquitectura clásica. Ve de día y acuerda un punto de encuentro para el regreso. Súmale un museo y algo para comer.",
     tags: ["día", "arquitectura", "balcones"],
   },
   {
     name: "Museos & sitios",
     href: "/actividades/museos-sitios",
     icon: "🖼️",
-    note: "Arte, historia y arqueología en varios distritos. Revisa horarios antes (muchos cierran lunes). Compra entrada online si existe.",
+    note: "Arte, historia y arqueología en varios distritos. Confirma horarios antes de ir—varios museos cierran los lunes—y compra la entrada online si existe.",
     tags: ["museos", "horarios", "tickets"],
   },
   {
     name: "Barranco creativo",
     href: "/actividades/barranco-creativo",
     icon: "🎨",
-    note: "Murales, galerías y el Puente de los Suspiros. Camina de día; de noche vuelve en app. Cafecitos y bares para cerrar el paseo.",
+    note: "Murales, galerías y Puente de los Suspiros. Camina de día y cierra con cafecitos o bares.",
     tags: ["murales", "puente", "cafés"],
   },
 ];
