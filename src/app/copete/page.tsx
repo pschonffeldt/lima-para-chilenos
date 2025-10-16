@@ -24,14 +24,13 @@ export default function CopetePage() {
         title="Copete"
         description={
           <>
-            Dónde tomar, qué pedir y cómo moverte de noche sin enredo. Bares
-            para sentarse, compras rápidas y pequeños tips para evitar malos
-            ratos.
+            Dónde tomar, qué pedir y donde ir. Bares para sentarse, compras
+            rápidas y pequeños tips para evitar malos ratos.
           </>
         }
       />
 
-      {/* Quick facts */}
+      {/* Drinks foudnation section */}
       <ThreeWaySection
         srTitle="Los fundamentos del copete"
         sectionTitle="Los fundamentos del copete"
@@ -39,7 +38,7 @@ export default function CopetePage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Qué pedir */}
+      {/* What to drink section */}
       <ThreeWaySection
         srTitle="Qué pedir en Perú"
         sectionTitle="Qué pedir en Perú"
@@ -47,7 +46,7 @@ export default function CopetePage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Bares por zona */}
+      {/* Where to drink section */}
       <ThreeWaySection
         srTitle="Bares por zona"
         sectionTitle="Bares por zona"
@@ -55,14 +54,14 @@ export default function CopetePage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Botillerías / compras rápidas */}
+      {/* Where to buy section */}
       <TwoWaySection
         srTitle="Botillerías y compras rápidas"
         sectionTitle="Botillerías y compras rápidas"
         items={QUICK_BUYS}
       />
 
-      {/* Do / Don't noche */}
+      {/* Do / Don't section */}
       <TwoWaySection
         srTitle="Haz / Evita de noche"
         sectionTitle="Haz / Evita de noche"
@@ -71,15 +70,15 @@ export default function CopetePage() {
 
       {/* CTA */}
       <CtaBanner
-        title="Plan redondo"
-        description="Mira Comida para elegir dónde cenar y revisa Transporte para volver seguro."
+        title="Barrios para alojarte"
+        description="Compara Miraflores, Barranco y San Isidro: qué ofrecen y qué te conviene."
         actions={[
           {
-            href: "/actividades",
-            label: "Ver Actividades",
+            href: "/barrios",
+            label: "Ver Barrios",
             variant: "primary",
           },
-          { href: "/advertencias", label: "Advertencias", variant: "dark" },
+          { href: "/actividades", label: "Ver Actividaes", variant: "dark" },
         ]}
       />
     </main>

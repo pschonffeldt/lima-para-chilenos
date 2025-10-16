@@ -848,7 +848,7 @@ export const NIGHTLIFE_BASICS: ThreeWaySectionItem[] = [
     blurb: [
       "Edad legal de consumo: 18 años.",
       "Lleva documento de identidad por si lo piden.",
-      "Evita beber en vía pública: suele estar prohibido.",
+      "Evita beber en vía pública: esta prohibido.",
     ],
   },
   {
@@ -866,7 +866,7 @@ export const NIGHTLIFE_BASICS: ThreeWaySectionItem[] = [
     label: "Seguridad nocturna",
     icon: "🌙",
     blurb: [
-      "Vuelta a casa: apps (Cabify/Uber).",
+      "Para la vuelta, mejor por app (Uber/Cabify).",
       "Cuida el celu al salir a la calle del bar.",
       "Si decides caminar, no lo hagas solo/a.",
     ],
@@ -881,7 +881,7 @@ export const WHAT_TO_ORDER_PERU: ThreeWaySectionItem[] = [
     blurb: [
       "Clásico limeño: pisco, limón, jarabe, clara y amargo.",
       "Potente; ideal para abrir.",
-      "Después del segundo ya estás entrando a la zona borracha.",
+      "Con dos pisco sour basta, el tercero te pasa la cuenta.",
     ],
   },
   {
@@ -920,8 +920,8 @@ export const BARS_BY_ZONE: ThreeWaySectionItem[] = [
     label: "Miraflores",
     icon: "🌊",
     blurb: [
-      "Bares variados cerca del Parque Kennedy y malecón.",
-      "Fácil volver en app.",
+      "Bares variados cerca del Parque Kennedy.",
+      "Puedes visitar mas de un bar por noche.",
     ],
   },
   {
@@ -942,7 +942,7 @@ export const QUICK_BUYS: TwoWaySectionItem[] = [
     blurb: [
       "Minimarkets y tiendas de barrio en zonas céntricas.",
       "Supermercados: más variedad y mejores precios.",
-      "Apps de delivery nocturno en distritos principales.",
+      "Apps de delivery funcionan muy bien en Lima.",
     ],
   },
   {
