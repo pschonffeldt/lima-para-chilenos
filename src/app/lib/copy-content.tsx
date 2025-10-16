@@ -1312,10 +1312,10 @@ export const OUTING_BASICS: ThreeWaySectionItem[] = [
   },
 ];
 
-// MapPage content
+// MapaPage content
 export const INTRO_MAP_BASICS: ThreeWaySectionItem[] = [
   {
-    label: "Barrios base",
+    label: "Zonas para alojarte",
     icon: "🏙️",
     blurb: [
       "Miraflores, Barranco y San Isidro",

@@ -24,7 +24,7 @@ export default function MapaPage() {
         }
       />
 
-      {/* Introducción explicativa section */}
+      {/* Expectations section */}
       <ThreeWaySection
         srTitle="Qué encontrarás"
         sectionTitle="Qué encontrarás"
@@ -32,13 +32,14 @@ export default function MapaPage() {
         defaultCtaVariant="primary"
       />
 
-      {/* MAP */}
+      {/* MAP section */}
       <MapEmbed iframeClassName="w-full h-[500px]" />
 
       {/* CTA section */}
       <CtaBanner
-        title="Aprovecha el mapa al máximo"
-        description="Tip: abre el mapa en una pestaña aparte para alternar capas, guardar marcadores y usar navegación paso a paso. Si el mapa no carga, asegúrate de no bloquear contenido embebido."
+        title="Cómo usar el mapa
+"
+        description="Haz zoom y muévete con gestos o el mouse. Para verlo grande, ábrelo en una pestaña nueva."
         actions={[]}
       />
     </main>
