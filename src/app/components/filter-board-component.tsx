@@ -98,6 +98,7 @@ export function ChipFilterBoard<T>({
 
       {/* Caller renders the list */}
       {children(filteredItems)}
+      <div className="min-h-[350px]"></div>
     </section>
   );
 }

@@ -1245,6 +1245,7 @@ export const MINI_ITINERARIES: TwoWaySectionItem[] = [
   },
 ];
 
+// CarretesPage content
 export const PREPARTY_PRIMER: ThreeWaySectionItem[] = [
   {
     // href: "/carretes#zonas",
@@ -1262,7 +1263,7 @@ export const PREPARTY_PRIMER: ThreeWaySectionItem[] = [
     icon: "🚕",
     blurb: [
       "Usa apps (Cabify/Uber) ida y vuelta.",
-      "Define punto de recojo antes de cerrar la cuenta.",
+      "Define un punto de encuentro antes de pedir la cuenta.",
       "Evita caminar tramos largos de noche.",
     ],
   },

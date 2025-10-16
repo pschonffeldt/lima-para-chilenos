@@ -16,11 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      {/* body doesn't scroll; main content does */}
       <body className="h-[100svh] overflow-hidden bg-background text-foreground antialiased flex">
         <SidebarComponent />
-
-        {/* Right side: column → content (scroll) + footer (bottom) */}
         <div className="flex min-h-[100svh] flex-1 flex-col">
           <ContainerComponent>
             {children}

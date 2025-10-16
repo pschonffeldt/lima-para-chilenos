@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { Itinerary } from "../lib/itineraries-content";
+import Button from "./button-component";
 
 export type ItineraryLink = { href: string; label: string };
 
@@ -109,27 +109,19 @@ export default function ItineraryCard({
       {/* Links */}
       {!hideLinks && g.links && g.links.length > 0 ? (
         <div className="mt-auto flex flex-wrap gap-2 pt-5">
-          {g.links.map((l) =>
-            isExternal(l.href) ? (
-              <a
-                key={l.href + l.label}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
-              >
-                {l.label}
-              </a>
-            ) : (
-              <Link
-                key={l.href + l.label}
-                href={l.href}
-                className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
-              >
-                {l.label}
-              </Link>
-            )
-          )}
+          {g.links.map((l) => (
+            <Button
+              key={l.href + l.label}
+              href={l.href}
+              // open external links in a new tab safely
+              {...(isExternal(l.href)
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              variant="outline" // or "primary" / "dark" / whatever you prefer
+            >
+              {l.label}
+            </Button>
+          ))}
         </div>
       ) : null}
     </article>

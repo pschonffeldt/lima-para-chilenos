@@ -1,9 +1,10 @@
 import * as React from "react";
 import { PartiesLima } from "../lib/parties-content";
+import Button from "./button-component";
 
 export function PartyCard({ party }: { party: PartiesLima }) {
   return (
-    <article className="group relative flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-md transition">
+    <article className="group relative flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md">
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-lg font-semibold text-gray-900">{party.title}</h3>
       </div>
@@ -41,36 +42,38 @@ export function PartyCard({ party }: { party: PartiesLima }) {
         )}
       </div>
 
-      <div className="mt-3 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-2">
         {party.googleMapsUrl && (
-          <a
+          <Button
             href={party.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
+            variant="outline"
           >
             Ver ubicación
-          </a>
+          </Button>
         )}
+
         {party.socialMedia && (
-          <a
+          <Button
             href={party.socialMedia}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
+            variant="outline"
           >
             Ver perfil en RRSS
-          </a>
+          </Button>
         )}
+
         {party.website && (
-          <a
+          <Button
             href={party.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border bg-white px-3 py-1.5 text-sm shadow-sm hover:bg-white/80"
+            variant="outline"
           >
             Visitar website
-          </a>
+          </Button>
         )}
       </div>
     </article>

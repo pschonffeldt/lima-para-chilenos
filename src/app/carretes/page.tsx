@@ -66,7 +66,7 @@ export default function CarretesPage() {
         }
       />
 
-      {/* Donde carretiar en lima section */}
+      {/* Where to party section */}
       <ThreeWaySection
         srTitle="¿Donde carretiar en Lima?"
         sectionTitle="¿Donde carretiar en Lima?"
@@ -74,7 +74,7 @@ export default function CarretesPage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Carrete filter section */}
+      {/* Party filter section */}
       <ChipFilterBoard
         items={PARTIES_LIMA}
         filters={[LOCATION_FILTER, PRICE_FILTER]}
