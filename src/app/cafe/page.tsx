@@ -33,13 +33,13 @@ export default function CafePage() {
 
       {/* Coffee quick facts section */}
       <ThreeWaySection
-        srTitle="¿Por qué moverte poco?"
-        sectionTitle="¿Por qué moverte poco?"
+        srTitle="Qué esperar del café en Lima"
+        sectionTitle="Qué esperar del café en Lima"
         items={COFFEE_BASICS}
         defaultCtaVariant="primary"
       />
 
-      {/* DÓNDE IR Section */}
+      {/* Where to drink coffee section */}
       <ContentGridWithTag
         items={COFFEE_SPOTS}
         sectionTitle="Dónde tomar café"
@@ -48,7 +48,7 @@ export default function CafePage() {
         className="mt-6"
       />
 
-      {/* CÓMO PEDIR Section */}
+      {/* What to get section */}
       <ThreeWaySection
         srTitle="Cómo pedir (rápido y sin drama)"
         sectionTitle="Cómo pedir (rápido y sin drama)"
@@ -56,7 +56,7 @@ export default function CafePage() {
         defaultCtaVariant="primary"
       />
 
-      {/* COMPRAR GRANOS Section */}
+      {/* Buying beans section */}
       <ThreeWaySection
         srTitle="Comprar granos para llevar"
         sectionTitle="Comprar granos para llevar"
@@ -64,10 +64,10 @@ export default function CafePage() {
         defaultCtaVariant="primary"
       />
 
-      {/* CTA section */}
+      {/* CTA */}
       <CtaBanner
-        title="¿Listo para un café?"
-        description="Revisa los barrios y encuentra la mejor opción para ti"
+        title="Barrios con buena escena cafetera"
+        description="Parques costeros, terrazas y cafeterías de especialidad cerca."
         actions={[
           { href: "/barrios", label: "Ver barrios", variant: "primary" },
         ]}
