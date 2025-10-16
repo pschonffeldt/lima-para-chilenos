@@ -310,6 +310,7 @@ export const TRANSPORT_QUICK_TIPS: ThreeWaySectionItem[] = [
       "El tráfico en Lima es horrible.",
       "Mañana 7–9 am · Tarde 6–9 pm.",
       "Viernes y lluvias = más tráfico.",
+      "Días con partidos de futbol.",
     ],
   },
   {
@@ -317,16 +318,16 @@ export const TRANSPORT_QUICK_TIPS: ThreeWaySectionItem[] = [
     label: "Seguridad",
     icon: "🛡️",
     blurb: [
-      "Taxi solo por app; evita la calle.",
-      "Esquina concurrida: guarda el celu.",
+      "Transporte: pide por app; no pares taxis en la calle.",
       "Comparte tu viaje y activa “follow my ride”.",
+      "Uber en Lima: usa el código de verificación (PIN).",
     ],
   },
 ];
 
 export const AIRPORT_TO_CITY: TwoWaySectionItem[] = [
   {
-    href: "/transporte#aeropuerto-opciones",
+    // href: "/transporte#aeropuerto-opciones",
     label: "Opciones",
     icon: "🛫",
     blurb: [
@@ -336,13 +337,15 @@ export const AIRPORT_TO_CITY: TwoWaySectionItem[] = [
     ],
   },
   {
-    href: "/transporte#aeropuerto-tiempo",
+    // href: "/transporte#aeropuerto-tiempo",
     label: "Tiempo y costo (aprox.)",
     icon: "⏱️",
     blurb: [
       "Hacia Miraflores/Barranco: 35–70 min según tráfico.",
-      "Precio app típico: S/ 20 (compartido) – 50 (privado) aprox.",
-      "Evita ofertas “de la calle” dentro/fuera del terminal.",
+      "Apps de transporte: desde S/ 50 (estimado).",
+      "Evita ofertas de taxi en calle/aeropuerto.",
+      "QuickLlama: S/ 20, hacia Miraflores, 24/7.",
+      "Airport Express: desde S/ 15, paradas en Miraflores; salidas aprox. cada hora.",
     ],
   },
 ];
@@ -374,7 +377,6 @@ export const MOVE_WITH_APPS: ThreeWaySectionItem[] = [
     icon: "💸",
     blurb: [
       "Tarifa varía por tráfico/lluvia/demanda.",
-      "Propina no es obligatoria, y nadie se la espera.",
       "No deberían haber peajes en el trayecto.",
     ],
   },
@@ -418,9 +420,9 @@ export const COMMON_ROUTES: TwoWaySectionItem[] = [
     label: "Desde Miraflores",
     icon: "📍",
     blurb: [
-      "→ Barranco: 10–20 min (en auto).",
-      "→ San Isidro (centro): 10–25 min (en auto).",
-      "→ Centro Histórico: 30–50 min (en auto).",
+      "→ Barranco: 10–20 min (app).",
+      "→ San Isidro: 10–25 min (app).",
+      "→ Centro Histórico: 30–50 min (app).",
     ],
   },
   {
@@ -428,9 +430,9 @@ export const COMMON_ROUTES: TwoWaySectionItem[] = [
     label: "Desde Barranco",
     icon: "🧭",
     blurb: [
-      "→ Miraflores (Kennedy): 10–20 min (en auto).",
-      "→ San Isidro: 15–30 min (en auto).",
-      "→ Aeropuerto: 45–80 min (en auto).",
+      "→ Miraflores (Kennedy): 10–20 min (app).",
+      "→ San Isidro: 15–30 min (app).",
+      "→ Aeropuerto: 45–80 min (app).",
     ],
   },
 ];
@@ -450,8 +452,8 @@ export const OTHER_MEANS: ThreeWaySectionItem[] = [
     label: "Bicicleta & malecón",
     icon: "🚲",
     blurb: [
-      "Para pasear/correr, el malecón es ideal de día.",
-      "Como transporte diario, evalúa tráfico y grandes intersecciones.",
+      "Para pasear, el malecón es ideal de día.",
+      "Como transporte diario, evalúa cruces y tráfico; no todas las vías son amigables.",
     ],
   },
   {
@@ -460,6 +462,7 @@ export const OTHER_MEANS: ThreeWaySectionItem[] = [
     icon: "🅿️",
     blurb: [
       "Malls y hoteles suelen tener estacionamiento pagado.",
+      "En Perú les dicen “playas de estacionamiento”.",
       "En calle, fíjate en parquímetros/señalización y evita dejar objetos a la vista.",
     ],
   },

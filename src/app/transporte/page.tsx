@@ -25,24 +25,15 @@ export default function TransportPage() {
         title="Transporte"
         description={
           <>
-            Lo más práctico es usar <strong>aplicaciones de taxi</strong>. Para
-            trayectos definidos, el <strong>Metropolitano</strong> funciona
-            bien. Evita tomar taxis directamente en la calle. Aquí lo esencial
-            para moverte entre Miraflores, Barranco, San Isidro y el aeropuerto.
+            Lo más práctico es usar aplicaciones de transporte (Uber, Cabify).
+            Evita taxis de calle. Aquí tienes tiempos y consejos para moverte
+            entre Miraflores, Barranco, San Isidro y el aeropuerto de forma
+            segura.
           </>
         }
-        // If need buttons uncomment below code
-        // actions={[
-        //   {
-        //     href: "/introduccion",
-        //     label: "Empezar por la Introducción",
-        //     variant: "primary",
-        //   },
-        //   { href: "/mapa", label: "Ver mapa con destinos", variant: "dark" },
-        // ]}
       />
 
-      {/* Transpor quick tips section */}
+      {/* Upon arrival tips section */}
       <ThreeWaySection
         srTitle="Esenciales al llegar"
         sectionTitle="Esenciales al llegar"
@@ -50,14 +41,14 @@ export default function TransportPage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Airport section  */}
+      {/* Airport transport section  */}
       <TwoWaySection
         srTitle="Traslado del aeropuerto a la zona turística"
         sectionTitle="Traslado del aeropuerto a la zona turística"
         items={AIRPORT_TO_CITY}
       />
 
-      {/* Transpor apps section */}
+      {/* Transportation apps section */}
       <ThreeWaySection
         srTitle="Moverse con Apps"
         sectionTitle="Moverse con Apps"
@@ -65,7 +56,7 @@ export default function TransportPage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Metropolitano */}
+      {/* Public transportation section */}
       <ThreeWaySection
         srTitle="Metropolitano (sistema de transporte público)"
         sectionTitle="Metropolitano (sistema de transporte público)"
@@ -73,14 +64,14 @@ export default function TransportPage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Rutas comunes section  */}
+      {/* Common routes section  */}
       <TwoWaySection
         srTitle="Rutas comunes (tiempos aprox.)"
         sectionTitle="Rutas comunes (tiempos aprox.)"
         items={COMMON_ROUTES}
       />
 
-      {/* Otros medios */}
+      {/* Other ways of moving section */}
       <ThreeWaySection
         srTitle="Otros medios"
         sectionTitle="Otros medios"
@@ -90,15 +81,15 @@ export default function TransportPage() {
 
       {/* CTA section */}
       <CtaBanner
-        title="Primero la seguridad"
-        description="Revisa las advertencias rápidas antes de salir a patear barrios."
+        title="Primero decide dónde y qué hacer"
+        description="Elige tu barrio base y arma actividades por tiempo y estilo."
         actions={[
           {
-            href: "/advertencias",
-            label: "Ver Advertencias",
+            href: "/barrios",
+            label: "Ver Barrios",
             variant: "primary",
           },
-          { href: "/mapa", label: "Abrir mapa", variant: "dark" },
+          { href: "/actividades", label: "Abrir Actividades", variant: "dark" },
         ]}
       />
     </main>
