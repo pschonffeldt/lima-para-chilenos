@@ -38,16 +38,16 @@ export default function BarriosPage() {
 
       {/* Why move a little section */}
       <ThreeWaySection
-        srTitle="¿Por qué moverte poco?"
-        sectionTitle="¿Por qué moverte poco?"
+        srTitle="Cómo optimizar traslados"
+        sectionTitle="Cómo optimizar traslados"
         items={WHY_MOVE_LITTLE}
         defaultCtaVariant="primary"
       />
 
       {/* CTA section */}
       <CtaBanner
-        title="Primero la seguridad"
-        description="Consejo: alójate en Miraflores o Barranco y usa apps de transporte para moverte. "
+        title="Muévete seguro"
+        description="Dónde alojar y cómo moverte bien con apps de transporte."
         actions={[
           {
             href: "/advertencias",
