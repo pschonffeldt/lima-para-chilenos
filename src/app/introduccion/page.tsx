@@ -8,7 +8,7 @@ import {
   ESSENTIALS,
   MONEY,
   OTHER_TIPS,
-  ROUTES,
+  WHERE_TO_STAY,
 } from "../lib/copy-content";
 
 // Sections content
@@ -20,7 +20,7 @@ export const metadata = {
     "Cómo moverte en Lima: apps (Uber/Cabify/InDrive), aeropuerto, Metropolitano, horarios punta y tips de seguridad para chilenos.",
 };
 
-export default function IntroPage() {
+export default function IntroductionPage() {
   return (
     <main className="space-y-10 py-10">
       {/* Hero section */}
@@ -33,14 +33,6 @@ export default function IntroPage() {
             partir bien.
           </>
         }
-        actions={[
-          {
-            href: "/introduccion",
-            label: "Empezar por la Introducción",
-            variant: "primary",
-          },
-          { href: "/mapa", label: "Ver mapa con destinos", variant: "dark" },
-        ]}
       />
 
       {/* Essentials upon arrival section */}
@@ -56,10 +48,13 @@ export default function IntroPage() {
         title="Checklist al aterrizar"
         variant="plain"
         items={[
-          <>Conéctate: compra eSIM o activa plan internacional. </>,
-          <>Plata: cambia un poco a soles o usa cajero de banco grande.</>,
+          <>Conéctate: compra eSIM o activa roaming. </>,
           <>
-            Traslado: pide taxi por app; destino Miraflores/Barranco/San Isidro.
+            Efectivo: lleva unos soles; si no, usa cajeros de bancos grandes.
+          </>,
+          <>
+            Traslado aeropuerto → Miraflores/Barranco: 35–55 min fuera de punta;
+            60–90+ min en hora punta.
           </>,
           <>Ubícate: malecón = norte-sur; vía expresa = eje central.</>,
           <>Cuídate: Guarda el teléfono en esquinas muy concurridas.</>,
@@ -75,22 +70,21 @@ export default function IntroPage() {
       />
 
       {/* Money and payments section */}
-      <ThreeWaySection
-        srTitle="Dinero: cambio, tarjetas y Yape/Plin"
-        sectionTitle="Dinero: cambio, tarjetas y Yape/Plin"
+      <TwoWaySection
+        srTitle="Pagos y divisas"
+        sectionTitle="Pagos y divisas"
         items={MONEY}
-        defaultCtaVariant="primary"
       />
 
-      {/* Rutas rection */}
+      {/* Where to stay rection */}
       <ThreeWaySection
         srTitle="Barrios recomendados para alojar"
         sectionTitle="Barrios recomendados para alojar"
-        items={ROUTES}
+        items={WHERE_TO_STAY}
         defaultCtaVariant="primary"
       />
 
-      {/* Horarios & costumbres section  */}
+      {/* Schedules and customs section  */}
       <TwoWaySection
         srTitle="Horarios & costumbres"
         sectionTitle="Horarios & costumbres"

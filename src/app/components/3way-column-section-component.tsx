@@ -20,7 +20,7 @@ export type ThreeWaySectionItem = {
   href?: string; // if present, renders a CTA
   label: string;
   icon?: React.ReactNode;
-  blurb?: string[];
+  blurb?: Array<string | React.ReactNode>; // ← allow links
   ctaLabel?: string; // defaults to "Ver {label.toLowerCase()}"
   ctaVariant?: ButtonVariant; // overrides section default
 };
@@ -30,7 +30,6 @@ type ThreeWaySectionProps = {
   srTitle?: string;
   sectionTitle?: string;
   className?: string;
-  /** default button style for all cards (can be overridden per item) */
   defaultCtaVariant?: ButtonVariant;
 };
 
@@ -78,7 +77,7 @@ export function ThreeWaySection({
                     href={href}
                     className={buttonClass(ctaVariant ?? defaultCtaVariant)}
                   >
-                    {ctaLabel ?? `Ver ${label.toLowerCase()}`}
+                    {ctaLabel ?? `Ver ${label}`}
                   </Link>
                 </div>
               ) : null}

@@ -116,10 +116,10 @@ export const DISTRICTS = [
 export const ESSENTIALS: ThreeWaySectionItem[] = [
   {
     href: "/barrios",
-    label: "¿Donde te deberías quedar?",
+    label: "¿Donde alojar?",
     icon: "👋",
     blurb: [
-      "Miraflores — cómoda, caminable, malecón",
+      "Miraflores — cómoda, caminable, parques frente al mar",
       "Barranco — arte y bares, bohemio.",
       "San Isidro — seguro, oficinas y restaurantes top.",
     ],
@@ -150,7 +150,6 @@ export const ESSENTIALS: ThreeWaySectionItem[] = [
 
 export const COMMUNICATIONS: ThreeWaySectionItem[] = [
   {
-    // href: "/introduccion",
     label: "Operadores recomendados",
     icon: "📡",
     blurb: [
@@ -160,31 +159,59 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
     ],
   },
   {
-    // href: "/transporte",
     label: "Dónde comprar eSIM",
     icon: "📱",
     blurb: [
-      "Mobimatter, marketplace de eSIM",
-      "Holafly, segúramente has visto sus comerciales",
-      "Maya, no es tan famoso, pero igual es bueno",
+      <>
+        <a
+          href="https://www.mobimatter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:no-underline"
+        >
+          Mobimatter
+        </a>{" "}
+        — marketplace de eSIM
+      </>,
+      <>
+        <a
+          href="https://esim.holafly.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:no-underline"
+        >
+          Holafly
+        </a>{" "}
+        — seguramente has visto sus comerciales
+      </>,
+      <>
+        <a
+          href="https://www.maya.net"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:no-underline"
+        >
+          Maya
+        </a>{" "}
+        — no es tan famoso, pero igual es bueno
+      </>,
     ],
   },
   {
-    // href: "/comida",
     label: "Tips rápidos",
     icon: "⁉️",
     blurb: [
       "Activa datos/roaming solo si tu plan lo permite",
-      "Guarda el QR de eSIM y anota tu número local",
-      "Wi-Fi en cafés y malls, usa siempre un VPN",
+      "Al usar eSIM guarda el QR y el código de activación y anota tu número peruano.",
+      "En cafés y malls suele haber Wi-Fi. Usa tu VPN para proteger tus datos.",
     ],
   },
 ];
 
-export const MONEY: ThreeWaySectionItem[] = [
+export const MONEY: TwoWaySectionItem[] = [
   {
     // href: "/introduccion#cambio",
-    label: "Cambio seguro",
+    label: "Cambio de divisa",
     icon: "💱",
     blurb: [
       "Casas de cambio formales (en locales comerciales).",
@@ -202,43 +229,45 @@ export const MONEY: ThreeWaySectionItem[] = [
       "Bajas comisiones para tarjetas Chilenas.",
     ],
   },
-  {
-    // href: "/introduccion#yape",
-    label: "Billeteras digitales",
-    icon: "📲",
-    blurb: [
-      "NO pierdas tiempo, no podrás usar estas Apps.",
-      "Tienes que ser Peruano o tener residencia.",
-      "En Perú, todos los Peruanos Yapean, los turistas pagan con tarjeta.",
-    ],
-  },
 ];
 
-export const ROUTES: ThreeWaySectionItem[] = [
+export const WHERE_TO_STAY: ThreeWaySectionItem[] = [
   {
     href: "/barrios/miraflores",
     label: "Miraflores",
     icon: "🌊",
     blurb: [
-      "Un buen lugar para quedarte en tu primera visita.",
-      "Malecón con parques y cafés cerca.",
+      "Un muy buen lugar para tu primera visita.",
+      "Parques frente al mar, ciclovías y miradores para caminar/pedalear.",
+      "Cafés para trabajar y restaurantes para todos los bolsillos.",
+      "Seguro de día y bien conectado; puede haber ruido cerca de Kennedy/Larco y fines de semana.",
     ],
   },
   {
     href: "/barrios/barranco",
     label: "Barranco",
     icon: "🎨",
-    blurb: ["Arte y bares, caminable.", "Conexión rápida a Miraflores."],
+    blurb: [
+      "Bohemio y caminable: arte callejero, galerías y bares con música.",
+      "Conexión rápida a Miraflores (10–15 min en taxi sin taco).",
+      "Vida nocturna animada; algo de ruido cerca del Puente de los Suspiros/zonas de bares.",
+      "Alojamientos boutique y buena oferta gastronómica emergente.",
+    ],
   },
   {
     href: "/barrios/san-isidro",
     label: "San Isidro",
     icon: "🌳",
-    blurb: ["Seguro y tranquilo.", "Restaurantes top y parques amplios."],
+    blurb: [
+      "Residencial, seguro y tranquilo.",
+      "Parques amplios (Olivar) y restaurantes top; cafés más tranquilos para trabajar.",
+      "Menos vida nocturna y distancias mayores a pie.",
+      "Traslados fáciles a Miraflores (10–20 min en taxi fuera de punta).",
+    ],
   },
 ];
 
-export const OTHER_TIPS: ThreeWaySectionItem[] = [
+export const OTHER_TIPS: TwoWaySectionItem[] = [
   {
     href: "/introduccion#horarios",
     label: "Horarios & costumbres",
@@ -247,7 +276,6 @@ export const OTHER_TIPS: ThreeWaySectionItem[] = [
       "Almuerzo 1–3 pm; cena 8–10 pm.",
       "Restaurantes top piden reserva.",
       "Propina no obligatoria; 10% es bien recibida.",
-      "A las rotondas les dicen óvalos.",
     ],
   },
   {
@@ -256,9 +284,8 @@ export const OTHER_TIPS: ThreeWaySectionItem[] = [
     icon: "🌤️",
     blurb: [
       "Clima templado con cielos nublados en invierno.",
-      "Sol fuerte en verano; bloqueador siempre.",
+      "En verano el sol pega fuerte (dic–mar)",
       "Evita exhibir el celular en esquinas muy concurridas.",
-      "Para correr/caminar: malecón de día es tu mejor opción.",
     ],
   },
 ];
