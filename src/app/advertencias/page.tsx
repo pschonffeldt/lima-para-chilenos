@@ -32,20 +32,23 @@ export default function AdvertenciasPage() {
         }
         actions={[
           {
-            href: "/introduccion",
-            label: "Empezar por la Introducción",
+            href: "/transport",
+            label: "Ir a transporte",
             variant: "primary",
           },
           { href: "/mapa", label: "Ver mapa con destinos", variant: "dark" },
         ]}
       />
 
-      {/* Quick help section */}
+      {/* Before leaving section */}
       <InfoBox
         title="Antes de salir"
         variant="plain"
         items={[
-          <>✅ Taxi por app. Evita tomarlo en la calle.</>,
+          <>
+            ✅ Transporte: usa apps de taxi (Uber / Cabify). Evita tomar taxi en
+            la calle.
+          </>,
           <>
             ✅ Lleva solo lo necesario; guarda pasaporte en el alojamiento (usa
             copia digital).
@@ -54,13 +57,12 @@ export default function AdvertenciasPage() {
             ✅ Celular guardado en esquinas/semáforos y al subir/bajar del auto.
           </>,
           <>
-            ✅ Define un punto de recojo seguro para volver (parque, hotel,
-            mall).
+            ✅ Fija un lugar de encuentro para el regreso (parque, hotel, mall).
           </>,
         ]}
       />
 
-      {/* Estafas rection */}
+      {/* Scams rection */}
       <ThreeWaySection
         srTitle="Estafas comunes (y cómo evitarlas)"
         sectionTitle="Estafas comunes (y cómo evitarlas)"
@@ -68,14 +70,14 @@ export default function AdvertenciasPage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Zonas y horarios section  */}
+      {/* Zones and times section  */}
       <TwoWaySection
         srTitle="Zonas y horarios"
         sectionTitle="Zonas y horarios"
         items={ZONES_AND_HOURS}
       />
 
-      {/* Cajeros y pagos section */}
+      {/* ATMs and payments section */}
       <ThreeWaySection
         srTitle="Cajeros, tarjetas y efectivo"
         sectionTitle="Cajeros, tarjetas y efectivo"
@@ -83,14 +85,14 @@ export default function AdvertenciasPage() {
         defaultCtaVariant="primary"
       />
 
-      {/* Qué hacer si section  */}
+      {/* What to do if section  */}
       <TwoWaySection
         srTitle="Qué hacer si…"
         sectionTitle="Qué hacer si…"
         items={WHAT_TO_DO}
       />
 
-      {/* Números útiles section */}
+      {/* Useful numbers section */}
       <ThreeWaySection
         srTitle="Números de emergencia"
         sectionTitle="Números de emergencia"
@@ -100,12 +102,12 @@ export default function AdvertenciasPage() {
 
       {/* CTA section */}
       <CtaBanner
-        title="Muévete con plan"
-        description="Abre el mapa y revisa Transporte para volver seguro."
+        title="Planifica tu día"
+        description="Elige qué hacer por tiempo y estilo. Revisa actividades, mapas y tiempos de traslado."
         actions={[
           {
-            href: "/introduccion",
-            label: "Ver Introducción",
+            href: "/actividades",
+            label: "Ver Actividades",
             variant: "primary",
           },
           { href: "/barrios", label: "Ver Barrios", variant: "dark" },

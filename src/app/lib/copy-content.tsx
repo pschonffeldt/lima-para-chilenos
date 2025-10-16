@@ -544,16 +544,16 @@ export const HOODS: ContentGridWithTagItem[] = [
   },
 ];
 
-// Advertencias Content
+// AdvertenciasPage Content
 export const COMMON_SCAMS: ThreeWaySectionItem[] = [
   {
     // href: "/advertencias#taxis-informales",
-    label: "Taxis informales",
+    label: "Apps de transporte",
     icon: "🚕",
     blurb: [
-      "Evita “ofertas” de taxi en la calle/aeropuerto.",
-      "Usa Cabify/Uber y verifica la patente & conductor.",
-      "Si no te cuadra, cancela y pide otro.",
+      "Evita ofertas de taxi en calle o aeropuerto.",
+      "Usa apps y confirma patente + conductor.",
+      "No te cuadra? Cancela y pide otro de inmediato.",
     ],
   },
   {
@@ -561,9 +561,9 @@ export const COMMON_SCAMS: ThreeWaySectionItem[] = [
     label: "Cambio de dinero",
     icon: "💵",
     blurb: [
-      "No hay problema en cambiar USD en la calle.",
+      "Si traes cash, conviene traer USD más que pesos chilenos.",
+      "Cambiar USD en casas de cambio es común y seguro (mejor que en la calle).",
       "Cuenta y guarda el dinero sin hacerlo a la vista.",
-      "Evita montos grandes en público.",
     ],
   },
   {
@@ -573,7 +573,7 @@ export const COMMON_SCAMS: ThreeWaySectionItem[] = [
     blurb: [
       "Empujones o “derrame” para distraer.",
       "No dejes el celu sobre la mesa cerca de la calle.",
-      "Usa bolsos que cierren y llévalos al frente.",
+      "Protege tus pertenencias, sin importar el barrio.",
     ],
   },
 ];
@@ -607,7 +607,7 @@ export const CASH_CARDS_CASH: ThreeWaySectionItem[] = [
     label: "Cajeros (ATMs)",
     icon: "🏧",
     blurb: [
-      "Usa ATMs dentro de malls/bancos/hoteles.",
+      "Usa cajeros dentro de malls, bancos o hoteles.",
       "Cubre el teclado y guarda el dinero.",
       "Evita retirar montos grandes; mejor varios chicos.",
     ],
