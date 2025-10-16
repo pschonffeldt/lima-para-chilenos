@@ -24,14 +24,14 @@ export const SECTIONS = [
     label: "Transporte",
     icon: "🛵",
     blurb:
-      "Desde/hacia el aeropuerto, apps (Cabify/Uber/Beat), Metropolitano y combis, scooters/bicis, tarifas de referencia, tiempos reales y consejos de seguridad por zona.",
+      "Desde/hacia el aeropuerto, apps (Cabify/Uber), Metropolitano y combis, scooters/bicis, tarifas de referencia, tiempos reales y consejos de seguridad por zona.",
   },
   {
     href: "/barrios",
     label: "Barrios",
     icon: "🏙️",
     blurb:
-      "Comparativa de Miraflores, Barranco, San Isidro y más: vibra, presupuesto, pros/contras, dónde alojarse y qué hay cerca para comer, salir, trabajar y caminar seguro.",
+      "Compara Miraflores, Barranco, San Isidro y más: ambiente, presupuesto, pros y contras, alojamiento y lugares cercanos para comer, salir y caminar seguro.",
   },
   {
     href: "/mapa",
@@ -52,7 +52,7 @@ export const SECTIONS = [
     label: "Copete",
     icon: "🍸",
     blurb:
-      "Barras de autor, pisco y chilcanos, cervecerías artesanales, happy hours y compras rápidas (botillerías/supers). Reglas de ingreso y horarios por zona.",
+      "Barras de autor, pisco y chilcanos, cervecerías artesanales y happy hours. Revisa reglas de ingreso, reservas y horarios por zona; además, dónde comprar rápido (botillerías/supers).",
   },
   {
     href: "/cafe",
@@ -66,28 +66,28 @@ export const SECTIONS = [
     label: "Actividades",
     icon: "🗺️",
     blurb:
-      "Malecón, surf y bici; museos, galerías y tours a pie; compras y miradores. Incluye duración, dificultad, costos aproximados y enlaces a tickets cuando aplica.",
+      "Malecón, surf y bici, museos y galerías, tours a pie, compras y miradores; todo con duración, dificultad, costos aproximados y enlaces a tickets cuando aplique.",
   },
   {
     href: "/carretes",
     label: "Carretes",
     icon: "🕺",
     blurb:
-      "Clubs y fiestas por estilo musical, cover y políticas de acceso. Consejos de listas/RSVP, dress code, horarios y cómo volver seguro de noche.",
+      "Clubs y fiestas por estilo musical, cover y acceso. Consejos de listas/RSVP, dress code, horarios y cómo volver de noche de forma segura.",
   },
   {
     href: "/itinerarios",
     label: "Itinerarios",
     icon: "📘",
     blurb:
-      "Rutas listas por tiempo (2–4 h, medio día, día completo) y estilo (foodie, arte, mar). Con mapas, tiempos de traslado y enlaces a cada lugar.",
+      "Itinerarios por duración (2–4 h, medio día, día completo) y estilo (foodie, arte, mar). Con mapa, tiempos de traslado y enlaces a cada lugar.",
   },
   {
     href: "/contacto",
     label: "Contacto",
     icon: "📞",
     blurb:
-      "Tines alguna suferencia o eres una marca interesada en participar? Ponte en contacto con nosotros",
+      "Tines alguna suferencia o eres una marca interesada en participar? Ponte en contacto con nosotros.",
   },
 ] as const;
 
@@ -96,7 +96,7 @@ export const DISTRICTS = [
     id: "miraflores",
     slug: "/barrios/miraflores",
     name: "Miraflores",
-    note: "Base clásica para quedarse: malecón con vista al mar, ciclovías y parques, mucha oferta de cafés para trabajar y restaurantes de todo tipo. Seguro de día y bien conectado; puede haber ruido cerca de Kennedy/Larco y fines de semana.",
+    note: "Sector recomendado para alojarse: malecón, ciclovías, parques, cafés para trabajar y muchos restaurantes. Seguro de día y bien conectado; ojo con el ruido cerca de Kennedy/Larco y los fines de semana.",
   },
   {
     id: "barranco",

@@ -9,7 +9,7 @@ import { DISTRICTS, SECTIONS } from "./lib/copy-content";
 
 // Sections
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="space-y-10 py-10">
       {/* Hero section */}
@@ -131,7 +131,7 @@ export default function Home() {
 
       {/* Core topics grid section */}
       <section className="py-2 sm:py-2">
-        <h2 className="sr-only">Contenido esencial</h2>
+        <h2 className="sr-only">Introducción a Lima</h2>
 
         <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Core topics (Introducción, Transporte, etc.) */}
