@@ -26,35 +26,34 @@ export default function FoodPage() {
         title="Comida"
         description={
           <>
-            Lima es capital gastronómica. Aquí tienes una guía rápida para comer
-            bien, evitar sorpresas y entender horarios y costumbres sin dar
-            vueltas.
+            Lima es capital gastronómica. Guía rápida para comer bien sin
+            sorpresas: horarios, costumbres y tips clave.
           </>
         }
       />
-      {/* Quick facts */}
+      {/* How ot eat in Lima section */}
       <ThreeWaySection
         srTitle="¿Cómo comer en Lima?"
         sectionTitle="¿Cómo comer en Lima?"
         items={SCHEDULE_TIPPING_HYGIENE}
         defaultCtaVariant="primary"
       />
-      {/* Qué probar section */}
+      {/* What to eat section */}
       <ContentGridWithTag
         items={WHAT_TO_EAT}
-        sectionTitle="Barrios"
-        srTitle="Listado de barrios"
+        sectionTitle="¿Que comer?"
+        srTitle="¿Que comer?"
         cols={{ sm: 3, lg: 3 }}
         className="mt-6"
       />
-      {/* Dónde comer (por estilo) section */}
+      {/* Where to eat section */}
       <ThreeWaySection
         srTitle="Dónde comer (por estilo de salida)"
         sectionTitle="Dónde comer (por estilo de salida)"
         items={DINING_STYLES}
         defaultCtaVariant="primary"
       />
-      {/* Menú del día (cómo funciona) section */}
+      {/* Daily menu section */}
       <InfoBox
         title="Menú del día: cómo funciona"
         variant="plain"
@@ -66,14 +65,14 @@ export default function FoodPage() {
         ]}
       />
 
-      {/* Consejos para pedir section */}
+      {/* Food tips section */}
       <TwoWaySection
         srTitle="Consejos para pedir"
         sectionTitle="Consejos para pedir"
         items={DINING_ETIQUETTE}
       />
 
-      {/* Zonas para comer (barrios) section */}
+      {/* Food districts section */}
       <RowContentSection
         id="barrios-para-comer"
         sectionTitle="Barrios con buena oferta"
