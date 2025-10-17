@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ContactForm from "../components/contact-form";
 import HeroSection from "../components/hero-component";
 import { ThreeWaySection } from "../components/3way-column-section-component";
