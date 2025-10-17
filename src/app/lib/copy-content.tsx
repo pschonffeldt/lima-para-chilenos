@@ -1365,3 +1365,55 @@ export const CONTACT_TIPS: ThreeWaySectionItem[] = [
     ],
   },
 ];
+
+// AboutPage content
+export const WHAT_IS: ThreeWaySectionItem[] = [
+  {
+    label: "Propósito",
+    icon: "🎯",
+    blurb: [
+      "Hacerte fácil dónde alojar, qué hacer y cómo moverte.",
+      "Menos vueltas, más tiempo útil.",
+      "Datos para Chilenos, hecho por un Chileno 🇨🇱❤️",
+    ],
+  },
+  {
+    label: "Alcance y criterios",
+    icon: "⏱️",
+    blurb: [
+      "Barrios principales: Miraflores, Barranco, San Isidro.",
+      "Preferimos lugares caminables, con mapa claro y horarios fiables.",
+    ],
+  },
+  {
+    label: "Cómo se actualiza",
+    icon: "🔄",
+    blurb: [
+      "Investingaciones en terreno (basicamente, yo voy a probar café, copete, comida y carretes 🤣",
+      "Ajustes según feedback de usuarios y cambios locales.",
+    ],
+  },
+];
+
+export const WHO_BEHIND: TwoWaySectionItem[] = [
+  {
+    // href: "/itinerarios/medio-dia-costero",
+    label: "Quién está detrás",
+    icon: "🤗",
+    blurb: [
+      "Proyecto creado por un Chileno viviendo en Lima",
+      "Experiencia en contenido, desarrollo de software y mapas prácticos para viajeros.",
+      "Alguien que lleva mas de 7 años viviendo fuera de Chile y que entiende lo importante que es planificar un viaje",
+    ],
+  },
+  {
+    // href: "/itinerarios/un-dia-mixto",
+    label: "Cómo aportar",
+    icon: "🫱🏼‍🫲🏽",
+    blurb: [
+      "¿Ves un dato desactualizado o falta un lugar clave?",
+      "Envíanos correcciones y sugerencias (cafés para trabajar, rutas, tips de seguridad).",
+      "Para donaciones, ponte en contacto con nosotros",
+    ],
+  },
+];
