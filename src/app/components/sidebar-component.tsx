@@ -3,56 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import {
+  NAV_A,
+  NAV_B,
+  NAV_C,
+  NAV_D,
+  NAV_E,
+  NAV,
+} from "./nav-menu-parts-component";
 
 function cx(...parts: Array<string | false | undefined>) {
   return parts.filter(Boolean).join(" ");
 }
-
-const NAV = [
-  { href: "/", label: "Inicio", icon: "🏆" },
-  { href: "/introduccion", label: "Introducción", icon: "👋" },
-  { href: "/advertencias", label: "Advertencias", icon: "⚠️" },
-  { href: "/transporte", label: "Transporte", icon: "🛵" },
-  { href: "/barrios", label: "Barrios", icon: "🏙️" },
-  { href: "/mapa", label: "Mapa", icon: "🧭" },
-  { href: "/comida", label: "Comida", icon: "🍽️" },
-  { href: "/copete", label: "Copete", icon: "🍸" },
-  { href: "/cafe", label: "Café", icon: "☕️" },
-  { href: "/actividades", label: "Actividades", icon: "🗺️" },
-  { href: "/carretes", label: "Carretes", icon: "🕺🏼" },
-  { href: "/itinerarios", label: "Itinerarios", icon: "📘" },
-  { href: "/contacto", label: "Contacto", icon: "📞" },
-  { href: "/sobre", label: "Sobre el proyecto", icon: "👨🏻‍💻" },
-];
-
-const NAV_A = [
-  { href: "/", label: "Inicio", icon: "🏆" },
-  { href: "/introduccion", label: "Introducción", icon: "👋" },
-  { href: "/advertencias", label: "Advertencias", icon: "⚠️" },
-];
-
-const NAV_B = [
-  { href: "/transporte", label: "Transporte", icon: "🛵" },
-  { href: "/barrios", label: "Barrios", icon: "🏙️" },
-  { href: "/mapa", label: "Mapa", icon: "🧭" },
-];
-
-const NAV_C = [
-  { href: "/comida", label: "Comida", icon: "🍽️" },
-  { href: "/copete", label: "Copete", icon: "🍸" },
-  { href: "/cafe", label: "Café", icon: "☕️" },
-];
-
-const NAV_D = [
-  { href: "/actividades", label: "Actividades", icon: "🗺️" },
-  { href: "/carretes", label: "Carretes", icon: "🕺🏼" },
-  { href: "/itinerarios", label: "Itinerarios", icon: "📘" },
-];
-
-const NAV_E = [
-  { href: "/contacto", label: "Contacto", icon: "📞" },
-  { href: "/sobre", label: "Sobre el proyecto", icon: "👨🏻‍💻" },
-];
 
 export default function SidebarComponent() {
   const pathname = usePathname();
@@ -87,6 +49,7 @@ export default function SidebarComponent() {
 
   // ---------- Desktop rail (md+) ----------
   const DesktopRail = (
+    // Nav menu
     <aside
       className={cx(
         "relative hidden md:block h-full shrink-0 border-r bg-gray-100",
@@ -94,7 +57,7 @@ export default function SidebarComponent() {
         collapsed ? "w-19" : "w-[220px]"
       )}
     >
-      {/* Collapse toggle */}
+      {/* Nav menu collapse toggle */}
       <button
         type="button"
         onClick={() => setCollapsed((v) => !v)}
@@ -102,7 +65,7 @@ export default function SidebarComponent() {
         aria-expanded={!collapsed}
         className={cx(
           "absolute right-0 top-10 -translate-y-1/2 translate-x-1/2",
-          "z-20 h-8 w-8 rounded-full border bg-white text-black",
+          "z-20 h-8 w-8 rounded-full border border-gray-200 bg-white text-black",
           "flex items-center justify-center align hover:bg-gray-100 transition-colors cursor-pointer"
         )}
         title={collapsed ? "Expandir (⌘/Ctrl + \\)" : "Colapsar (⌘/Ctrl + \\)"}
@@ -110,14 +73,14 @@ export default function SidebarComponent() {
         {collapsed ? "›" : "‹"}
       </button>
 
-      {/* Width */}
+      {/* Nav menu width */}
       <div
         className={cx(
           "flex h-full flex-col",
           collapsed ? "mt-10 p-1 pt-6" : "mt-10 p-1 pt-6"
         )}
       >
-        {/* Nav menu */}
+        {/* Nav menu groups */}
         <nav className="mt-6 grid gap-2 text-sm border-b-1 pb-2 border-gray-300">
           {NAV_A.map((item) => {
             const active =
@@ -146,7 +109,7 @@ export default function SidebarComponent() {
                   {item.icon}
                 </span>
 
-                {/* LABEL: fades while its column collapses */}
+                {/* Labels: fades while its column collapses */}
                 <span
                   className={cx(
                     "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
@@ -188,7 +151,7 @@ export default function SidebarComponent() {
                   {item.icon}
                 </span>
 
-                {/* LABEL: fades while its column collapses */}
+                {/* Labels: fades while its column collapses */}
                 <span
                   className={cx(
                     "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
@@ -230,7 +193,7 @@ export default function SidebarComponent() {
                   {item.icon}
                 </span>
 
-                {/* LABEL: fades while its column collapses */}
+                {/* Labels: fades while its column collapses */}
                 <span
                   className={cx(
                     "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
@@ -272,7 +235,7 @@ export default function SidebarComponent() {
                   {item.icon}
                 </span>
 
-                {/* LABEL: fades while its column collapses */}
+                {/* Labels: fades while its column collapses */}
                 <span
                   className={cx(
                     "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
@@ -314,7 +277,7 @@ export default function SidebarComponent() {
                   {item.icon}
                 </span>
 
-                {/* LABEL: fades while its column collapses */}
+                {/* Labels: fades while its column collapses */}
                 <span
                   className={cx(
                     "min-w-0 pl-3 whitespace-nowrap text-sm overflow-hidden",
@@ -328,7 +291,23 @@ export default function SidebarComponent() {
             );
           })}
         </nav>
+        {/* Copyright */}
         <div className="mt-auto" />
+        <div className="flex flex-col flex-wrap p-4 gap-1 border-t-1 border-gray-300">
+          <small className="text-gray-500">
+            &copy; {new Date().getFullYear()}{" "}
+            <a
+              href="https://pschonffeldt.dev/"
+              className="font-medium text-gray-700 transition-colors hover:text-blue-600"
+            >
+              pschonffeldt
+            </a>
+          </small>
+          <small className="text-gray-500 text-xs	">
+            Todos los derechos reservados.
+          </small>
+        </div>
+        <div className="mb-10" />
       </div>
     </aside>
   );
@@ -344,11 +323,12 @@ export default function SidebarComponent() {
       aria-label="Abrir menú"
       title="Abrir menú"
     >
-      {/* simple hamburger */}
+      {/* Hamburger icon */}
       <span aria-hidden>☰</span>
     </button>
   );
 
+  // Mobile nav menu
   const MobileDrawer = (
     <div
       className={cx(
@@ -357,7 +337,7 @@ export default function SidebarComponent() {
       )}
       aria-hidden={!open}
     >
-      {/* Backdrop */}
+      {/* Mobile nav menu background */}
       <div
         onClick={() => setOpen(false)}
         className={cx(
@@ -365,7 +345,7 @@ export default function SidebarComponent() {
           open ? "opacity-100" : "opacity-0"
         )}
       />
-      {/* Panel */}
+      {/* Mobile nav menu panel */}
       <div
         id="mobile-drawer"
         role="dialog"
@@ -411,6 +391,22 @@ export default function SidebarComponent() {
             );
           })}
         </nav>
+        <div className="mt-auto" />
+        <div className="flex flex-col flex-wrap p-4 gap-1 border-t-1 border-gray-300">
+          <small className="text-gray-500">
+            &copy; {new Date().getFullYear()}{" "}
+            <a
+              href="https://pschonffeldt.dev/"
+              className="font-medium text-gray-700 transition-colors hover:text-blue-600"
+            >
+              pschonffeldt
+            </a>
+          </small>
+          <small className="text-gray-500 text-xs	">
+            Todos los derechos reservados.
+          </small>
+        </div>
+        <div className="mb-10" />
       </div>
     </div>
   );
