@@ -12,7 +12,7 @@ const TOPICS = [
   "Otro",
 ] as const;
 
-export default function ContactForm() {
+export default function ContactPage() {
   const [topic, setTopic] = useState<(typeof TOPICS)[number]>("Sugerencia");
   const [name, setName] = useState("");
   const [email, setEmail] = useState(""); // opcional
@@ -45,8 +45,11 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4 rounded-xl border p-5">
-      <div>
+    <form
+      onSubmit={onSubmit}
+      className="space-y-4 p-6 group h-full rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+    >
+      <div className="">
         <label htmlFor="topic" className="mb-1 block text-sm font-medium">
           Tema
         </label>
@@ -54,7 +57,7 @@ export default function ContactForm() {
           id="topic"
           value={topic}
           onChange={(e) => setTopic(e.target.value as (typeof TOPICS)[number])}
-          className="w-full rounded-lg border px-3 py-2 text-sm"
+          className="w-full rounded-lg border px-2 py-2 border-gray-200 bg-white text-sm"
         >
           {TOPICS.map((t) => (
             <option key={t} value={t}>
@@ -64,7 +67,7 @@ export default function ContactForm() {
         </select>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4  sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1 block text-sm font-medium">
             Nombre (opcional)
@@ -73,7 +76,7 @@ export default function ContactForm() {
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-lg border px-3 py-2 text-sm"
+            className="w-full rounded-lg border px-2 py-2 border-gray-200 bg-white text-sm"
             placeholder="Tu nombre"
             autoComplete="name"
           />
@@ -87,7 +90,7 @@ export default function ContactForm() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-lg border px-3 py-2 text-sm"
+            className="w-full rounded-lg border px-2 py-2 border-gray-200 bg-white text-sm"
             placeholder="tucorreo@dominio.com"
             autoComplete="email"
           />
@@ -103,33 +106,22 @@ export default function ContactForm() {
           required
           value={msg}
           onChange={(e) => setMsg(e.target.value)}
-          className="min-h-32 w-full rounded-lg border px-3 py-2 text-sm"
+          className="min-h-32 w-full rounded-lg border px-2 py-2 border-gray-200 bg-white text-sm"
           placeholder="Cuéntanos qué habría que mejorar o corregir…"
         />
         <p className="mt-1 text-xs text-muted-foreground">
-          No compartas datos sensibles. Tu mensaje se abrirá en tu app de
-          correo.
+          No compartas datos sensibles.
         </p>
       </div>
 
       <div className="flex flex-col flex-wrap gap-2">
-        <h3 className="mb-1 block text-m font-medium text-center">
-          ⚠️ Formulario en reparación, usa el boton verde para abrir tu correo y
-          enviar un correo directamente a nuestro equipo. ⚠️
-        </h3>
         <button
           type="submit"
           disabled={busy || !msg.trim()}
-          className="rounded-lg border bg-red-600 text-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-red-800 disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-lg border bg-green-500 text-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-green-400 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {busy ? "Preparando…" : "Formulario temporalmente desactivado"}
+          {busy ? "Preparando…" : "Enviar"}
         </button>
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="rounded-lg border px-4 py-2 text-sm bg-emerald-400 text-white hover:bg-emerald-600"
-        >
-          Apreta para abrir tu correo y escribir directamente.
-        </a>
       </div>
     </form>
   );

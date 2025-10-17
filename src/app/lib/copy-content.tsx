@@ -1340,3 +1340,28 @@ export const INTRO_MAP_BASICS: ThreeWaySectionItem[] = [
     ],
   },
 ];
+
+// ContactPage content
+export const CONTACT_TIPS: ThreeWaySectionItem[] = [
+  {
+    label: "Corrección rápida",
+    icon: "🏙️",
+    blurb: [
+      "Si es del mapa, abre la página de Mapa y cuéntanos qué marcador hay que corregir (nombre y ubicación).",
+    ],
+  },
+  {
+    label: "Sugerencias",
+    icon: "☕️",
+    blurb: [
+      "¿Tienes nuevos cafés para trabajar, rutas de running o tips de seguridad? ¡Bienvenidos!",
+    ],
+  },
+  {
+    label: "Problemas técnicos",
+    icon: "🏃‍♂️",
+    blurb: [
+      "Si algo no carga o ves un error, dinos tu navegador/dispositivo y, si puedes, adjunta una captura.",
+    ],
+  },
+];
