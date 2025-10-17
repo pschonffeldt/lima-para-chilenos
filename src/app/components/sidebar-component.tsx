@@ -22,6 +22,7 @@ const NAV = [
   { href: "/carretes", label: "Carretes", icon: "🕺🏼" },
   { href: "/itinerarios", label: "Itinerarios", icon: "📘" },
   { href: "/contacto", label: "Contacto", icon: "📞" },
+  { href: "/sobre", label: "Sobre el proyecto", icon: "👨🏻‍💻" },
 ];
 
 const NAV_A = [
@@ -48,7 +49,10 @@ const NAV_D = [
   { href: "/itinerarios", label: "Itinerarios", icon: "📘" },
 ];
 
-const NAV_E = [{ href: "/contacto", label: "Contacto", icon: "📞" }];
+const NAV_E = [
+  { href: "/contacto", label: "Contacto", icon: "📞" },
+  { href: "/sobre", label: "Sobre el proyecto", icon: "👨🏻‍💻" },
+];
 
 export default function SidebarComponent() {
   const pathname = usePathname();
