@@ -37,6 +37,7 @@ export function TwoWaySection({
         <h2 className="pb-3 text-lg font-semibold">{sectionTitle}</h2>
       ) : null}
 
+      {/* Component container ans mapping */}
       <div className="grid items-stretch gap-6 sm:grid-cols-2">
         {twoItems.map(({ id, href, label, icon, blurb }, idx) => {
           const key = id ?? href ?? label ?? `item-${idx}`;

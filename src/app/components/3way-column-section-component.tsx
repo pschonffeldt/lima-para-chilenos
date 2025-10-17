@@ -20,7 +20,7 @@ export type ThreeWaySectionItem = {
   href?: string; // if present, renders a CTA
   label: string;
   icon?: React.ReactNode;
-  blurb?: Array<string | React.ReactNode>; // ← allow links
+  blurb?: React.ReactNode[]; // ← allow links
   ctaLabel?: string; // defaults to "Ver {label.toLowerCase()}"
   ctaVariant?: ButtonVariant; // overrides section default
 };

@@ -7,7 +7,11 @@ import { CtaBanner } from "./components/cta-component";
 import { MapEmbed } from "./components/map-component";
 import { DISTRICTS, SECTIONS } from "./lib/copy-content";
 
-// Sections
+// Metadata
+export const metadata = {
+  title: "Lima para Chilenos",
+  description: "Descubre Lima de la forma más eficiente",
+};
 
 export default function HomePage() {
   return (
@@ -221,7 +225,7 @@ export default function HomePage() {
         {/* MAP */}
         <MapEmbed iframeClassName="w-full h-[500px]" />
 
-        {/* CTA section */}
+        {/* CTA */}
         <CtaBanner
           title="Revisa nuestro mapa"
           description="Marcadores de barrios, cafés para trabajar, restaurantes y spots para."

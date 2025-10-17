@@ -14,7 +14,7 @@ import { CtaBanner } from "../components/cta-component";
 export const metadata = {
   title: "Transporte — Lima para Chilenos",
   description:
-    "Cómo moverte en Lima: apps (Uber/Cabify/InDrive), aeropuerto, Metropolitano, horarios punta y tips de seguridad para chilenos.",
+    "Cómo moverte en Lima: apps (Uber/Cabify), aeropuerto, Metropolitano, horarios punta y tips de seguridad para chilenos.",
 };
 
 export default function TransportPage() {

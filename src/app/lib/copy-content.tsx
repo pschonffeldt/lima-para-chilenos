@@ -136,7 +136,7 @@ export const ESSENTIALS: ThreeWaySectionItem[] = [
     ],
   },
   {
-    href: "/pagos-conectividad",
+    // href: "/pagos-conectividad",
     label: "Pagos & conectividad",
     icon: "🍽️",
     blurb: [
@@ -162,7 +162,7 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
     label: "Dónde comprar eSIM",
     icon: "📱",
     blurb: [
-      <>
+      <span key="mobimatter">
         <a
           href="https://www.mobimatter.com"
           target="_blank"
@@ -172,8 +172,8 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
           Mobimatter
         </a>{" "}
         — marketplace de eSIM
-      </>,
-      <>
+      </span>,
+      <span key="holafly">
         <a
           href="https://esim.holafly.com/"
           target="_blank"
@@ -183,8 +183,8 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
           Holafly
         </a>{" "}
         — seguramente has visto sus comerciales
-      </>,
-      <>
+      </span>,
+      <span key="maya">
         <a
           href="https://www.maya.net"
           target="_blank"
@@ -194,7 +194,7 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
           Maya
         </a>{" "}
         — no es tan famoso, pero igual es bueno
-      </>,
+      </span>,
     ],
   },
   {
@@ -269,7 +269,7 @@ export const WHERE_TO_STAY: ThreeWaySectionItem[] = [
 
 export const OTHER_TIPS: TwoWaySectionItem[] = [
   {
-    href: "/introduccion#horarios",
+    // href: "/introduccion#horarios",
     label: "Horarios & costumbres",
     icon: "🕒",
     blurb: [
@@ -279,7 +279,7 @@ export const OTHER_TIPS: TwoWaySectionItem[] = [
     ],
   },
   {
-    href: "/introduccion#clima",
+    // href: "/introduccion#clima",
     label: "Clima & seguridad ligera",
     icon: "🌤️",
     blurb: [

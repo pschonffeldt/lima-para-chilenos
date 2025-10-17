@@ -13,7 +13,7 @@ import {
 
 // Metadata
 export const metadata = {
-  title: "Transporte — Lima para Chilenos",
+  title: "Introducción — Lima para Chilenos",
   description:
     "Cómo moverte en Lima: apps (Uber/Cabify/InDrive), aeropuerto, Metropolitano, horarios punta y tips de seguridad para chilenos.",
 };
@@ -46,16 +46,11 @@ export default function IntroductionPage() {
         title="Checklist al aterrizar"
         variant="plain"
         items={[
-          <>Conéctate: compra eSIM o activa roaming. </>,
-          <>
-            Efectivo: lleva unos soles; si no, usa cajeros de bancos grandes.
-          </>,
-          <>
-            Traslado aeropuerto → Miraflores/Barranco: 35–55 min fuera de punta;
-            60–90+ min en hora punta.
-          </>,
-          <>Ubícate: malecón = norte-sur; vía expresa = eje central.</>,
-          <>Cuídate: Guarda el teléfono en esquinas muy concurridas.</>,
+          "Conéctate: compra eSIM o activa roaming.",
+          "Efectivo: lleva unos soles; si no, usa cajeros de bancos grandes.",
+          "Traslado aeropuerto → Miraflores/Barranco: 35–55 min fuera de punta; 60–90+ min en hora punta.",
+          "Ubícate: malecón = norte-sur; vía expresa = eje central.",
+          "Cuídate: Guarda el teléfono en esquinas muy concurridas.",
         ]}
       />
 
