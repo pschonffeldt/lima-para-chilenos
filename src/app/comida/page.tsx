@@ -55,7 +55,7 @@ export default function FoodPage() {
       />
       {/* Daily menu section */}
       <InfoBox
-        title="Menú del día: cómo funciona"
+        title="📅 Menú del día: cómo funciona"
         variant="plain"
         items={[
           <>Incluye entrada + fondo + bebida (a veces postre).</>,

@@ -56,8 +56,8 @@ export default function CopetePage() {
 
       {/* Where to buy section */}
       <TwoWaySection
-        srTitle="Botillerías y compras rápidas"
-        sectionTitle="Botillerías y compras rápidas"
+        srTitle="¿Donde comprar copete?"
+        sectionTitle="¿Donde comprar copete?"
         items={QUICK_BUYS}
       />
 

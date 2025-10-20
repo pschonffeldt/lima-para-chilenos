@@ -72,7 +72,7 @@ export const ITINERARIOS: Itinerary[] = [
     ],
     notes: [
       "Revisa horarios (varios museos cierran lunes).",
-      "Haz una reservación para el restaurante en San Isidro",
+      "Haz una reservación para el restaurante en San Isidro.",
     ],
     price: "300 soles",
     links: [{ href: "/actividades/museos-sitios", label: "Museos & sitios" }],

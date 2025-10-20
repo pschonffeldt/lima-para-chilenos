@@ -73,7 +73,7 @@ export default function AboutPage() {
       {/* CTA */}
       <CtaBanner
         title="Ponte en contacto"
-        description="Nos interesa saber lo que piensas sobre mi proyecto. Ponte en contacto conmigo"
+        description="Nos interesa saber lo que piensas sobre mi proyecto. Ponte en contacto conmigo."
         actions={[
           {
             href: "/contacto",

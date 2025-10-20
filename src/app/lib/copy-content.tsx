@@ -119,7 +119,7 @@ export const ESSENTIALS: ThreeWaySectionItem[] = [
     label: "¿Donde alojar?",
     icon: "👋",
     blurb: [
-      "Miraflores — cómoda, caminable, parques frente al mar",
+      "Miraflores — cómoda, caminable, parques frente al mar.",
       "Barranco — arte y bares, bohemio.",
       "San Isidro — seguro, oficinas y restaurantes top.",
     ],
@@ -130,7 +130,7 @@ export const ESSENTIALS: ThreeWaySectionItem[] = [
     icon: "🛵",
     blurb: [
       "El tráfico en Lima es horrible.",
-      "Salir del aeropuerto puede ser desafiante",
+      "Salir del aeropuerto puede ser desafiante.",
       "Evita taxi de calle y la combis.",
       "Usa los servicios oficiales o apps de transporte.",
     ],
@@ -141,9 +141,9 @@ export const ESSENTIALS: ThreeWaySectionItem[] = [
     icon: "🍽️",
     blurb: [
       "Trae USD y habilita tu tarjeta bancaria Chilena.",
-      "Cambia un poco de Soles en el aeropuerto",
-      "El resto lo puedes cambiar en la calle o en casas de cambio",
-      "eSIM o roaming, no compres una SIM fisica en Lima",
+      "Cambia un poco de Soles en el aeropuerto.",
+      "El resto lo puedes cambiar en la calle o en casas de cambio.",
+      "eSIM o roaming, no compres una SIM fisica en Lima.",
     ],
   },
 ];
@@ -153,9 +153,9 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
     label: "Operadores recomendados",
     icon: "📡",
     blurb: [
-      "Claro — buena cobertura en zonas céntricas",
-      "Entel — alternativa estable",
-      "Movistar — muy extendido, señal variable por distrito",
+      "Claro — buena cobertura en zonas céntricas.",
+      "Entel — alternativa estable.",
+      "Movistar — muy extendido, señal variable por distrito.",
     ],
   },
   {
@@ -171,7 +171,7 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
         >
           Mobimatter
         </a>{" "}
-        — marketplace de eSIM
+        — marketplace de eSIM.
       </span>,
       <span key="holafly">
         <a
@@ -182,7 +182,7 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
         >
           Holafly
         </a>{" "}
-        — seguramente has visto sus comerciales
+        — seguramente has visto sus comerciales.
       </span>,
       <span key="maya">
         <a
@@ -193,7 +193,7 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
         >
           Maya
         </a>{" "}
-        — no es tan famoso, pero igual es bueno
+        — no es tan famoso, pero igual es bueno.
       </span>,
     ],
   },
@@ -201,7 +201,7 @@ export const COMMUNICATIONS: ThreeWaySectionItem[] = [
     label: "Tips rápidos",
     icon: "⁉️",
     blurb: [
-      "Activa datos/roaming solo si tu plan lo permite",
+      "Activa datos/roaming solo si tu plan lo permite.",
       "Al usar eSIM guarda el QR y el código de activación y anota tu número peruano.",
       "En cafés y malls suele haber Wi-Fi. Usa tu VPN para proteger tus datos.",
     ],
@@ -284,7 +284,7 @@ export const OTHER_TIPS: TwoWaySectionItem[] = [
     icon: "🌤️",
     blurb: [
       "Clima templado con cielos nublados en invierno.",
-      "En verano el sol pega fuerte (dic–mar)",
+      "En verano el sol pega fuerte (dic–mar).",
       "Evita exhibir el celular en esquinas muy concurridas.",
     ],
   },
@@ -1145,7 +1145,7 @@ export const QUICK_BASICS: ThreeWaySectionItem[] = [
     blurb: [
       "Apps (Cabify/Uber) para moverte fácil.",
       "Evita taxi de calle. No es seguro.",
-      "Lima es muy caminable",
+      "Lima es muy caminable.",
     ],
   },
 ];
@@ -1287,7 +1287,7 @@ export const OUTING_BASICS: ThreeWaySectionItem[] = [
     icon: "👇🏼",
     blurb: [
       "Usa los filtros para seleccionar el tipo de actividad que más te interesa.",
-      "Puedes filtrar por duración o actividad (eqiqueta)",
+      "Puedes filtrar por duración o actividad (eqiqueta).",
       "Revisa el itinerario completo apretando el boton de cada tarjeta",
     ],
   },
@@ -1319,24 +1319,24 @@ export const INTRO_MAP_BASICS: ThreeWaySectionItem[] = [
     label: "Zonas para alojarte",
     icon: "🏙️",
     blurb: [
-      "Miraflores, Barranco y San Isidro",
-      "Puntos para caminar, cafés y miradores",
+      "Miraflores, Barranco y San Isidro.",
+      "Puntos para caminar, cafés y miradores.",
     ],
   },
   {
     label: "Vida diaria",
     icon: "☕️",
     blurb: [
-      "Cafés para trabajar, restaurantes, barras",
-      "ATMs / casas de cambio (cuando aplique)",
+      "Cafés para trabajar, restaurantes, barras.",
+      "ATMs / casas de cambio (cuando aplique).",
     ],
   },
   {
     label: "Movimiento",
     icon: "🏃‍♂️",
     blurb: [
-      "Rutas para correr por el malecón",
-      "Referencias para pedir app con seguridad",
+      "Rutas para correr por el malecón.",
+      "Referencias para pedir app con seguridad.",
     ],
   },
 ];
@@ -1345,21 +1345,22 @@ export const INTRO_MAP_BASICS: ThreeWaySectionItem[] = [
 export const CONTACT_TIPS: ThreeWaySectionItem[] = [
   {
     label: "Corrección rápida",
-    icon: "🏙️",
+    icon: "🏎️",
     blurb: [
       "Si es del mapa, abre la página de Mapa y cuéntanos qué marcador hay que corregir (nombre y ubicación).",
     ],
   },
   {
     label: "Sugerencias",
-    icon: "☕️",
+    icon: "🗣️",
     blurb: [
-      "¿Tienes nuevos cafés para trabajar, rutas de running o tips de seguridad? ¡Bienvenidos!",
+      "¿Tienes nuevos cafés para trabajar, rutas de running o tips de seguridad?",
+      "Los comentarios de nuestros usuarios sin siembre bienvenidos 🥰.",
     ],
   },
   {
     label: "Problemas técnicos",
-    icon: "🏃‍♂️",
+    icon: "🔧",
     blurb: [
       "Si algo no carga o ves un error, dinos tu navegador/dispositivo y, si puedes, adjunta una captura.",
     ],
@@ -1374,7 +1375,7 @@ export const WHAT_IS: ThreeWaySectionItem[] = [
     blurb: [
       "Hacerte fácil dónde alojar, qué hacer y cómo moverte.",
       "Menos vueltas, más tiempo útil.",
-      "Datos para Chilenos, hecho por un Chileno 🇨🇱❤️",
+      "Datos para Chilenos, por un Chileno 🇨🇱❤️.",
     ],
   },
   {
@@ -1389,7 +1390,7 @@ export const WHAT_IS: ThreeWaySectionItem[] = [
     label: "Cómo se actualiza",
     icon: "🔄",
     blurb: [
-      "Investingaciones en terreno (basicamente, yo voy a probar café, copete, comida y carretes 🤣",
+      "Investingaciones en terreno (basicamente, pruebo café, copete, comida y carretes 🤣).",
       "Ajustes según feedback de usuarios y cambios locales.",
     ],
   },
@@ -1401,9 +1402,9 @@ export const WHO_BEHIND: TwoWaySectionItem[] = [
     label: "Quién está detrás",
     icon: "🤗",
     blurb: [
-      "Proyecto creado por un Chileno viviendo en Lima",
+      "Proyecto creado por un Chileno viviendo en Lima.",
       "Experiencia en contenido, desarrollo de software y mapas prácticos para viajeros.",
-      "Alguien que lleva mas de 7 años viviendo fuera de Chile y que entiende lo importante que es planificar un viaje",
+      "Alguien que lleva mas de 7 años viviendo fuera de Chile y que entiende lo importante que es planificar un viaje.",
     ],
   },
   {
@@ -1413,7 +1414,7 @@ export const WHO_BEHIND: TwoWaySectionItem[] = [
     blurb: [
       "¿Ves un dato desactualizado o falta un lugar clave?",
       "Envíanos correcciones y sugerencias (cafés para trabajar, rutas, tips de seguridad).",
-      "Para donaciones, ponte en contacto con nosotros",
+      "Para donaciones, ponte en contacto con nosotros.",
     ],
   },
 ];
