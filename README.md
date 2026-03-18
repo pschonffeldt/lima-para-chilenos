@@ -1,6 +1,6 @@
-# Pokémon Explorer
+# Para Chilenos
 
-Discover, learn, and explore the world of Pokémon in one simple web app.
+Discover, learn, and explore the world from a chilean point of view.
 
 A Next.js 15 + TypeScript + Tailwind v4 web app for exploring Pokémon data.
 
@@ -9,8 +9,8 @@ A Next.js 15 + TypeScript + Tailwind v4 web app for exploring Pokémon data.
 ## Quick Start
 
 1. **Clone the repo**
-   git clone git@github.com:username/pokemon-explorer.git
-   cd pokemon-explorer
+   git clone git@github.com:username/lima-para-chilenos.git
+   cd lima-para-chilenos
 
 2. **Install dependencies**
    npm install
